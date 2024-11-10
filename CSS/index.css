@@ -1,0 +1,27 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.header {
+    text-align: center;
+    background-image: linear-gradient(to right,#C01F1F,#5A0F0F);
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    color: white;
+}
+
+.banner {
+    height: 30%;
+    width: 30%;
+}
