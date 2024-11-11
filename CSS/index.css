@@ -1,27 +1,191 @@
-body {
+/* || CCS RESET */
+*
+{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-li {
-    list-style-type: none;
-    padding-left: 20px;
-    padding-right: 20px;
+/* || VARIABLES */
+:root
+{
+    /* COLORS */
+    --headerBg: linear-gradient(to right, #C01F1F, #5A0F0F);
+    --mainText: white;
 }
 
-.header {
-    text-align: center;
-    background-image: linear-gradient(to right,#C01F1F,#5A0F0F);
-    width: 100%;
-    padding: 5px;
+/* DARK MODE VARIABLES */
+@media (prefers-color-scheme: dark)
+{
+    :root
+    {
+        --headerBg: linear-gradient(to right, #C01F1F, #5A0F0F);
+    }
+}
+
+/* || UTILITY CLASSES */
+.nowrap
+{
+    white-space: nowrap;
+}
+
+/* || HEADER START */
+
+header
+{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
-    color: white;
+
+    background-image: var(--headerBg);
+
+    padding: 20px 0;
 }
 
-.banner {
-    height: 30%;
+header img
+{
     width: 30%;
+}
+
+header nav
+{
+    padding: 10px 0;
+
+    background-color: blue;
+    width: 100%;
+}
+
+header .navBar
+{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+header .navBar .menu
+{
+    padding: 10px 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    width: 100%;
+
+    background-color: red;
+
+    color: var(--mainText);
+    list-style-type: none;
+}
+
+header .navBar .menu li a
+{
+    display: inline-block;
+    position: relative;
+
+    cursor: pointer;
+}
+
+header .navBar .menu li a::after
+{
+    content: "";
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+
+    transition: all 0.2s;
+}
+
+header .navBar .menu li a:hover::after
+{
+    width: 100%;
+}
+
+/* SIDEBAR */
+.open-menu,
+.close-menu
+{
+    position: absolute;
+    font-size: 1.5rem;
+    color: green;
+
+    display: none;
+}
+
+.open-menu
+{
+    right: 28px;
+    top: 28px;
+}
+
+.close-menu
+{
+    top: 28px;
+    right: 28px;
+}
+
+#check
+{
+    display: none;
+}
+
+/* || HEADER END */
+
+
+
+/* || MOBILE SCREEN SIZE */
+@media screen and (max-width: 610px)
+{
+
+    /* || NAVIGATION */
+    header .navBar .menu
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+
+        text-align: center;
+        font-size: 1.2rem;
+
+        background-color: gray;
+        position: fixed;
+
+        top: 0;
+        right: -100%;
+        width: 50%;
+        height: 100vh;
+
+        color: var(--mainText);
+
+        z-index: 999;
+    }
+
+    header .navBar .menu li
+    {
+        border-bottom: 1px solid white;
+
+        padding: 30px 0;
+    }
+
+    header .navBar .menu li
+    {
+        width: 100%;
+    }
+
+    .open-menu,
+    .close-menu
+    {
+        display: block;
+    }
+
+    #check:checked~.menu
+    {
+        right: 0;
+    }
 }

@@ -1,24 +1,50 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="../CSS/index.css">
+
+
+    <!-- FONTS AWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<header>
-    <div class="header">
-        <img class="banner" src="../Images/LOGO AY 24-25/3 WHITE HEADER LOGO BANNER TYPE.png">
-    </div>
-    <div class="header">
-        <li><a>News</a></li>
-        <li><a>Editorial</a></li>
-        <li><a>Feature</a></li>
-        <li><a>Sports</a></li>
-        <li><a>TSU Marilag 2024</a></li>
-        <li><a>CCS Sportsfest 2024</a></li>
-    </div>  
-</header>
+
+
 <body>
-    <h1>News</h1>
+    <header>
+        <img src="../Images/LOGO AY 24-25/3 WHITE HEADER LOGO BANNER TYPE.png">
+        <nav>
+            <ul class="navBar">
+                <input type="checkbox" id="check">
+
+                <span class="menu">
+                    <li><a>News</a></li>
+                    <li><a>Editorial</a></li>
+                    <li><a>Feature</a></li>
+                    <li><a>Sports</a></li>
+                    <li><a><span class="nowrap">TSU Marilag 2024</span></a></li>
+                    <li><a><span class="nowrap">CCS Sportsfest 2024</span></a></li>
+
+                    <label for="check" class="close-menu">
+                        <i class="fas fa-times"></i>
+                    </label>
+                </span>
+
+                <label for="check" class="open-menu">
+                    <i class="fas fa-bars"></i>
+                </label>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>News</h1>
+    </main>
 </body>
+
 </html>
