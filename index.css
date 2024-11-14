@@ -161,6 +161,14 @@ main
     background-color: pink;
 }
 
+main hr 
+{
+    width: 100%;
+    margin: auto;
+    border: none;
+    border-top: 2px solid #C01F1F;
+}
+
 main .main-header
 {
     font-family: Coolvetica;
@@ -168,6 +176,14 @@ main .main-header
 }
 
 .news
+{
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+}
+
+.other-main-news
 {
     display: flex;
     flex-direction: row;
@@ -187,19 +203,44 @@ main .main-header
 
 .main-news
 {
-    font-size: 1.5rem;
+    font-size: 1.50rem;
+    font-family: Helvetica;
+}
+
+.container.two .headline
+{
+    text-align: left;
+
+    background-color: blue;
+
+    font-family: Coolvetica;
+    font-size: 1.1rem;
+}
+.container.two .main-news
+{
+    font-size: .85rem;
     font-family: Helvetica;
 }
 
 .container.one
 {
     margin: 20px 0;
-
     display: flex;
     flex-direction: row;
     gap: 20px;
     flex-grow: 1;
     background-color: rgb(218, 131, 145);
+    overflow: hidden;
+    align-items: stretch;
+}
+
+.container.one img
+{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    flex: 1;
 }
 
 .container.two
@@ -209,10 +250,27 @@ main .main-header
     flex-direction: column;
     flex-shrink: 1;
     background-color: rgb(218, 131, 145);
-
     font-family: Coolvetica;
     font-size: 1.55rem;
     font-weight: 10;
+    overflow: hidden;
+}
+
+.container.two img
+{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.container img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    margin: 0;
 }
 
 .news-item
@@ -221,26 +279,38 @@ main .main-header
     flex-direction: column;
     flex: 1;
     margin: 1.2rem 0;
+    min-width: 0;
+    height: 100%;
+}
+.news-item img
+{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
-.editorial-item
+.editorial.item
 {
     display: flex;
     gap: 1rem;
-    align-items: start;
+    align-items: flex-start;
+    flex-direction: row;
 }
 
-.container img
+.editorial.item img
 {
-    max-width: 300px;
-    width: 100%;
+    width: 300px;
     height: auto;
-    margin: 10px;
     object-fit: cover;
-    aspect-ratio: 16/9;
+    flex-shrink: 0;
 }
 
-
+.editorial.item > div
+{
+    flex: 1;
+    min-width: 0;
+    padding: 0 1rem;
+}
 
 /* || CARD */
 
@@ -249,7 +319,8 @@ main .main-header
     display: flex;
     flex-direction: row;
     justify-content: center;
-
+    align-items: center; 
+    text-align: center;
     background: darkcyan;
     gap: 20px;
 
@@ -261,8 +332,9 @@ main .main-header
 
 .card
 {
-    padding: 13% 14%;
-
+    padding: 13% 0;
+    width: 100%;
+    height: auto;
     background-image: linear-gradient(rgba(90, 15, 15, 0.8), rgba(192, 31, 31, 0.8)), url("../Assets/testIMG-Landscape.jpg");
 
     background-size: cover;
@@ -288,7 +360,8 @@ main .main-header
 }
 
 .sports.news,
-.feature.news
+.feature.news,
+.editorial.news
 {
     background-color: aqua;
     padding: 20px;
@@ -394,42 +467,30 @@ footer .copyright
 
 
 /* || MOBILE SCREEN SIZE */
-@media screen and (max-width: 610px)
+@media screen and (max-width: 810px)
 {
-
     /* || NAVIGATION START */
     header .navBar .menu
     {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-
-
         text-align: center;
         font-size: 1.2rem;
-
         background-color: gray;
         position: fixed;
-
         top: 0;
         right: -100%;
         width: 50%;
         height: 100vh;
-
         color: var(--mainText);
-
         z-index: 999;
     }
 
     header .navBar .menu li
     {
         border-bottom: 1px solid white;
-
         padding: 30px 0;
-    }
-
-    header .navBar .menu li
-    {
         width: 100%;
     }
 
@@ -443,7 +504,131 @@ footer .copyright
     {
         right: 0;
     }
-
     /* || NAVIGATION END */
 
+    /* || HEADER */
+    header
+    {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    header img
+    {
+        width: 50%;
+    }
+
+    /* || MAIN */
+    main
+    {
+        width: 100%;
+        margin: 0;
+    }
+
+    .news
+    {
+        flex-direction: column;
+    }
+
+    .container.one,
+    .container.two
+    {
+        flex-direction: column;
+    }
+
+    .container.one img,
+    .container.two img
+    {
+        width: 100%;
+    }
+
+    .editorial.item
+    {
+        flex-direction: column;
+    }
+
+    .editorial.item img
+    {
+        width: 100%;
+    }
+
+    /* || CARD */
+    .card-container
+    {
+        flex-direction: column;
+    }
+
+    .card
+    {
+        padding: 10%;
+    }
+
+    /* || FOOTER */
+    footer .socials .icons
+    {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    footer .logo img
+    {
+        width: 20%;
+    }
+
+    /* New additions for full column layout */
+    header .navBar,
+    .news-item,
+    .editorial.item > div,
+    .sports.news,
+    .feature.news,
+    .card-container,
+    .other-news,
+    .other-main-news,
+    .other-main-news-no-img
+    {
+        flex-direction: column;
+    }
+
+    .news-item img,
+    .editorial.item img,
+    .sports.news img,
+    .feature.news img
+    {
+        width: 100%;
+    }
+
+    .headliner .container.one {
+        display: flex;
+        flex-direction: column; 
+    }
+
+    .headliner .container.one .news-item img {
+        order: 2; 
+    }
+
+    .headliner .container.one .news-item {
+        order: 1; 
+    }
+}
+
+/* || TABLET SCREEN SIZE */
+@media screen and (max-width: 1310px) {
+    .other-main-news,
+    .other-main-news-no-img {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        gap: 20px; 
+    }
+
+    .other-main-news .container.two,
+    .other-main-news-no-img .container.two {
+        flex: 0 0 calc(50% - 20px); 
+        box-sizing: border-box; 
+    }
+    
+    .editorial.item {
+        flex-direction: column;
+        align-items: center;
+    }
 }
