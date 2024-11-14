@@ -160,7 +160,8 @@ main
     background-color: pink;
 }
 
-main .main-header {
+main .main-header
+{
     font-family: Coolvetica;
     font-size: 3rem;
 }
@@ -183,7 +184,8 @@ main .main-header {
     font-size: 1.75rem;
 }
 
-.main-news {
+.main-news
+{
     font-size: 1.5rem;
     font-family: Helvetica;
 }
@@ -222,17 +224,18 @@ main .main-header {
 
 .editorial-item
 {
-    display: flex; 
-    gap: 1rem; 
+    display: flex;
+    gap: 1rem;
     align-items: start;
 }
 
-.container img {
-    max-width: 300px; 
-    width: 100%; 
-    height: auto; 
+.container img
+{
+    max-width: 300px;
+    width: 100%;
+    height: auto;
     margin: 10px;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 
@@ -340,8 +343,8 @@ footer hr
 
 footer .logo img
 {
-    height: 25%;
-    width: auto;
+    height: auto;
+    width: 25%;
 }
 
 footer .logo h3
