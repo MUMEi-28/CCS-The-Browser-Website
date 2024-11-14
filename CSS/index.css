@@ -8,25 +8,18 @@
 
 /* || FONTS*/
 
-@font-face {
+@font-face
+{
     font-family: Helvetica;
     src: url(../Assets/fonts/Helvetica.ttf);
 }
 
-@font-face {
+@font-face
+{
     font-family: Coolvetica;
     src: url(../Assets/fonts/coolvetica\ rg.otf);
 }
 
-p {
-    font-family: Helvetica
-}
-
-h1 {
-    font-size: 4rem;
-    font-weight: 200;
-    font-family: Coolvetica;
-}
 
 /* || VARIABLES */
 :root
@@ -157,6 +150,120 @@ header .navBar .menu li a:hover::after
 
 /* || HEADER END */
 
+/* || MAIN START */
+
+main
+{
+    width: 90%;
+    margin: 0 auto;
+
+    background-color: pink;
+}
+
+.news
+{
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+}
+
+.headline
+{
+    text-align: left;
+
+    background-color: blue;
+}
+
+.container.one
+{
+    margin: 20px 0;
+
+    display: flex;
+    flex-direction: row;
+
+    flex-grow: 1;
+    background-color: rgb(218, 131, 145);
+}
+
+.container.two
+{
+    margin: 20px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 1;
+
+    background-color: rgb(218, 131, 145);
+}
+
+.news-item
+{
+    display: flex;
+    flex-direction: column;
+
+    margin: 1.2rem 0;
+}
+
+.container img
+{
+    width: 30%;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+
+/* || CARD */
+
+.card-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    background: darkcyan;
+    gap: 20px;
+
+
+    color: white;
+
+    padding: 20px 0;
+}
+
+.card
+{
+    padding: 13% 14%;
+
+    background-image: linear-gradient(rgba(90, 15, 15, 0.8), rgba(192, 31, 31, 0.8)), url("../Assets/testIMG.jpg");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.other-news
+{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.other-news h2
+{
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+.sports.news,
+.feature.news
+{
+    background-color: aqua;
+    padding: 20px;
+}
+
+/* || MAIN END */
 
 /* || FOOTER START */
 
@@ -178,8 +285,6 @@ footer .socials
     padding: 10px;
 }
 
-
-
 footer .socials .icons
 {
     display: flex;
@@ -198,6 +303,7 @@ footer .socials .icons i
     color: white;
     font-size: 2rem;
 }
+
 
 footer hr
 {
@@ -238,6 +344,8 @@ footer .about a
 {
     color: white;
     text-decoration: none;
+    font-family: Coolvetica;
+
 }
 
 footer .copyright
