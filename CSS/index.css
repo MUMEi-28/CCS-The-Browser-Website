@@ -160,6 +160,11 @@ main
     background-color: pink;
 }
 
+main .main-header {
+    font-family: Coolvetica;
+    font-size: 3rem;
+}
+
 .news
 {
     display: flex;
@@ -173,6 +178,14 @@ main
     text-align: left;
 
     background-color: blue;
+
+    font-family: Coolvetica;
+    font-size: 1.75rem;
+}
+
+.main-news {
+    font-size: 1.5rem;
+    font-family: Helvetica;
 }
 
 .container.one
@@ -193,6 +206,10 @@ main
     flex-direction: column;
     flex-shrink: 1;
     background-color: rgb(218, 131, 145);
+
+    font-family: Coolvetica;
+    font-size: 1.55rem;
+    font-weight: 10;
 }
 
 .news-item
@@ -245,6 +262,10 @@ main
 
     background-size: cover;
     background-repeat: no-repeat;
+
+    font-size: 1.5rem;
+    font-family: Coolvetica;
+    font-weight: 100;
 }
 
 
@@ -287,6 +308,7 @@ footer .socials
 footer .socials
 {
     font-weight: 600;
+    font-family: Helvetica;
     padding: 10px;
 }
 
@@ -349,7 +371,7 @@ footer .about a
 {
     color: white;
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: Helvetica;
 
 }
 
@@ -357,6 +379,7 @@ footer .copyright
 {
     color: white;
     padding: 0 0 0 1.5rem;
+    font-family: Helvetica;
 }
 
 /* || FOOTER END */
