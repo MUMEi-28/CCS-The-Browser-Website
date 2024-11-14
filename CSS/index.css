@@ -181,7 +181,7 @@ main
 
     display: flex;
     flex-direction: row;
-
+    gap: 20px;
     flex-grow: 1;
     background-color: rgb(218, 131, 145);
 }
@@ -189,12 +189,9 @@ main
 .container.two
 {
     margin: 20px 0;
-
     display: flex;
     flex-direction: column;
-
     flex-shrink: 1;
-
     background-color: rgb(218, 131, 145);
 }
 
@@ -202,15 +199,23 @@ main
 {
     display: flex;
     flex-direction: column;
-
+    flex: 1;
     margin: 1.2rem 0;
 }
 
-.container img
+.editorial-item
 {
-    width: 30%;
-    height: auto;
-    margin-right: 10px;
+    display: flex; 
+    gap: 1rem; 
+    align-items: start;
+}
+
+.container img {
+    max-width: 300px; 
+    width: 100%; 
+    height: auto; 
+    margin: 10px;
+    object-fit: cover; 
 }
 
 
@@ -236,7 +241,7 @@ main
 {
     padding: 13% 14%;
 
-    background-image: linear-gradient(rgba(90, 15, 15, 0.8), rgba(192, 31, 31, 0.8)), url("../Assets/testIMG.jpg");
+    background-image: linear-gradient(rgba(90, 15, 15, 0.8), rgba(192, 31, 31, 0.8)), url("../Assets/testIMG-Landscape.jpg");
 
     background-size: cover;
     background-repeat: no-repeat;
