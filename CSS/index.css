@@ -206,6 +206,13 @@ main
     margin: 1.2rem 0;
 }
 
+.editorial-item
+{
+    display: flex; 
+    gap: 1rem; 
+    align-items: start;
+}
+
 .container img
 {
     width: 30%;
