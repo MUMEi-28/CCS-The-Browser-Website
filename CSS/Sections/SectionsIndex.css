@@ -141,6 +141,19 @@ main hr {
     line-height: 1.5;
 }
 
+.container.two .headline h2 {
+    font-family: Coolvetica;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.container.two .main-news p {
+    font-family: Helvetica;
+    font-size: .95 rem;
+    line-height: 1.5;
+}
+
 .news {
     display: flex;
     flex-direction: row;
@@ -149,6 +162,10 @@ main hr {
 
 .headline {
     text-align: left;
+}
+
+.container {
+    overflow: hidden;
 }
 
 .container.one {
@@ -163,7 +180,30 @@ main hr {
     margin: 20px 0;
     display: flex;
     flex-direction: column;
+    gap: 20px;
     flex-shrink: 1;
+}
+
+.container img {
+    margin: 10px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.container.one img {
+    width: 60%;
+    height: auto;
+    margin: 10px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.container.two img {
+    width: 35%;
+    height: auto;
+    margin: 10px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
 }
 
 .news-item {
@@ -176,21 +216,10 @@ main hr {
 .editorial-item {
     display: flex;
     gap: 1rem;
+    flex-direction: row;
     align-items: start;
 }
 
-.container img {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    margin: 10px;
-    object-fit: cover;
-    aspect-ratio: 16/9;
-}
-
-.container.one img {
-    max-width: 500px;
-}
 
 .card-container {
     display: flex;
@@ -294,7 +323,7 @@ footer .copyright {
     font-family: Helvetica;
 }
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 810px) {
     header .navBar .menu {
         display: flex;
         flex-direction: column;
@@ -324,5 +353,28 @@ footer .copyright {
 
     #check:checked~.menu {
         right: 0;
+    }
+
+    
+}
+
+@media screen and (max-width: 1210px) {
+    .container.one, .container.two,.editorial-item {
+        flex-direction: column;
+    }
+
+    .container.one img {
+        width: 100%;
+    }
+
+    .container.two img {
+        width: 100%;
+    }
+
+    .headliner .news-item img {
+        order: 1;
+    }
+    .headliner .news-item {
+        order: 2;
     }
 }
