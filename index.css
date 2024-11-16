@@ -11,13 +11,13 @@
 @font-face
 {
     font-family: Helvetica;
-    src: url(../Assets/fonts/Helvetica.ttf);
+    src: url(Assets/fonts/Helvetica.ttf);
 }
 
 @font-face
 {
     font-family: Coolvetica;
-    src: url(../Assets/fonts/coolvetica\ rg.otf);
+    src: url(Assets/fonts/coolvetica\ rg.otf);
 }
 
 
@@ -335,7 +335,7 @@ main .main-header
     padding: 13% 0;
     width: 100%;
     height: auto;
-    background-image: linear-gradient(rgba(90, 15, 15, 0.8), rgba(192, 31, 31, 0.8)), url("../Assets/testIMG-Landscape.jpg");
+    background-image: linear-gradient(rgba(90, 15, 15, 0.8), rgba(192, 31, 31, 0.8)), url("Assets/testIMG-Landscape.jpg");
 
     background-size: cover;
     background-repeat: no-repeat;
