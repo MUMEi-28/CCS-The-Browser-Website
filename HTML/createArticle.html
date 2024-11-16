@@ -1,0 +1,120 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../CSS/createArticle.css">
+
+
+    <!-- FONTS AWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body>
+    <header>
+        <img src="../Assets/LOGO AY 24-25/3 WHITE HEADER LOGO BANNER TYPE.png">
+        <nav>
+            <ul class="navBar">
+                <input type="checkbox" id="check">
+
+                <span class="menu">
+                    <li><a>News</a></li>
+                    <li><a>Editorial</a></li>
+                    <li><a>Feature</a></li>
+                    <li><a>Sports</a></li>
+                    <li><a><span class="nowrap">TSU Marilag 2024</span></a></li>
+                    <li><a><span class="nowrap">CCS Sportsfest 2024</span></a></li>
+
+                    <label for="check" class="close-menu">
+                        <i class="fas fa-times"></i>
+                    </label>
+                </span>
+
+                <label for="check" class="open-menu">
+                    <i class="fas fa-bars"></i>
+                </label>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Create new article</h1>
+        
+            <form action="/action_page.php">
+              <br>
+              <div class = "input-box">
+                <div class = "input-field headline">
+                <label for="tname">TITLE/HEADLINE: </label>
+                </div>
+                     <input type="text" id="tname" name="title/headline" placeholder="Write your title here...">
+                   <br><br>
+                        <div class = "input-field writer">
+                            <label for="twrite">WRITER: </label>
+                            <br>
+                              <input type="text" id="twrite" name="writer" placeholder="Write your name here ...">
+                              <br><br>
+                        </div>
+                        <div class = "input-field imageheader">
+                        <label for="timage">IMAGE HEADER: </label>
+                            <br>
+              <input type="text" id="timage" name="imageheader" placeholder="Place your image header...">
+              <br><br>
+              </div>
+              <div class = "input-field writer">
+              <label for="tcontent">ARTICLE CONTENT: </label>
+              <br>
+             <textarea name = "" id="articlecontent" cols = "55" rows = "15" placeholder="Your content here...">
+             </textarea>
+              <br><br>
+              </div>
+
+              <div class = "input-field writer">
+              <label for="ttype">TYPE OF ARTICLE: </label>
+              <br>
+              <input type="text" id="ttype" name="typeofarticle" placeholder="Your type of article...">
+              <br><br>  
+              <input type="button" class="button" name = "SAVE" value="SAVE">
+              <input type="button" class="button" name = "CANCEL" value="CANCEL">
+              <br>
+                        </div>
+                    </div>
+                </div>
+            </form>
+          
+
+    </main>
+
+
+    <footer>
+        <div class="socials">
+            <p>Follow Us.</p>
+            <ul class="icons">
+                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="logo">
+            <img src="../Assets/LOGO AY 24-25/LOGO mejo 3D.png" alt="Logo">
+            <h3>minds poured out on paper.</h3>
+        </div>
+
+        <ul class="about">
+            <li><a href="">About Us</a></li>
+            <li><a href="">Privacy Policy</a></li>
+        </ul>
+
+        <p class="copyright">Copyright 2024 TSU-CCS The Browser. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
