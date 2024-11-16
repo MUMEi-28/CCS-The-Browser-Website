@@ -164,25 +164,18 @@ main
 
 /* Article Div */
 
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 4px;
-   
-  }
-  textarea[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 4px;
+.form{
 
-  }
-
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    
+}
 
 .button {
     background-color: #f44336; /* Red */
