@@ -1,152 +1,179 @@
-* {
-    margin: 0;
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body
+{
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+header
+{
+  background-color: #800000;
+  color: #fff;
+  padding: 1rem;
+}
+
+.header-content
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1
+{
+  margin-right: 2rem;
+}
+
+nav a
+{
+  color: #fff;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+main
+{
+  max-width: 100em;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.article-header
+{
+  padding: 20px;
+}
+
+.top-section
+{
+  margin-bottom: 15px;
+}
+
+.category
+{
+  font-size: 0.9em;
+  color: #555;
+}
+
+.headline
+{
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.date
+{
+  font-size: 0.9em;
+  color: #777;
+}
+
+.bottom-section
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author-info
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name
+{
+  font-weight: bold;
+}
+
+.author-role
+{
+  font-size: 0.9em;
+  color: #555;
+}
+
+.edit-button
+{
+  background-color: #8B0000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.9em;
+
+}
+
+article img
+{
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+hr
+{
+  height: 2px;
+  background-color: #800000;
+  border: none;
+
+}
+
+.more-articles
+{
+  margin-top: 2rem;
+}
+
+.more-articles h3
+{
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.article-preview
+{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.article-preview img
+{
+  width: 100px;
+  height: 60px;
+  margin-right: 1rem;
+}
+
+footer
+{
+  background-color: #800000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+#more-articles
+{
+  h3
+  {
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    margin: 0;
   }
-  
-  body {
-    background-color: #f0f0f0;
-    color: #333;
-  }
-  
-  header {
-    background-color: #800000;
-    color: #fff;
-    padding: 1rem;
-  }
-  
-  .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  header h1 {
-    margin-right: 2rem;
-  }
-  
-  nav a {
-    color: #fff;
-    margin-right: 1rem;
-    text-decoration: none;
-  }
-  
-  main {
-    max-width: 100em;
-    padding: 1rem;
-    background-color: #fff;
-  }
-
-  .article-header {
-    padding: 20px;
 }
 
-.top-section {
-    margin-bottom: 15px;
+.article-content
+{
+  text-indent: 50px;
+  max-width: 65rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  text-align: justify;
 }
-
-.category {
-    font-size: 0.9em;
-    color: #555;
-}
-
-.headline {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 5px 0;
-}
-
-.date {
-    font-size: 0.9em;
-    color: #777;
-}
-
-.bottom-section {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-}
-
-.author-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.author-name {
-    font-weight: bold;
-}
-
-.author-role {
-    font-size: 0.9em;
-    color: #555;
-}
-
-.edit-button {
-    background-color: #8B0000; 
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 0.9em;
-    
-}
-  
-  article img {
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-  
-  hr{
-    height: 2px;
-    background-color: #800000;
-    border: none;
-  
-  }
-  .more-articles {
-    margin-top: 2rem;
-  }
-  
-  .more-articles h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .article-preview {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .article-preview img {
-    width: 100px;
-    height: 60px;
-    margin-right: 1rem;
-  }
-  
-  footer {
-    background-color: #800000;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  #more-articles {
-    h3 {
-      padding: 0;
-      margin: 0;
-    }
-  }
-
-  .article-content {
-    text-indent: 50px;
-    max-width: 65rem;
-    margin: 0 auto;
-    margin-top: 1rem;
-    text-align: justify;
-  }
- 
