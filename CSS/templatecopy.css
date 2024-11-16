@@ -394,7 +394,7 @@ footer .about
 
 footer .about li
 {
-    padding-top: 1rem;
+    /*   padding-top: 1rem; */
 }
 
 footer .about a
@@ -467,5 +467,12 @@ footer .copyright
     }
 
     /* || NAVIGATION END */
+
+
+    footer .logo img
+    {
+        height: 10%;
+        width: auto;
+    }
 
 }
