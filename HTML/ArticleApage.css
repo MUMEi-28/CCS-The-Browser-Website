@@ -253,14 +253,14 @@ hr
   margin-right: 1rem;
 }
 
-/*footer
-{
+/* || FOOTER START */
+footer {
     background-color: #800000;
     color: #fff;
     text-align: center;
     padding: 1rem;
-}*/
-
+  }
+/* || FOOTER END */
 #more-articles
 {
     h3
@@ -299,14 +299,7 @@ hr
 
 /* || MAIN END */
 
-/* || FOOTER START */
-footer {
-    background-color: #800000;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-  }
-/* || FOOTER END */
+
 
 
 
