@@ -154,8 +154,10 @@ header .navBar .menu li a:hover::after
 
 main
 {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+    
+
 
     background-color: pink;
 }
@@ -163,6 +165,13 @@ main
 /* || MAIN END */
 
 /* Article Div */
+
+div, form{
+    margin: 20px;
+    padding: 10px 20px;
+
+}
+
 
 input[type=text] {
     width: 100%;
