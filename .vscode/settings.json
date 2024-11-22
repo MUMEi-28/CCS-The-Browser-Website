@@ -1,3 +1,18 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "vscord.status.idle.check": false,
+    "vscord.status.idle.enabled": false,
+    "vscord.status.details.enabled": false,
+    "vscord.status.details.idle.enabled": false,
+    "vscord.status.state.idle.enabled": false,
+    "vscord.status.state.enabled": false,
+    "vscord.status.image.small.notInFile.text": "I'd like something sweet...",
+    "vscord.status.buttons.button1.active.enabled": true,
+    "vscord.status.buttons.button1.active.label": "Do not click",
+    "vscord.status.buttons.button1.git.active.url": "https://github.com/MUMEi-28/CCS-The-Browser-Website",
+    "vscord.status.buttons.button2.active.enabled": true,
+    "vscord.status.buttons.button2.active.url": "https://github.com/MUMEi-28/CCS-The-Browser-Website",
+    "vscord.status.buttons.button2.active.label": "View Repository",
+    "vscord.app.name": "Visual Studio Code",
+    "vscord.app.privacyMode.enable": false
 }
