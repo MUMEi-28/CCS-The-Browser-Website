@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="links">
-                    Don't have account? <a href="register.html">Register Now</a>
+                    Don't have account? <a href="register.php">Register Now</a>
                 </div>
             </form>
         </div>
