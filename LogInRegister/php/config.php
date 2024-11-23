@@ -1,3 +1,5 @@
 <?php 
-    $conn = mysqli_connect("localhost", "root", "", "accountsdb") or die("Couldn't Connect")
+ 
+ $con = mysqli_connect("localhost","root","","account") or die("Couldn't connect");
+
 ?>
