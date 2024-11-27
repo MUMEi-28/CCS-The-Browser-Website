@@ -550,6 +550,44 @@ main .main-header
 /* || ARTICLE END */
 
 
+/* || PRIVACY POLICY START */
+
+main .content
+{
+    margin-top: 25px;
+}
+
+main .section
+{
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+main .privacypolicy h1
+{
+    font-size: 4rem;
+    font-family: Coolvetica;
+}
+
+main .privacypolicy h2
+{
+    font-size: 2rem;
+    line-height: 2.9rem;
+
+    font-family: Coolvetica;
+}
+
+main .privacypolicy p
+{
+    font-size: 1rem;
+    font-family: Helvetica;
+}
+
+/* || PRIVACY POLICY END */
+
+
+
+
 /* || MAIN END */
 
 
