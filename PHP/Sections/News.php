@@ -7,6 +7,8 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="../../CSS/Sections/SectionsIndex.css">
+    <!--     <link rel="stylesheet" href="../CSS/main.css">
+ -->
 
 
     <!-- FONTS AWESOME CDN -->
@@ -17,19 +19,16 @@
 
 
 <body>
-    <?php include 'sectheader.php'; ?>
+    <?php include("../header.php"); ?>
     <main>
-        <section class="main-header">
-            <h1>NEWS</h1>
-            <hr>
-        </section>
+
         <section class="headliner">
             <section class="container one">
                 <div class="news-item">
                     <section class="headline">
-    
+
                         <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
-    
+
                     </section>
                     <section class="main-news">
                         <p>
@@ -40,12 +39,12 @@
                         </p>
                     </section>
                 </div>
-    
+
                 <img src="../../Assets/testIMG-Landscape.jpg" alt="Main News Image">
-    
+
             </section>
         </section>
-        
+
         <hr>
 
         <section class="other-main-news">
@@ -110,7 +109,7 @@
 
     </main>
 
-    <?php include 'sectfooter.php'; ?>
+    <?php include("../footer.php"); ?>
 </body>
 
 </html>

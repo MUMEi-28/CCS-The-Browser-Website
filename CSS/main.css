@@ -112,12 +112,16 @@ header .navBar .menu li a
     font-family: Helvetica;
 
     color: white;
+
+    text-decoration: none;
+
 }
 
 header .navBar .menu li a:visited,
 header .navBar .menu li a:active
 {
     color: white;
+    text-decoration: none;
 }
 
 header .navBar .menu li a::after
@@ -320,7 +324,7 @@ main .main-header
 
 .editorial.item img
 {
-    width: 300px;
+    width: 50%;
     height: auto;
     object-fit: cover;
     flex-shrink: 0;
@@ -390,6 +394,203 @@ main .main-header
 
 
 /* || HOMEPAGE END */
+
+
+/* || ARTICLE START */
+
+.article-header
+{
+    padding: 20px;
+}
+
+.top-section
+{
+    margin-bottom: 15px;
+}
+
+.category
+{
+    font-size: 0.9em;
+    color: #555;
+}
+
+.headline
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.date
+{
+    font-size: 0.9em;
+    color: #777;
+}
+
+.bottom-section
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-info
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name
+{
+    font-weight: bold;
+}
+
+.author-role
+{
+    font-size: 0.9em;
+    color: #555;
+}
+
+.edit-button
+{
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9em;
+
+}
+
+.article img
+{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+.more-articles hr
+{
+    height: 2px;
+    background-color: #C01F1F;
+    border: none;
+}
+
+.more-articles
+{
+    margin-top: 2rem;
+}
+
+.more-articles h3
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.article-preview
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    color: white;
+}
+
+.article-preview img
+{
+    width: 100px;
+    height: 60px;
+    margin-right: 1rem;
+}
+
+.article-preview:link
+{
+    color: black;
+}
+
+.article-preview:visited
+{
+    color: black;
+}
+
+.article-preview:hover
+{
+    color: firebrick;
+    text-decoration: underline;
+}
+
+.article-preview:active
+{
+    color: palevioletred;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+#more-articles
+{
+    h3
+    {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.article-content
+{
+    text-indent: 50px;
+    max-width: 65rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    text-align: justify;
+
+    line-height: 1.3rem;
+}
+
+
+/* || ARTICLE END */
+
+
+/* || PRIVACY POLICY START */
+
+main .content
+{
+    margin-top: 25px;
+}
+
+main .section
+{
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+main .privacypolicy h1
+{
+    font-size: 4rem;
+    font-family: Coolvetica;
+}
+
+main .privacypolicy h2
+{
+    font-size: 2rem;
+    line-height: 2.9rem;
+
+    font-family: Coolvetica;
+}
+
+main .privacypolicy p
+{
+    font-size: 1rem;
+    font-family: Helvetica;
+}
+
+/* || PRIVACY POLICY END */
+
+
+
 
 /* || MAIN END */
 

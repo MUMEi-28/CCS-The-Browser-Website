@@ -11,7 +11,7 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="../CSS/articleApage.css">
+    <link rel="stylesheet" href="../CSS/main.css">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                 <?php endif; ?>
             </div>
         </div>
-        <article>
+        <article class="article">
             <img src="../Assets/testIMG-Landscape.jpg" alt="Article Image">
             <p class="article-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                 Ipsum
