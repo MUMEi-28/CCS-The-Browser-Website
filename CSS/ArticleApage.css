@@ -156,36 +156,8 @@ main
 {
     width: 90%;
     margin: 0 auto;
-
-    background-color: pink;
 }
 
-
-.header-content
-{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-header h1
-{
-    margin-right: 2rem;
-}
-
-nav a
-{
-    color: #fff;
-    margin-right: 1rem;
-    text-decoration: none;
-}
-
-main
-{
-    max-width: 100em;
-    padding: 1rem;
-    background-color: #fff;
-}
 
 .article-header
 {
@@ -251,21 +223,21 @@ main
 
 }
 
-article img
+.article img
 {
 
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+
 }
 
-hr
+.more-articles hr
 {
     height: 2px;
-    background-color: #800000;
+    background-color: #C01F1F;
     border: none;
-
 }
 
 .more-articles
