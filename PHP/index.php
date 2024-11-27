@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,37 +11,14 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../CSS/index.css">
 </head>
 
-<body>
-    <header>
-        <img src="Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png">
-        <nav>
-            <ul class="navBar">
-                <input type="checkbox" id="check">
-
-                <span class="menu">
-                    <li><a href="HTML/Sections/News.html">News</a></li>
-                    <li><a>Editorial</a></li>
-                    <li><a>Feature</a></li>
-                    <li><a>Sports</a></li>
-                    <li><a><span class="nowrap">TSU Marilag 2024</span></a></li>
-                    <li><a><span class="nowrap">CCS Sportsfest 2024</span></a></li>
-
-                    <label for="check" class="close-menu">
-                        <i class="fas fa-times"></i>
-                    </label>
-                </span>
-
-                <label for="check" class="open-menu">
-                    <i class="fas fa-bars"></i>
-                </label>
-            </ul>
-        </nav>
-    </header>
+    <body>
+        <?php include 'header.php'?>
 
     <main>
+
         <section class="main-header">
             <h1>NEWS</h1>
 
@@ -70,13 +46,13 @@
                             </section>
                         </div>
 
-                        <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                        <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                     </section>
                 </section>
 
                 <section class="sub-news">
                     <section class="container two">
-                        <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                        <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                         <div class="news-item">
                             <section class="headline">
@@ -103,7 +79,7 @@
 
             <div class="other-main-news">
                 <section class="container two">
-                    <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                    <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
                         <section class="headline">
@@ -123,7 +99,7 @@
                 </section>
 
                 <section class="container two">
-                    <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                    <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
                         <section class="headline">
@@ -143,7 +119,7 @@
                 </section>
 
                 <section class="container two">
-                    <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                    <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
                         <section class="headline">
@@ -163,7 +139,7 @@
                 </section>
 
                 <section class="container two">
-                    <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                    <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
                         <section class="headline">
@@ -243,7 +219,7 @@
                 <div class="sports news">
                     <section class="container two">
                         <div class="news-item">
-                            <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                            <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
 
                                 <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
@@ -262,7 +238,7 @@
                     </section>
                     <section class="container two">
                         <div class="news-item">
-                            <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                            <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
 
                                 <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
@@ -287,7 +263,7 @@
                 <div class="feature news">
                     <section class="container two">
                         <div class="news-item">
-                            <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                            <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
 
                                 <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
@@ -306,7 +282,7 @@
                     </section>
                     <section class="container two">
                         <div class="news-item">
-                            <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                            <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
 
                                 <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
@@ -333,7 +309,7 @@
             <div class="editorial news">
                 <section class="container two">
                     <div class="editorial item">
-                        <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                        <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                         <div style="flex: 1;">
                             <section class="headline">
                                 <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
@@ -350,7 +326,7 @@
                 </section>
                 <section class="container two">
                     <div class="editorial item">
-                        <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                        <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                         <div style="flex: 1;">
                             <section class="headline">
                                 <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
@@ -367,35 +343,10 @@
                 </section>
             </div>
         </div>
-
     </main>
 
+    <?php include 'footer.php'?>
 
-    <footer>
-        <div class="socials">
-            <p>Follow Us.</p>
-            <ul class="icons">
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
-                <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
-            </ul>
-        </div>
-
-        <hr>
-
-        <div class="logo">
-            <img src="Assets/LOGO-AY-24-25/LOGO-mejo-3D.png" alt="Logo">
-            <h3>minds poured out on paper.</h3>
-        </div>
-
-        <ul class="about">
-            <li><a href="">About Us</a></li>
-            <li><a href="">Privacy Policy</a></li>
-        </ul>
-
-        <p class="copyright">Copyright 2024 TSU-CCS The Browser. All rights reserved.</p>
-    </footer>
 </body>
 
 </html>

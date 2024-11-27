@@ -16,34 +16,44 @@
 
 
 <body>
-    <header>
-        <img src="../Assets/LOGO AY 24-25/3 WHITE HEADER LOGO BANNER TYPE.png">
-        <nav>
-            <ul class="navBar">
-                <input type="checkbox" id="check">
-
-                <span class="menu">
-                    <li><a>News</a></li>
-                    <li><a>Editorial</a></li>
-                    <li><a>Feature</a></li>
-                    <li><a>Sports</a></li>
-                    <li><a><span class="nowrap">TSU Marilag 2024</span></a></li>
-                    <li><a><span class="nowrap">CCS Sportsfest 2024</span></a></li>
-
-                    <label for="check" class="close-menu">
-                        <i class="fas fa-times"></i>
-                    </label>
-                </span>
-
-                <label for="check" class="open-menu">
-                    <i class="fas fa-bars"></i>
-                </label>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
 
     <main>
         <h1>Create new article</h1>
+        
+            <form action="/action_page.php">
+              <br>
+              <div class = "input-box">
+                <div class = "input-field headline">
+                <label for="tname">TITLE/HEADLINE: </label>
+                </div>
+                     <input type="text" id="tname" name="title/headline" placeholder="Write your title here...">
+                   <br><br>
+                        <div class = "input-field writer">
+                            <label for="twrite">WRITER: </label>
+                            <br>
+                              <input type="text" id="twrite" name="writer" placeholder="Write your name here ...">
+                              <br><br>
+                        </div>
+                        <div class = "input-field imageheader">
+                            <label for="timageheader">IMAGE HEADER: </label>
+                        <br>
+                            <input type="text" id="timageheader" name="imageheader" placeholder="Place your image header...">
+                            <br><br>
+                        </div>
+                        <div class = "input-field image">
+                            <label for="timage">IMAGE:</label>
+                            <br>
+                            <input type="file" id="timage" name="name" placeholder="Select your image here..." accept="image/*">
+                            <br><br>
+                        </div>
+              <div class = "input-field writer">
+              <label for="tcontent">ARTICLE CONTENT: </label>
+              <br>
+             <textarea name = "" id="articlecontent" cols = "100" rows = "20" placeholder="">
+             </textarea>
+              <br><br>
+              </div>
 
         <form action="/action_page.php">
             <br>
@@ -88,33 +98,7 @@
 
 
     </main>
-
-
-    <footer>
-        <div class="socials">
-            <p>Follow Us.</p>
-            <ul class="icons">
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
-                <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
-            </ul>
-        </div>
-
-        <hr>
-
-        <div class="logo">
-            <img src="../Assets/LOGO AY 24-25/LOGO mejo 3D.png" alt="Logo">
-            <h3>minds poured out on paper.</h3>
-        </div>
-
-        <ul class="about">
-            <li><a href="">About Us</a></li>
-            <li><a href="">Privacy Policy</a></li>
-        </ul>
-
-        <p class="copyright">Copyright 2024 TSU-CCS The Browser. All rights reserved.</p>
-    </footer>
+    <?php include 'footer.php' ?>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article Page</title>
 
-    <link rel="stylesheet" href="../HTML/ArticleApage.css">
+    <link rel="stylesheet" href="../CSS/ArticleApage.css">
 
     <!-- FONTS AWESOME CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -14,31 +14,7 @@
 </head>
 
 <body>
-    <header>
-        <img src="../Assets/LOGO-AY-24-25/3 BLACK HEADER LOGO BANNER TYPE.png">
-        <nav>
-            <ul class="navBar">
-                <input type="checkbox" id="check">
-
-                <span class="menu">
-                    <li><a>News</a></li>
-                    <li><a>Editorial</a></li>
-                    <li><a>Feature</a></li>
-                    <li><a>Sports</a></li>
-                    <li><a><span class="nowrap">TSU Marilag 2024</span></a></li>
-                    <li><a><span class="nowrap">CCS Sportsfest 2024</span></a></li>
-
-                    <label for="check" class="close-menu">
-                        <i class="fas fa-times"></i>
-                    </label>
-                </span>
-
-                <label for="check" class="open-menu">
-                    <i class="fas fa-bars"></i>
-                </label>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'header.php'?>
 
     <main>
         <div class="article-header">
@@ -131,31 +107,7 @@
         </section>
     </main>
 
-    <footer>
-        <div class="socials">
-            <p>Follow Us.</p>
-            <ul class="icons">
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
-                <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-square-instagram"></i></a></li>
-            </ul>
-        </div>
-
-        <hr>
-
-        <div class="logo">
-            <img src="../Assets/LOGO-AY-24-25/3 BLACK HEADER LOGO BANNER TYPE.png" alt="Logo">
-            <h3>minds poured out on paper.</h3>
-        </div>
-
-        <ul class="about">
-            <li><a href="">About Us</a></li>
-            <li><a href="">Privacy Policy</a></li>
-        </ul>
-
-        <p class="copyright">Copyright 2024 TSU-CCS The Browser. All rights reserved.</p>
-    </footer>
+    <?php include 'header.php'?>
 </body>
 
 </html>
