@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="LogInRegister/style/style.css">
     <title>Login</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
         <div class="box form-box">
             <?php 
              
-              include("php/config.php");
+              include("LogInRegister/php/config.php");
               if(isset($_POST['submit'])){
                 $email = mysqli_real_escape_string($con,$_POST['email']);
                 $password = mysqli_real_escape_string($con,$_POST['password']);
@@ -36,7 +36,7 @@
          
                 }
                 if(isset($_SESSION['valid'])){
-                    header("Location: home.php");
+                    header("Location: LogInRegister/home.php");
                 }
               }else{
 
@@ -59,7 +59,7 @@
                     <input type="submit" class="btn" name="submit" value="Login" required>
                 </div>
                 <div class="links">
-                    Don't have account? <a href="register.php">Sign Up Now</a>
+                    Don't have account? <a href="LogInRegister/register.php">Sign Up Now</a>
                 </div>
             </form>
         </div>
