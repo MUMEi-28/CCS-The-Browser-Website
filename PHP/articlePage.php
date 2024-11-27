@@ -90,16 +90,18 @@
                 <img src="../Assets/testIMG-Landscape.jpg" alt="Preview Image">
                 <div>
                     <h4>Lorem Ipsum Dolor Very Very Very Long Headline</h4>
-                    <p>Praesent eros velit, tincidunt id elit a, consequat sollicitudin libero. 
-                       Sed quis enim scelerisque, tempus libero et, fermentum urna. Nunc et quam ut lorem laoreet mollis.</p>
+                    <p>Praesent eros velit, tincidunt id elit a, consequat sollicitudin libero.
+                        Sed quis enim scelerisque, tempus libero et, fermentum urna. Nunc et quam ut lorem laoreet
+                        mollis.</p>
                 </div>
             </a>
             <a href="" class="article-preview">
                 <img src="../Assets/testIMG-Landscape.jpg" alt="Preview Image">
                 <div>
                     <h4>Lorem Ipsum Dolor Very Very Very Long Headline</h4>
-                    <p>Praesent eros velit, tincidunt id elit a, consequat sollicitudin libero. 
-                       Sed quis enim scelerisque, tempus libero et, fermentum urna. Nunc et quam ut lorem laoreet mollis.</p>
+                    <p>Praesent eros velit, tincidunt id elit a, consequat sollicitudin libero.
+                        Sed quis enim scelerisque, tempus libero et, fermentum urna. Nunc et quam ut lorem laoreet
+                        mollis.</p>
                 </div>
             </a>
         </section>

@@ -1,5 +1,15 @@
 <?php 
- 
- $con = mysqli_connect("localhost","root","","account") or die("Couldn't connect");
+    
+/*     $servername = "sql208.infinityfree.com";
+    $username = "if0_37796848";
+    $password = "I8UicYYBeQsyzh0";
+    $database = "if0_37796848_CCSTheBrowserDB"; */
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "account";
+
+ $con = mysqli_connect($servername, $username, $password, $database) or die("Couldn't connect");
 
 ?>

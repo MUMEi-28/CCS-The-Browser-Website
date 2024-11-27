@@ -23,7 +23,7 @@
 
         <div class="right-links">
             <a href="#">Change Profile</a>
-            <a href="php/logout.php"> <button class="btn">Log Out</button> </a>
+            <a href="LogInRegister/php/logout.php"> <button class="btn">Log Out</button> </a>
         </div>
     </div>
     <div class="container">
@@ -42,7 +42,7 @@
                     echo "<div class='message'>
                     <p>Profile Updated!</p>
                 </div> <br>";
-              echo "<a href='home.php'><button class='btn'>Go Home</button>";
+              echo "<a href='LogInRegister/home.php'><button class='btn'>Go Home</button>";
        
                 }
                }else{
