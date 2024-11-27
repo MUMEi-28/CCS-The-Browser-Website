@@ -112,12 +112,16 @@ header .navBar .menu li a
     font-family: Helvetica;
 
     color: white;
+
+    text-decoration: none;
+
 }
 
 header .navBar .menu li a:visited,
 header .navBar .menu li a:active
 {
     color: white;
+    text-decoration: none;
 }
 
 header .navBar .menu li a::after
