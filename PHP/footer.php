@@ -12,7 +12,7 @@
     <hr>
 
     <div class="logo">
-        <img src="../../Assets/LOGO-AY-24-25/LOGO-mejo-3D.png" alt="Logo">
+        <img src="../Assets/LOGO-AY-24-25/LOGO-mejo-3D.png" alt="Logo">
         <h3>minds poured out on paper.</h3>
     </div>
 
@@ -22,4 +22,5 @@
     </ul>
 
     <p class="copyright">Copyright 2024 TSU-CCS The Browser. All rights reserved.</p>
+
 </footer>

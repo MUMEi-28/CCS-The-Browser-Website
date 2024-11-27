@@ -44,6 +44,16 @@
     white-space: nowrap;
 }
 
+#pop-out:hover
+{
+    transform: scale(1.01);
+}
+
+html
+{
+    background-color: #FAFAFA;
+}
+
 /* || HEADER START */
 
 header
@@ -100,6 +110,14 @@ header .navBar .menu li a
 
     cursor: pointer;
     font-family: Helvetica;
+
+    color: white;
+}
+
+header .navBar .menu li a:visited,
+header .navBar .menu li a:active
+{
+    color: white;
 }
 
 header .navBar .menu li a::after
@@ -157,10 +175,225 @@ main
     width: 90%;
     margin: 0 auto;
 
-    background-color: pink;
+    /*   background-color: pink; */
 }
 
+/* || HOMEPAGE START */
+
+main hr
+{
+    width: 100%;
+    margin: auto;
+    border: none;
+    border-top: 2px solid #C01F1F;
+}
+
+main .main-header
+{
+    font-family: Coolvetica;
+    font-size: 3rem;
+}
+
+.news
+{
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+}
+
+.other-main-news
+{
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+}
+
+.headline
+{
+    text-align: left;
+    font-family: Coolvetica;
+    font-size: 1.75rem;
+}
+
+.main-news
+{
+    font-size: 1.50rem;
+    font-family: Helvetica;
+}
+
+.container
+{
+    padding: 1rem;
+    border-radius: 0.7rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+.container.two .headline
+{
+    text-align: left;
+    font-family: Coolvetica;
+    font-size: 1.1rem;
+}
+
+.container.two .main-news
+{
+    font-size: .85rem;
+    font-family: Helvetica;
+}
+
+.container.one
+{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-grow: 1;
+    overflow: hidden;
+    align-items: stretch;
+}
+
+.container.one img
+{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    flex: 1;
+}
+
+.container.two
+{
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    font-family: Coolvetica;
+    font-size: 1.55rem;
+    font-weight: 10;
+    overflow: hidden;
+}
+
+.container.two img
+{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.container img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    margin: 0;
+}
+
+.news-item
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 1.2rem 0;
+    min-width: 0;
+    height: 100%;
+}
+
+.news-item img
+{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.editorial.item
+{
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.editorial.item img
+{
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.editorial.item>div
+{
+    flex: 1;
+    min-width: 0;
+    padding: 0 1rem;
+}
+
+/* || CARD */
+
+.card-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+
+    color: white;
+
+    padding: 20px 0;
+}
+
+.card
+{
+    padding: 13% 0;
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(rgba(90, 15, 15, 0.8), rgba(192, 31, 31, 0.8)), url("../Assets/testIMG.jpg");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    font-size: 1.5rem;
+    font-family: Coolvetica;
+    font-weight: 100;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.other-news
+{
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+}
+
+
+.other-news h2
+{
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+.sports.news,
+.feature.news,
+.editorial.news
+{
+    padding: 20px;
+}
+
+
+/* || HOMEPAGE END */
+
 /* || MAIN END */
+
+
 
 /* || FOOTER START */
 
@@ -210,8 +443,9 @@ footer hr
 
 footer .logo img
 {
-    height: 25%;
-    width: auto;
+
+    height: auto;
+    width: 15%;
 }
 
 footer .logo h3
@@ -227,9 +461,10 @@ footer .logo h3
 footer .about
 {
     list-style: none;
-    padding: 0 0 18rem 1.5rem;
+    padding: 0 0 15rem 1.5rem;
 
     font-family: Helvetica;
+
 }
 
 footer .about li

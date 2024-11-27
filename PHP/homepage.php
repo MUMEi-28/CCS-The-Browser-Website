@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Browser || Homepage</title>
 
     <!-- FONTS AWESOME CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/main.css">
 </head>
 
 <body>
@@ -26,10 +26,9 @@
         </section>
         <hr>
         <div class="main-news">
-
             <div class="news">
                 <section class="headliner">
-                    <section class="container one">
+                    <section class="container one" id="pop-out">
                         <div class="news-item">
                             <section class="headline">
 
@@ -52,7 +51,7 @@
                 </section>
 
                 <section class="sub-news">
-                    <section class="container two">
+                    <section class="container two" id="pop-out">
                         <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                         <div class="news-item">
@@ -79,7 +78,7 @@
             <hr>
 
             <div class="other-main-news">
-                <section class="container two">
+                <section class="container two" id="pop-out">
                     <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
@@ -99,7 +98,7 @@
                     </div>
                 </section>
 
-                <section class="container two">
+                <section class="container two" id="pop-out">
                     <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
@@ -119,7 +118,7 @@
                     </div>
                 </section>
 
-                <section class="container two">
+                <section class="container two" id="pop-out">
                     <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
@@ -139,7 +138,7 @@
                     </div>
                 </section>
 
-                <section class="container two">
+                <section class="container two" id="pop-out">
                     <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
@@ -159,7 +158,7 @@
                     </div>
                 </section>
                 <div class="other-main-news-no-img">
-                    <section class="container two">
+                    <section class="container two" id="pop-out">
 
                         <div class="news-item">
                             <section class="headline">
@@ -180,7 +179,7 @@
 
 
                     </section>
-                    <section class="container two">
+                    <section class="container two" id="pop-out">
                         <div class="news-item">
                             <section class="headline">
 
@@ -205,11 +204,11 @@
         </div>
         <hr>
         <section class="card-container">
-            <div class="card">
+            <div class="card" id="pop-out">
                 <h2>CCS SPORTSFEST 2024</h2>
             </div>
 
-            <div class="card">
+            <div class="card" id="pop-out">
                 <h2>TSU MARILAG 2024</h2>
             </div>
         </section>
@@ -218,7 +217,7 @@
             <div class="container two">
                 <h2>SPORTS</h2>
                 <div class="sports news">
-                    <section class="container two">
+                    <section class="container two" id="pop-out">
                         <div class="news-item">
                             <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
@@ -237,7 +236,7 @@
                             </section>
                         </div>
                     </section>
-                    <section class="container two">
+                    <section class="container two" id="pop-out">
                         <div class="news-item">
                             <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
@@ -262,7 +261,7 @@
             <div class="container two">
                 <h2>FEATURE</h2>
                 <div class="feature news">
-                    <section class="container two">
+                    <section class="container two" id="pop-out">
                         <div class="news-item">
                             <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
@@ -281,7 +280,7 @@
                             </section>
                         </div>
                     </section>
-                    <section class="container two">
+                    <section class="container two" id="pop-out">
                         <div class="news-item">
                             <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
@@ -308,7 +307,7 @@
         <div class="container two">
             <h2>EDITORIAL</h2>
             <div class="editorial news">
-                <section class="container two">
+                <section class="container two" id="pop-out">
                     <div class="editorial item">
                         <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                         <div style="flex: 1;">
@@ -325,7 +324,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="container two">
+                <section class="container two" id="pop-out">
                     <div class="editorial item">
                         <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                         <div style="flex: 1;">
@@ -347,7 +346,6 @@
     </main>
 
     <?php include("footer.php") ?>
-
 </body>
 
 </html>
