@@ -156,7 +156,7 @@ main
 {
     width: 100%;
     margin: 0 auto;
-    
+
 
 
     background-color: pink;
@@ -166,23 +166,17 @@ main
 
 /* Article Div */
 
-div, form{
+div,
+form
+{
     margin: 20px;
     padding: 10px 20px;
 
 }
 
 
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 4px;
-   
-  }
-  textarea[type=text] {
+input[type=text]
+{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -190,11 +184,24 @@ input[type=text] {
     border: 2px solid red;
     border-radius: 4px;
 
-  }
-    
+}
 
-.button {
-    background-color: #f44336; /* Red */
+textarea[type=text]
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+
+}
+
+
+.button
+{
+    background-color: #f44336;
+    /* Red */
     border: none;
     color: white;
     padding: 15px 32px;
