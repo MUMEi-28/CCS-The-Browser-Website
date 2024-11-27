@@ -32,7 +32,7 @@
                     echo "<div class='message'>
                       <p>Wrong Username or Password</p>
                        </div> <br>";
-                   echo "<a href='logIn.php'><button class='btn'>Go Back</button>";
+                   echo "<a href='index.php'><button class='btn'>Go Back</button>";
          
                 }
                 if(isset($_SESSION['valid'])){
