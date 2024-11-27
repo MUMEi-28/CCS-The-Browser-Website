@@ -31,7 +31,10 @@
                     <div class="author-name">Juan Dela Cruz</div>
                     <div class="author-role">News Writer</div>
                 </div>
-                <button class="edit-button">Edit Article</button>
+                <!-- pacheck kung tama, kung pag user nakahide ang edit button tenkssssss-->
+                <?php if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
+                    <button class="edit-button">Edit Article</button>
+                <?php endif; ?>
             </div>
         </div>
         <article>
