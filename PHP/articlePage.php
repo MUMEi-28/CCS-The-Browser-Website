@@ -34,10 +34,30 @@
                     <div class="author-name">Juan Dela Cruz</div>
                     <div class="author-role">News Writer</div>
                 </div>
-                <!-- pacheck kung tama, kung pag user nakahide ang edit button tenkssssss-->
-                <?php if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
+
+
+                <?php
+                session_start();
+
+                if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
                     <button class="edit-button">Edit Article</button>
                 <?php endif; ?>
+
+                <!-- 
+                // PANG DEBUG LANG ETO PARA MAKITA KUNG ANONG ID NAKA LOG IN
+                <?php
+                if (isset($_SESSION['id'])) {
+                    echo "<script defer>
+            alert('Logged in user ID: " . addslashes($_SESSION['id']) . "'); 
+          </script>";
+                } else {
+                    echo "<script defer>
+            alert('No user is logged in.');
+          </script>";
+                }
+                ?> -->
+
+
             </div>
         </div>
         <article class="article">
