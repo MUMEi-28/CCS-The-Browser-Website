@@ -12,6 +12,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="../CSS/main.css">
+
+    <script src="../Javascript/main.js" defer></script>
 </head>
 
 <body>
