@@ -1,5 +1,8 @@
 <header>
-    <img src="../Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png" alt="Banner">
+    <a href="../index.php" class="user-Account">
+        <i class="fa-regular fa-circle-user"></i>
+    </a>
+    <img src="../Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png" alt="Banner" class="header-logo">
     <nav>
         <ul class="navBar">
             <input type="checkbox" id="check">
