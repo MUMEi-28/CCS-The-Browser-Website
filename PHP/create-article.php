@@ -7,15 +7,57 @@ $imgHeader = "";
 $articleContent  = "";
 $typeOfArticle = "";
 
+
+$errorMessage = "11111";
+$successMessage = "";
+
 // This code will run only when the form is submitted (via POST request).
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $headline = $_POST['headline'];
+    $writer = $_POST['writer'];
+    $imgHeader = $_POST['imgHeader'];
+    $articleContent = $_POST['articleContent'];
+    $typeOfArticle = $_POST['typeOfArticle'];
+
+
+    echo "  <script defer>alert('SUBMITTED');</script>";
 }
 
 
 do {
     // CHECK IF ALL FIELDS ARE NOT EMPTY
+    if (empty($headline) || empty($writer) || empty($imgHeader) || empty($articleContent) || empty($typeOfArticle)) {
+        $errorMessage = "All fields are required.";
+        break;
+    }
 
 
+
+    // ADD THE ARTICLES TO THE DATABASE
+    $sql = "INSERT INTO articles (artHeadline, artContent, artWriter, artImgHeader, artType)" .
+        "VALUES ('$headline', '$articleContent', '$writer', '$imgHeader', '$typeOfArticle')";
+
+
+    $result = $con->query($sql);
+
+    if (!$result) {
+        $errorMessage = "Invalid Query: " . $con->error;
+        break;
+    }
+
+
+    // RESET ALL FIELDS
+
+    $headline = "";
+    $writer = "";
+    $imgHeader = "";
+    $articleContent = "";
+    $typeOfArticle = "";
+
+    $errorMessage = "";
+    $successMessage = "";
+
+    header("location: home.php");
 } while (false)
 ?>
 
@@ -27,8 +69,6 @@ do {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Browser || Create</title>
-
-
 
     <!-- FONTS AWESOME CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -50,35 +90,45 @@ do {
 
             <div class="inputContainer" id="inputContainer">
                 <label for="headline">TITLE/HEADLINE:</label>
-                <input type="text">
+                <input type="text" name="headline">
             </div>
 
             <div class="inputContainer" id="inputContainer">
                 <label for="writer">WRITER:</label>
-                <input type="text">
+                <input type="text" name="writer">
             </div>
 
             <div class="inputContainer">
                 <label for="image-header">IMAGE HEADER:</label>
-                <input type="file">
+                <input type="file" name="imgHeader">
             </div>
 
             <div class="inputContainer" id="inputContainer">
                 <label for="I">ARTICLE CONTENT:</label>
-                <!--                 <input type="text">
- -->
                 <textarea name="articleContent" id="" cols="30" rows="26"></textarea>
             </div>
 
             <div class="inputContainer" id="inputContainer">
                 <label for="headline">TYPE OF ARTICLE:</label>
-                <input type="text">
+                <input type="text" name="typeOfArticle">
             </div>
 
             <div class="submit-cancel-container">
-                <input type="submit" value="SAVE">
+                <input type="submit" value="POST" name="submit">
                 <input type="button" value="CANCEL" id="cancel">
             </div>
+
+
+            <!--     <?php
+
+                        // IF THERE ARE NO ERROR MESSAGE AND THE SUBMIT BUTTON WAS CLICKED
+                        if (!empty($errorMessage) && isset($_POST['submit'])) {
+                            echo "
+                <script defer> alert('PLS IMPLEMENT WARNING CONTAINER NA MERON OK BUTTON SAYING /ALL FIELDS SHOULD NOT BE EMPTY OR SOMETHING/')</script>";
+                            $errorMessage = "";
+                        }
+                        ?> -->
+
         </form>
     </main>
 
