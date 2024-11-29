@@ -1,3 +1,25 @@
+<?php
+include("../LogInRegister/php/config.php");
+
+$headline = "";
+$writer = "";
+$imgHeader = "";
+$articleContent  = "";
+$typeOfArticle = "";
+
+// This code will run only when the form is submitted (via POST request).
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+}
+
+
+do {
+    // CHECK IF ALL FIELDS ARE NOT EMPTY
+
+
+} while (false)
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +45,7 @@
     <?php include("header.php") ?>
 
     <main>
-        <form action="" class="createArticle">
+        <form action="create-article.php" class="createArticle" method="post">
             <h1>Create new article</h1>
 
             <div class="inputContainer" id="inputContainer">
