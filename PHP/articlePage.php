@@ -37,8 +37,8 @@
 
 
                 <?php
-                session_start();
-
+                /*                 session_start();
+ */
                 if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
                     <button class="edit-button">Edit Article</button>
                 <?php endif; ?>

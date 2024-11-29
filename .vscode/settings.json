@@ -14,5 +14,6 @@
     "vscord.status.buttons.button2.active.url": "https://github.com/MUMEi-28/CCS-The-Browser-Website",
     "vscord.status.buttons.button2.active.label": "View Repository",
     "vscord.app.name": "Visual Studio Code",
-    "vscord.app.privacyMode.enable": false
+    "vscord.app.privacyMode.enable": false,
+    "editor.codeLens": true
 }

@@ -7,9 +7,9 @@
     session_start();
 
     if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
+        <button class="PostNews-button">Post News</button>
     <?php endif; ?>
 
-    <button class="PostNews-button">Post News</button>
 
     <img src="../Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png" alt="Banner" class="header-logo">
     <nav>

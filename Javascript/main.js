@@ -1,36 +1,49 @@
+/* || GLOBAL FUNCTIONS START */
+
+/* || GLOBAL FUNCTIONS END */
+function GoToHomePage()
+{
+    window.location.href = "home.php";
+}
+function PrintAnyText()
+{
+    console.log("BUTTON WAS CLICKED");
+}
 /* || HEADER START */
-
-function GoBackToHomePage()
+function HeaderFunctions()
 {
-    const imageLogo = document.querySelector(".header-logo");
 
-    imageLogo.addEventListener("click", GoToHomePage);
-
-    console.log(imageLogo);
-
-    function GoToHomePage()
+    function LogoClickBackToHome()
     {
-        window.location.href = "home.php";
+        const imageLogo = document.querySelector(".header-logo");
+
+        imageLogo.addEventListener("click", GoToHomePage);
+
     }
 
-}
-
-function GoToEditArticlePage()
-{
-    const postButton = document.querySelector(".PostNews-button");
-
-    postButton.addEventListener("click", GoToArticle)
-
-    function GoToArticle()
+    function GoToCreateArticlePage()
     {
-        window.location.href = "editArticle.php";
+        const postButton = document.querySelector(".PostNews-button");
+
+
+        if (postButton != null)
+        {
+            postButton.addEventListener("click", GoToArticle)
+        }
+
+
+        function GoToArticle()
+        {
+            window.location.href = "create-article.php";
+        }
+
     }
 
+    GoToCreateArticlePage();
+
+    LogoClickBackToHome();
 }
-
-GoToEditArticlePage();
-
-GoBackToHomePage();
+HeaderFunctions();
 /* || HEADER END */
 
 
@@ -39,9 +52,12 @@ function HomePageContainerButtons()
 {
     const container = document.getElementsByClassName("container");
 
+
     for (i = 0; i < container.length; i++)
     {
         container[i].addEventListener("click", GoToArticlePage);
+        container[i].addEventListener("click", PrintAnyText);
+
     }
 
     function GoToArticlePage()
@@ -53,5 +69,24 @@ function HomePageContainerButtons()
 HomePageContainerButtons();
 
 /* || HOME PAGE END */
+
+/* || ARTICLE PAGE START */
+
+function ArticlePageFunctions()
+{
+    function GoHomePageOnCancel()
+    {
+        const cancelButton = document.querySelector("#cancel")
+
+        if (cancelButton != null)
+        {
+            cancelButton.addEventListener("click", GoToHomePage);
+        }
+    }
+    GoHomePageOnCancel();
+}
+
+ArticlePageFunctions();
+/* || ARTICLE PAGE END */
 
 

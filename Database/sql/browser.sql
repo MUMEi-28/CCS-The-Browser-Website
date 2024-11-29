@@ -18,7 +18,6 @@ VALUES
 ('Marc Jersey Castro', 'marc.castro@example.com', 29, 'jersey567');
 
 
-
 CREATE TABLE articles (
     artHeadline varchar(1000),
     artContent varchar(2000),
@@ -28,3 +27,4 @@ CREATE TABLE articles (
     artDate DATE,
     artEdit DATE    
 );
+
