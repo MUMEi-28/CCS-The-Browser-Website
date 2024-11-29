@@ -43,8 +43,7 @@
                     <button class="edit-button">Edit Article</button>
                 <?php endif; ?>
 
-                <!-- 
-                // PANG DEBUG LANG ETO PARA MAKITA KUNG ANONG ID NAKA LOG IN
+
                 <?php
                 if (isset($_SESSION['id'])) {
                     echo "<script defer>
@@ -55,7 +54,7 @@
             alert('No user is logged in.');
           </script>";
                 }
-                ?> -->
+                ?>
 
 
             </div>
