@@ -72,8 +72,24 @@ header
 
 header .header-logo
 {
-    width: 30%;
+    width: 20%;
+
+
     cursor: pointer;
+}
+
+.PostNews-button
+{
+    position: absolute;
+    top: 27px;
+    left: 80px;
+
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9em;
 }
 
 

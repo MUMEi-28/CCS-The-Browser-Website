@@ -15,6 +15,21 @@ function GoBackToHomePage()
 
 }
 
+function GoToEditArticlePage()
+{
+    const postButton = document.querySelector(".PostNews-button");
+
+    postButton.addEventListener("click", GoToArticle)
+
+    function GoToArticle()
+    {
+        window.location.href = "editArticle.php";
+    }
+
+}
+
+GoToEditArticlePage();
+
 GoBackToHomePage();
 /* || HEADER END */
 
