@@ -3,8 +3,6 @@
 function GoToHomePage()
 {
     window.location.href = "home.php";
-    console.log("");
-
 }
 function OnClickPostNews()
 {
@@ -14,11 +12,16 @@ function OnClickPostNews()
 }
 function GoToEditArticle()
 {
-    const articleId = this.getAttribute("data-id");
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const articleId = urlParams.get('id');
+
+    console.log(articleId);
+
     if (articleId)
     {
         // Redirect to articlePage.php with the article ID as a query parameter
-        window.location.href = "edit-article.php?id=${articleId}";
+        window.location.href = `edit-article.php?id=${articleId}`;
     }
     else
     {

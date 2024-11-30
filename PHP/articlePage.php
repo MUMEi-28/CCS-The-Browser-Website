@@ -1,3 +1,43 @@
+<?php
+
+// Connect to the database
+include("../LogInRegister/php/config.php");
+
+// GET method: Shows the data of the client
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+
+    // If there is no ID on the URL then return to homepage
+    if (!isset($_GET['id'])) {
+        header("location: home.php");
+        exit; // to stop code from running further
+    }
+
+    $id = $_GET["id"];
+
+    // Get the database
+    $sql = "SELECT * FROM articles WHERE artId = $id";
+    $result = $con->query($sql);
+    $row = $result->fetch_assoc();
+
+    /*  if (!$row) {
+        header("location: index.php");
+        exit;
+    } */
+
+    // Reference all the variables
+    $headline = $row["artHeadline"];
+    $writer = $row["artWriter"];
+    // $imgHeader = $row[""];
+    $articleContent = $row["artContent"];
+    $typeOfArticle = $row["artType"];
+    $date = $row["artDate"];
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,13 +65,14 @@
         <div class="article-header">
             <div class="top-section">
                 <div class="category">NEWS</div>
-                <h1 class="headline">Lorem Ipsum Dolor Very Very Very Long Headline</h1>
-                <div class="date">November 8, 2024</div>
+                <h1 class="headline"><?php echo "$headline"  ?> </h1>
+                <div class="date"><?php echo "$date" ?></div>
+                <!-- <div class="date">November 8, 2024</div> -->
             </div>
 
             <div class="bottom-section">
                 <div class="author-info">
-                    <div class="author-name">Juan Dela Cruz</div>
+                    <div class="author-name"><?php echo "$writer" ?></div>
                     <div class="author-role">News Writer</div>
                 </div>
 
@@ -48,50 +89,9 @@
         </div>
         <article class="article">
             <img src="../Assets/testIMG-Landscape.jpg" alt="Article Image">
-            <p class="article-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum
-                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type
-                and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                leap into
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of
-                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                Aldus
-                PageMaker including versions of Lorem Ipsum.</p>
-            <p class="article-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum
-                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type
-                and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                leap into
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of
-                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                Aldus
-                PageMaker including versions of Lorem Ipsum.</p>
-            <p class="article-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum
-                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type
-                and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                leap into
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of
-                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                Aldus
-                PageMaker including versions of Lorem Ipsum.</p>
-            <p class="article-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum
-                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type
-                and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                leap into
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of
-                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                Aldus
-                PageMaker including versions of Lorem Ipsum.</p>
+            <p class="article-content">
+                <?php echo "$articleContent" ?>
+            </p>
         </article>
 
         <section class="more-articles">

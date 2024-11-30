@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Fill In the values 
     $headline = $row['artHeadline'];
     $writer = $row['artWriter'];
-    // $imgHeader = $row['artImgHeader'];
+    //   $imgHeader = $row['artImgHeader'];
     $articleContent = $row['artContent'];
     $typeOfArticle = $row['artType'];
 }
