@@ -20,6 +20,20 @@
 
     <?php include("header.php") ?>
 
+
+    <!-- PANG DEBUG LANG ETO -->
+    <?php
+    if (isset($_SESSION['id'])) {
+        echo "<script defer>
+            console.log('Logged in user ID: " . addslashes($_SESSION['id']) . "'); 
+          </script>";
+    } else {
+        echo "<script defer>
+            alert('No user is logged in.');
+          </script>";
+    }
+    ?>
+
     <main>
 
         <section class="main-header">
@@ -30,7 +44,7 @@
         <div class="main-news">
             <div class="news">
                 <section class="headliner">
-                    <section class="container one" id="pop-out">
+                    <section class="container one" id="pop-out" data-id='$row[id]'>
                         <div class="news-item">
                             <section class="headline">
 

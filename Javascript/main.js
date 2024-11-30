@@ -1,14 +1,33 @@
 /* || GLOBAL FUNCTIONS START */
 
-/* || GLOBAL FUNCTIONS END */
 function GoToHomePage()
 {
     window.location.href = "home.php";
+    console.log("");
+
 }
-function PrintAnyText()
+function GoToArticle()
 {
-    console.log("BUTTON WAS CLICKED");
+
+    const articleId = this.getAttribute("data-id");
+    if (articleId)
+    {
+        // Redirect to articlePage.php with the article ID as a query parameter
+        window.location.href = `articlePage.php?id=${articleId}`;
+    }
+
+
+    //   window.location.href = "create-article.php";
+    console.log("CREATE ARTICLE CLICKED");
 }
+function GoToEditArticle()
+{
+    window.location.href = "edit-article.php";
+    console.log("EDIT ARTICLE CLICKED");
+}
+
+/* || GLOBAL FUNCTIONS END */
+
 /* || HEADER START */
 function HeaderFunctions()
 {
@@ -30,13 +49,6 @@ function HeaderFunctions()
         {
             postButton.addEventListener("click", GoToArticle)
         }
-
-
-        function GoToArticle()
-        {
-            window.location.href = "create-article.php";
-        }
-
     }
 
     GoToCreateArticlePage();
@@ -84,6 +96,16 @@ function ArticlePageFunctions()
         }
     }
     GoHomePageOnCancel();
+
+    function OnClickEditArticle()
+    {
+        const editArticleButton = document.querySelector(".edit-button");
+
+
+        editArticleButton.addEventListener("click", GoToEditArticle);
+    }
+
+    OnClickEditArticle();
 }
 
 ArticlePageFunctions();

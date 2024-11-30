@@ -1,5 +1,19 @@
 <?php
+// Connect to the database
 include("../LogInRegister/php/config.php");
+
+// Get the database
+$sql = "SELECT * FROM articles";
+$result =   $con->query($sql);
+
+if (!$result) {
+    die("Invalid Query: " . $con->error);
+}
+
+while ($row = $result->fetch_assoc()) {
+
+    echo "";
+}
 
 $headline = "";
 $writer = "";
@@ -8,8 +22,31 @@ $articleContent  = "";
 $typeOfArticle = "";
 
 
-$errorMessage = "11111";
+$errorMessage = "";
 $successMessage = "";
+
+// Get the data
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+    // If there is no ID on the URL
+    if (!isset($_GET['id'])) {
+        //     header("location: home.php");
+        exit;
+    }
+
+    $id = $_GET["id"];
+
+    $sql = "SELECT * FROM articles WHERE artID = $id";
+    $result = $con->query($sql);
+    $row = $result->fetch_assoc();
+
+    // Fill In the values 
+    $headline = $row['artHeadline'];
+    $writer = $row['artWriter'];
+    // $imgHeader = $row['artImgHeader'];
+    $articleContent = $row['artContent'];
+    $typeOfArticle = $row['artType'];
+}
 
 // This code will run only when the form is submitted (via POST request).
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -68,7 +105,7 @@ do {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Browser || Edit</title>
+    <title>The Browser || Create</title>
 
     <!-- FONTS AWESOME CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -86,16 +123,16 @@ do {
 
     <main>
         <form action="create-article.php" class="createArticle" method="post">
-            <h1>Create new article</h1>
+            <h1>Edit article</h1>
 
             <div class="inputContainer" id="inputContainer">
                 <label for="headline">TITLE/HEADLINE:</label>
-                <input type="text" name="headline">
+                <input type="text" name="headline" value="<?php echo $headline ?>">
             </div>
 
             <div class="inputContainer" id="inputContainer">
                 <label for="writer">WRITER:</label>
-                <input type="text" name="writer">
+                <input type="text" name="writer" value="<?php echo $writer ?>">
             </div>
 
             <div class="inputContainer">
@@ -105,12 +142,12 @@ do {
 
             <div class="inputContainer" id="inputContainer">
                 <label for="I">ARTICLE CONTENT:</label>
-                <textarea name="articleContent" id="" cols="30" rows="26"></textarea>
+                <textarea name="articleContent" id="" cols="30" rows="26"><?php echo $articleContent ?></textarea>
             </div>
 
             <div class="inputContainer" id="inputContainer">
                 <label for="headline">TYPE OF ARTICLE:</label>
-                <input type="text" name="typeOfArticle">
+                <input type="text" name="typeOfArticle" value="<?php echo $typeOfArticle ?>">
             </div>
 
             <div class="submit-cancel-container">
