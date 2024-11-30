@@ -1,21 +1,62 @@
-/* || HEADER START */
+/* || GLOBAL FUNCTIONS START */
 
-function GoBackToHomePage()
+function GoToHomePage()
 {
-    const imageLogo = document.querySelector(".header-logo");
-
-    imageLogo.addEventListener("click", GoToHomePage);
-
-    console.log(imageLogo);
-
-    function GoToHomePage()
-    {
-        window.location.href = "home.php";
-    }
+    window.location.href = "home.php";
+    console.log("");
 
 }
+function OnClickPostNews()
+{
+    window.location.href = `create-article.php`;
+    //   window.location.href = "create-article.php";
+    console.log("CREATE ARTICLE CLICKED");
+}
+function GoToEditArticle()
+{
+    const articleId = this.getAttribute("data-id");
+    if (articleId)
+    {
+        // Redirect to articlePage.php with the article ID as a query parameter
+        window.location.href = "edit-article.php?id=${articleId}";
+    }
+    else
+    {
+        console.log("ITS NOT WORKING");
+    }
 
-GoBackToHomePage();
+    console.log("EDIT ARTICLE CLICKED");
+}
+
+/* || GLOBAL FUNCTIONS END */
+
+/* || HEADER START */
+function HeaderFunctions()
+{
+
+    function LogoClickBackToHome()
+    {
+        const imageLogo = document.querySelector(".header-logo");
+
+        imageLogo.addEventListener("click", GoToHomePage);
+
+    }
+
+    function GoToCreateArticlePage()
+    {
+        const postButton = document.querySelector(".PostNews-button");
+
+        if (postButton != null)
+        {
+            postButton.addEventListener("click", OnClickPostNews)
+        }
+    }
+
+    GoToCreateArticlePage();
+
+    LogoClickBackToHome();
+}
+HeaderFunctions();
 /* || HEADER END */
 
 
@@ -24,19 +65,64 @@ function HomePageContainerButtons()
 {
     const container = document.getElementsByClassName("container");
 
+    // DITO YUNG MGA CLICKABLE CONTAINER SA HOMEPAGE
+
     for (i = 0; i < container.length; i++)
     {
         container[i].addEventListener("click", GoToArticlePage);
+
+        console.log(container[i]);
     }
 
     function GoToArticlePage()
     {
-        window.location.href = "articlePage.php";
+        console.log("CONTAINER CLICKED");
+
+        const articleId = this.getAttribute("data-id");
+        if (articleId)
+        {
+            // Redirect to articlePage.php with the article ID as a query parameter
+            window.location.href = `articlePage.php?id=${articleId}`;
+        }
+        else
+        {
+            alert("WALANG ID YUNG SITE")
+        }
+
     }
 }
 
 HomePageContainerButtons();
 
 /* || HOME PAGE END */
+
+/* || ARTICLE PAGE START */
+
+function ArticlePageFunctions()
+{
+    function GoHomePageOnCancel()
+    {
+        const cancelButton = document.querySelector("#cancel")
+
+        if (cancelButton != null)
+        {
+            cancelButton.addEventListener("click", GoToHomePage);
+        }
+    }
+    GoHomePageOnCancel();
+
+    function OnClickEditArticle()
+    {
+        const editArticleButton = document.querySelector(".edit-button");
+
+
+        editArticleButton.addEventListener("click", GoToEditArticle);
+    }
+
+    OnClickEditArticle();
+}
+
+ArticlePageFunctions();
+/* || ARTICLE PAGE END */
 
 

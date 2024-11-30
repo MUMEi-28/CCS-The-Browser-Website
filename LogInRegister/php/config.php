@@ -8,6 +8,6 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "account";
+$database = "thebrowser";
 
 $con = mysqli_connect($servername, $username, $password, $database) or die("Couldn't connect");

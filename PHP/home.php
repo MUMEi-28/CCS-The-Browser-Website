@@ -1,3 +1,13 @@
+<?php
+include("../LogInRegister/php/config.php");
+
+
+$sql = "SELECT * FROM articles";
+$result = $con->query($sql);
+$row = $result->fetch_assoc();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +30,20 @@
 
     <?php include("header.php") ?>
 
+
+    <!-- PANG DEBUG LANG ETO -->
+    <?php
+    if (isset($_SESSION['id'])) {
+        echo "<script defer>
+            console.log('Logged in user ID: " . addslashes($_SESSION['id']) . "'); 
+          </script>";
+    } else {
+        echo "<script defer>
+            alert('No user is logged in.');
+          </script>";
+    }
+    ?>
+
     <main>
 
         <section class="main-header">
@@ -30,7 +54,7 @@
         <div class="main-news">
             <div class="news">
                 <section class="headliner">
-                    <section class="container one" id="pop-out">
+                    <section class="container one" id="pop-out" <?php echo "data-id='$row[artID]'" ?>>
                         <div class="news-item">
                             <section class="headline">
 
@@ -53,7 +77,7 @@
                 </section>
 
                 <section class="sub-news">
-                    <section class="container two" id="pop-out">
+                    <section class="container two" id="pop-out" data-id="2">
                         <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                         <div class="news-item">
@@ -80,7 +104,7 @@
             <hr>
 
             <div class="other-main-news">
-                <section class="container two" id="pop-out">
+                <section class="container two" id="pop-out" data-id="2">
                     <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
@@ -100,7 +124,7 @@
                     </div>
                 </section>
 
-                <section class="container two" id="pop-out">
+                <section class="container two" id="pop-out" data-id="2">
                     <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
@@ -120,7 +144,7 @@
                     </div>
                 </section>
 
-                <section class="container two" id="pop-out">
+                <section class="container two" id="pop-out" data-id="2">
                     <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
@@ -140,7 +164,7 @@
                     </div>
                 </section>
 
-                <section class="container two" id="pop-out">
+                <section class="container two" id="pop-out" data-id="2">
                     <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
                     <div class="news-item">
@@ -160,7 +184,7 @@
                     </div>
                 </section>
                 <div class="other-main-news-no-img">
-                    <section class="container two" id="pop-out">
+                    <section class="container two" id="pop-out" data-id="2">
 
                         <div class="news-item">
                             <section class="headline">
@@ -181,7 +205,7 @@
 
 
                     </section>
-                    <section class="container two" id="pop-out">
+                    <section class="container two" id="pop-out" data-id="2">
                         <div class="news-item">
                             <section class="headline">
 
@@ -206,11 +230,11 @@
         </div>
         <hr>
         <section class="card-container">
-            <div class="card" id="pop-out">
+            <div class="card" id="pop-out" data-id="2">
                 <h2>CCS SPORTSFEST 2024</h2>
             </div>
 
-            <div class="card" id="pop-out">
+            <div class="card" id="pop-out" data-id="2">
                 <h2>TSU MARILAG 2024</h2>
             </div>
         </section>
@@ -219,7 +243,7 @@
             <div class="container two">
                 <h2>SPORTS</h2>
                 <div class="sports news">
-                    <section class="container two" id="pop-out">
+                    <section class="container two" id="pop-out" data-id="2">
                         <div class="news-item">
                             <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
@@ -238,7 +262,7 @@
                             </section>
                         </div>
                     </section>
-                    <section class="container two" id="pop-out">
+                    <section class="container two" id="pop-out" data-id="2">
                         <div class="news-item">
                             <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
@@ -263,7 +287,7 @@
             <div class="container two">
                 <h2>FEATURE</h2>
                 <div class="feature news">
-                    <section class="container two" id="pop-out">
+                    <section class="container two" id="pop-out" data-id="2">
                         <div class="news-item">
                             <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
@@ -282,7 +306,7 @@
                             </section>
                         </div>
                     </section>
-                    <section class="container two" id="pop-out">
+                    <section class="container two" id="pop-out" data-id="2">
                         <div class="news-item">
                             <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                             <section class="headline">
@@ -309,7 +333,7 @@
         <div class="container two">
             <h2>EDITORIAL</h2>
             <div class="editorial news">
-                <section class="container two" id="pop-out">
+                <section class="container two" id="pop-out" data-id="2">
                     <div class="editorial item">
                         <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                         <div style="flex: 1;">
@@ -326,7 +350,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="container two" id="pop-out">
+                <section class="container two" id="pop-out" data-id="2">
                     <div class="editorial item">
                         <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                         <div style="flex: 1;">

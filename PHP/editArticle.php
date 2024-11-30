@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="../CSS/createArticle.css">
 </head>
 
-
 <body>
     <?php include("header.php"); ?>
 

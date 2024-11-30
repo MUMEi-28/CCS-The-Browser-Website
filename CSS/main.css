@@ -17,7 +17,7 @@
 @font-face
 {
     font-family: Coolvetica;
-    src: url(../Assets/fonts/coolvetica\ rg.otf);
+    src: url(../Assets/fonts/coolvetica-rg.otf);
 }
 
 
@@ -72,10 +72,25 @@ header
 
 header .header-logo
 {
-    width: 30%;
+    width: 20%;
+
+
     cursor: pointer;
 }
 
+.PostNews-button
+{
+    position: absolute;
+    top: 27px;
+    left: 80px;
+
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
 
 header nav
 {
@@ -604,8 +619,71 @@ main .privacypolicy p
 
 /* || PRIVACY POLICY END */
 
+/* || CREATE ARTICLE START */
+
+.createArticle
+{
+    padding: 10px 0;
+}
+
+.createArticle h1
+{
+    font-size: 3rem;
+    font-weight: bolder;
+}
 
 
+.createArticle .inputContainer
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 0;
+}
+
+.createArticle .inputContainer label
+{
+    font-weight: bolder;
+}
+
+.createArticle #inputContainer input,
+.createArticle #inputContainer textarea
+{
+    width: 100%;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 2px;
+}
+
+.createArticle #inputContainer input
+{
+    padding: 7px 0;
+}
+
+.submit-cancel-container input
+{
+    padding: 1rem 3rem;
+    margin: 1rem 0;
+
+    border-radius: 1rem;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-cancel-container input:first-child
+{
+    color: white;
+    background-color: #C01F1F;
+}
+
+.submit-cancel-container input:last-child
+{
+    border: 2px solid #C01F1F;
+}
+
+
+/* || CREATE ARTICLE END */
 
 /* || MAIN END */
 
