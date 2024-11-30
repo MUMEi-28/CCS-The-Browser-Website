@@ -8,7 +8,7 @@ $articleContent  = "";
 $typeOfArticle = "";
 
 
-$errorMessage = "11111";
+$errorMessage = "";
 $successMessage = "";
 
 // This code will run only when the form is submitted (via POST request).

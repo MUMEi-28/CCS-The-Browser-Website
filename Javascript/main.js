@@ -6,23 +6,25 @@ function GoToHomePage()
     console.log("");
 
 }
-function GoToArticle()
+function OnClickPostNews()
 {
-
-    const articleId = this.getAttribute("data-id");
-    if (articleId)
-    {
-        // Redirect to articlePage.php with the article ID as a query parameter
-        window.location.href = `articlePage.php?id=${articleId}`;
-    }
-
-
+    window.location.href = `create-article.php`;
     //   window.location.href = "create-article.php";
     console.log("CREATE ARTICLE CLICKED");
 }
 function GoToEditArticle()
 {
-    window.location.href = "edit-article.php";
+    const articleId = this.getAttribute("data-id");
+    if (articleId)
+    {
+        // Redirect to articlePage.php with the article ID as a query parameter
+        window.location.href = "edit-article.php?id=${articleId}";
+    }
+    else
+    {
+        console.log("ITS NOT WORKING");
+    }
+
     console.log("EDIT ARTICLE CLICKED");
 }
 
@@ -44,10 +46,9 @@ function HeaderFunctions()
     {
         const postButton = document.querySelector(".PostNews-button");
 
-
         if (postButton != null)
         {
-            postButton.addEventListener("click", GoToArticle)
+            postButton.addEventListener("click", OnClickPostNews)
         }
     }
 
@@ -64,17 +65,30 @@ function HomePageContainerButtons()
 {
     const container = document.getElementsByClassName("container");
 
+    // DITO YUNG MGA CLICKABLE CONTAINER SA HOMEPAGE
 
     for (i = 0; i < container.length; i++)
     {
         container[i].addEventListener("click", GoToArticlePage);
-        container[i].addEventListener("click", PrintAnyText);
 
+        console.log(container[i]);
     }
 
     function GoToArticlePage()
     {
-        window.location.href = "articlePage.php";
+        console.log("CONTAINER CLICKED");
+
+        const articleId = this.getAttribute("data-id");
+        if (articleId)
+        {
+            // Redirect to articlePage.php with the article ID as a query parameter
+            window.location.href = `articlePage.php?id=${articleId}`;
+        }
+        else
+        {
+            alert("WALANG ID YUNG SITE")
+        }
+
     }
 }
 
