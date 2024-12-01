@@ -1,71 +1,412 @@
 <?php
-session_start();
+include("LogInRegister/php/config.php");
+
+
+$sql = "SELECT * FROM articles";
+$result = $con->query($sql);
+$row = $result->fetch_assoc();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="LogInRegister/style/style.css">
-    <title>Login</title>
+    <title>The Browser || Homepage</title>
+
+    <!-- FONTS AWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="CSS/main.css">
+
+    <script src="Javascript/index.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="box form-box">
-            <?php
 
-            include("LogInRegister/php/config.php");
-            if (isset($_POST['submit'])) {
-                $email = mysqli_real_escape_string($con, $_POST['email']);
-                $password = mysqli_real_escape_string($con, $_POST['password']);
+    <header>
+        <a href="LogInRegister/logIn.php" class="user-Account">
+            <i class="fa-regular fa-circle-user"></i>
+        </a>
 
-                $result = mysqli_query($con, "SELECT * FROM users WHERE Email='$email' AND Password='$password' ") or die("Select Error");
-                $row = mysqli_fetch_assoc($result);
+        <?php
+        session_start();
 
-                if (is_array($row) && !empty($row)) {
-                    $_SESSION['valid'] = $row['Email'];
-                    $_SESSION['username'] = $row['Username'];
-                    $_SESSION['age'] = $row['Age'];
-                    $_SESSION['id'] = $row['Id'];
-                } else {
-                    echo "<div class='message'>
-                      <p>Wrong Username or Password</p>
-                       </div> <br>";
-                    echo "<a href='index.php'><button class='btn'>Go Back</button>";
-                }
-                if (isset($_SESSION['valid'])) {
-                    header("Location: PHP/home.php");
-                }
-            } else {
+        if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
+            <button class="PostNews-button">Post News</button>
+        <?php endif; ?>
 
+        <img src="Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png" alt="Banner" class="header-logo">' ;
 
-            ?>
-                <header>Login</header>
-                <form action="" method="post">
-                    <div class="field input">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" autocomplete="off" required>
+        <nav>
+            <ul class="navBar">
+                <input type="checkbox" id="check">
+
+                <span class="menu">
+                    <li><a href="../../browser/PHP/Sections/News.php">News</a></li>
+                    <li><a href="../../browser/PHP/articlePage.php">Editorial</a></li>
+                    <li><a>Feature</a></li>
+                    <li><a>Sports</a></li>
+                    <li><a><span class="nowrap">TSU Marilag 2024</span></a></li>
+                    <li><a><span class="nowrap">CCS Sportsfest 2024</span></a></li>
+
+                    <label for="check" class="close-menu">
+                        <i class="fas fa-times"></i>
+                    </label>
+                </span>
+
+                <label for="check" class="open-menu">
+                    <i class="fas fa-bars"></i>
+                </label>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PANG DEBUG LANG ETO -->
+    <?php
+    if (isset($_SESSION['id'])) {
+        echo "<script defer>
+            console.log('Logged in user ID: " . addslashes($_SESSION['id']) . "'); 
+          </script>";
+    } else {
+        echo "<script defer>
+            alert('No user is logged in.');
+          </script>";
+    }
+    ?>
+
+    <main>
+
+        <section class="main-header">
+            <h1>NEWS</h1>
+
+        </section>
+        <hr>
+        <div class="main-news">
+            <div class="news">
+                <section class="headliner">
+                    <section class="container one" id="pop-out" <?php echo "data-id='$row[artID]'" ?>>
+                        <div class="news-item">
+                            <section class="headline">
+
+                                <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                            </section>
+                            <section class="main-news">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
+                                    mauris
+                                    vel
+                                    convallis.
+                                    Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                                </p>
+                            </section>
+                        </div>
+
+                        <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                    </section>
+                </section>
+
+                <section class="sub-news">
+                    <section class="container two" id="pop-out" data-id="2">
+                        <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+
+                        <div class="news-item">
+                            <section class="headline">
+
+                                <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                            </section>
+                            <section class="main-news">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
+                                    mauris
+                                    vel
+                                    convallis.
+                                    Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                                </p>
+                            </section>
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+
+            <hr>
+
+            <div class="other-main-news">
+                <section class="container two" id="pop-out" data-id="2">
+                    <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+
+                    <div class="news-item">
+                        <section class="headline">
+
+                            <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                        </section>
+                        <section class="main-news">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget mauris
+                                vel
+                                convallis.
+                                Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                            </p>
+                        </section>
                     </div>
+                </section>
 
-                    <div class="field input">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" autocomplete="off" required>
-                    </div>
+                <section class="container two" id="pop-out" data-id="2">
+                    <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
-                    <div class="field">
+                    <div class="news-item">
+                        <section class="headline">
 
-                        <input type="submit" class="btn" name="submit" value="Login" required>
+                            <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                        </section>
+                        <section class="main-news">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget mauris
+                                vel
+                                convallis.
+                                Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                            </p>
+                        </section>
                     </div>
-                    <div class="links">
-                        Don't have account? <a href="LogInRegister/register.php">Sign Up Now</a>
+                </section>
+
+                <section class="container two" id="pop-out" data-id="2">
+                    <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+
+                    <div class="news-item">
+                        <section class="headline">
+
+                            <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                        </section>
+                        <section class="main-news">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget mauris
+                                vel
+                                convallis.
+                                Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                            </p>
+                        </section>
                     </div>
-                </form>
+                </section>
+
+                <section class="container two" id="pop-out" data-id="2">
+                    <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+
+                    <div class="news-item">
+                        <section class="headline">
+
+                            <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                        </section>
+                        <section class="main-news">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget mauris
+                                vel
+                                convallis.
+                                Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                            </p>
+                        </section>
+                    </div>
+                </section>
+                <div class="other-main-news-no-img">
+                    <section class="container two" id="pop-out" data-id="2">
+
+                        <div class="news-item">
+                            <section class="headline">
+
+                                <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                            </section>
+                            <section class="main-news">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
+                                    mauris
+                                    vel
+                                    convallis.
+                                    Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                                </p>
+                            </section>
+                        </div>
+
+
+                    </section>
+                    <section class="container two" id="pop-out" data-id="2">
+                        <div class="news-item">
+                            <section class="headline">
+
+                                <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                            </section>
+
+                            <section class="main-news">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
+                                    mauris
+                                    vel
+                                    convallis.
+                                    Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                                </p>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
         </div>
-    <?php } ?>
-    </div>
+        <hr>
+        <section class="card-container">
+            <div class="card" id="pop-out" data-id="2">
+                <h2>CCS SPORTSFEST 2024</h2>
+            </div>
+
+            <div class="card" id="pop-out" data-id="2">
+                <h2>TSU MARILAG 2024</h2>
+            </div>
+        </section>
+
+        <div class="other-news">
+            <div class="container two">
+                <h2>SPORTS</h2>
+                <div class="sports news">
+                    <section class="container two" id="pop-out" data-id="2">
+                        <div class="news-item">
+                            <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                            <section class="headline">
+
+                                <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                            </section>
+                            <section class="main-news">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
+                                    mauris
+                                    vel
+                                    convallis.
+                                    Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                                </p>
+                            </section>
+                        </div>
+                    </section>
+                    <section class="container two" id="pop-out" data-id="2">
+                        <div class="news-item">
+                            <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                            <section class="headline">
+
+                                <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                            </section>
+                            <section class="main-news">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
+                                    mauris
+                                    vel
+                                    convallis.
+                                    Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                                </p>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="container two">
+                <h2>FEATURE</h2>
+                <div class="feature news">
+                    <section class="container two" id="pop-out" data-id="2">
+                        <div class="news-item">
+                            <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                            <section class="headline">
+
+                                <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                            </section>
+                            <section class="main-news">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
+                                    mauris
+                                    vel
+                                    convallis.
+                                    Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                                </p>
+                            </section>
+                        </div>
+                    </section>
+                    <section class="container two" id="pop-out" data-id="2">
+                        <div class="news-item">
+                            <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                            <section class="headline">
+
+                                <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+
+                            </section>
+                            <section class="main-news">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
+                                    mauris
+                                    vel
+                                    convallis.
+                                    Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                                </p>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container two">
+            <h2>EDITORIAL</h2>
+            <div class="editorial news">
+                <section class="container two" id="pop-out" data-id="2">
+                    <div class="editorial item">
+                        <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                        <div style="flex: 1;">
+                            <section class="headline">
+                                <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+                            </section>
+                            <section class="main-news">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
+                                    mauris vel convallis.
+                                    Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+                <section class="container two" id="pop-out" data-id="2">
+                    <div class="editorial item">
+                        <img src="Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                        <div style="flex: 1;">
+                            <section class="headline">
+                                <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
+                            </section>
+                            <section class="main-news">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
+                                    mauris vel convallis.
+                                    Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <?php include("PHP/footer.php") ?>
 </body>
 
 </html>
