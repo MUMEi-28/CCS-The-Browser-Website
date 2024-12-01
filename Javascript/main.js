@@ -7,7 +7,7 @@ function GoToHomePage()
 function OnClickPostNews()
 {
     //   window.location.href = `create-article.php`;
-    //   window.location.href = "create-article.php";
+    window.location.href = "create-article.php";
     console.log("CREATE ARTICLE CLICKED");
 }
 function GoToEditArticle()
