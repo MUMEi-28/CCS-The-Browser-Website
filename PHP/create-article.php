@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $typeOfArticle = $_POST['typeOfArticle'];
 
 
-    echo "  <script defer>alert('SUBMITTED');</script>";
+    /*     echo "  <script defer>alert('SUBMITTED');</script>";
+ */
 }
 
 

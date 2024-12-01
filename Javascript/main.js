@@ -3,22 +3,22 @@
 function GoToHomePage()
 {
     window.location.href = "home.php";
-    console.log("");
-
 }
 function OnClickPostNews()
 {
-    window.location.href = `create-article.php`;
+    //   window.location.href = `create-article.php`;
     //   window.location.href = "create-article.php";
     console.log("CREATE ARTICLE CLICKED");
 }
 function GoToEditArticle()
 {
-    const articleId = this.getAttribute("data-id");
+    const urlParams = new URLSearchParams(window.location.search);
+    const articleId = urlParams.get('id');
+
     if (articleId)
     {
         // Redirect to articlePage.php with the article ID as a query parameter
-        window.location.href = "edit-article.php?id=${articleId}";
+        window.location.href = `edit-article.php?id=${articleId}`;
     }
     else
     {
@@ -49,6 +49,7 @@ function HeaderFunctions()
         if (postButton != null)
         {
             postButton.addEventListener("click", OnClickPostNews)
+
         }
     }
 
@@ -115,11 +116,45 @@ function ArticlePageFunctions()
     {
         const editArticleButton = document.querySelector(".edit-button");
 
+        if (editArticleButton != null)
+        {
 
-        editArticleButton.addEventListener("click", GoToEditArticle);
+            editArticleButton.addEventListener("click", GoToEditArticle);
+        }
     }
 
     OnClickEditArticle();
+
+
+    function OnClickUpdateArticle()
+    {
+        const updateArticleButton = document.querySelector(".update-Button");
+
+        if (updateArticleButton != null)
+        {
+            updateArticleButton.addEventListener("click", UpdateAritcle);
+        }
+
+        function UpdateAritcle()
+        {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id');
+
+
+            if (articleId)
+            {
+                // Redirect to articlePage.php with the article ID as a query parameter
+                window.location.href = `edit-article.php?id=${articleId}`;
+            }
+            else
+            {
+                console.log("ITS NOT WORKING");
+            }
+
+        }
+    }
+
+    OnClickUpdateArticle();
 }
 
 ArticlePageFunctions();
