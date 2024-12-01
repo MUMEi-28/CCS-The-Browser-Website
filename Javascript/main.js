@@ -87,7 +87,8 @@ function HomePageContainerButtons()
         }
         else
         {
-            alert("WALANG ID YUNG SITE")
+            console.log("WALANG ID YUNG SITE");
+            /*  alert("WALANG ID YUNG SITE") */
         }
 
     }
