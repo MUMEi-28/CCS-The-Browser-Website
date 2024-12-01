@@ -7,7 +7,7 @@ function GoToHomePage()
 function OnClickPostNews()
 {
     //   window.location.href = `create-article.php`;
-    //   window.location.href = "create-article.php";
+    window.location.href = "create-article.php";
     console.log("CREATE ARTICLE CLICKED");
 }
 function GoToEditArticle()
@@ -87,7 +87,8 @@ function HomePageContainerButtons()
         }
         else
         {
-            alert("WALANG ID YUNG SITE")
+            console.log("WALANG ID YUNG SITE");
+            /*  alert("WALANG ID YUNG SITE") */
         }
 
     }
