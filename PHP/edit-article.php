@@ -30,10 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     // If there is no ID on the URL
     if (!isset($_GET['id'])) {
-        //     header("location: home.php");
+        header("location: home.php");
         exit;
     }
 
+    // Get the ID on the URL
     $id = $_GET["id"];
 
     $sql = "SELECT * FROM articles WHERE artID = $id";
@@ -50,17 +51,57 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 // This code will run only when the form is submitted (via POST request).
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $headline = $_POST['headline'];
+    $id = $_GET["id"];
+
+
+    // THIS IS USED TO CLEAN UP THE SPECIAL CHARACTERS ON THE INPUTS
+    $headline = $con->real_escape_string($_POST['headline']);
+    $writer = $con->real_escape_string($_POST['writer']);
+    $articleContent = $con->real_escape_string($_POST['articleContent']);
+    $typeOfArticle = $con->real_escape_string($_POST['typeOfArticle']);
+
+
+    /*     $headline = $_POST['headline'];
     $writer = $_POST['writer'];
     $imgHeader = $_POST['imgHeader'];
     $articleContent = $_POST['articleContent'];
-    $typeOfArticle = $_POST['typeOfArticle'];
+    $typeOfArticle = $_POST['typeOfArticle']; */
 
 
-    echo "  <script defer>alert('SUBMITTED');</script>";
+    $sql = "UPDATE articles 
+        SET artHeadline = '$headline', 
+            artWriter = '$writer', 
+            artContent = '$articleContent', 
+            artType = '$typeOfArticle' 
+        WHERE artID = $id";
+
+    // Execute the query
+    $result = $con->query($sql);
+
+    // Check for errors
+    if (!$result) {
+        die("Error updating article: " . $con->error);
+    } else {
+
+
+        echo "<script>
+        alert('Article updated successfully!');
+        window.location.href ='home.php';
+        </script>";
+        //     header("location: home.php"); // Redirect to home or desired page
+        exit;
+    }
+
+
+    echo "  <script defer>
+    alert('UPDATE BUTTON CLICKED ');
+    alert('ARTICLE ID: ' + $id);
+    </script>
+            
+    ";
 }
 
-
+/* 
 do {
     // CHECK IF ALL FIELDS ARE NOT EMPTY
     if (empty($headline) || empty($writer) || empty($imgHeader) || empty($articleContent) || empty($typeOfArticle)) {
@@ -69,10 +110,11 @@ do {
     }
 
 
-
     // ADD THE ARTICLES TO THE DATABASE
     $sql = "INSERT INTO articles (artHeadline, artContent, artWriter, artImgHeader, artType)" .
         "VALUES ('$headline', '$articleContent', '$writer', '$imgHeader', '$typeOfArticle')";
+
+    // DATA SQL UPATE ETO INSTEAD NG INSERTAAAAA
 
 
     $result = $con->query($sql);
@@ -95,7 +137,7 @@ do {
     $successMessage = "";
 
     header("location: home.php");
-} while (false)
+} while (false) */
 ?>
 
 
@@ -122,7 +164,7 @@ do {
     <?php include("header.php") ?>
 
     <main>
-        <form action="create-article.php" class="createArticle" method="post">
+        <form class="createArticle" method="post">
             <h1>Edit article</h1>
 
             <div class="inputContainer" id="inputContainer">
@@ -151,7 +193,7 @@ do {
             </div>
 
             <div class="submit-cancel-container">
-                <input type="submit" value="POST" name="submit">
+                <input type="submit" value="UPDATE" name="update" class="update-Button">
                 <input type="button" value="CANCEL" id="cancel">
             </div>
 
@@ -159,9 +201,10 @@ do {
             <!--     <?php
 
                         // IF THERE ARE NO ERROR MESSAGE AND THE SUBMIT BUTTON WAS CLICKED
-                        if (!empty($errorMessage) && isset($_POST['submit'])) {
+                        if (!empty($errorMessage) && isset($_POST['update'])) {
                             echo "
-                <script defer> alert('PLS IMPLEMENT WARNING CONTAINER NA MERON OK BUTTON SAYING /ALL FIELDS SHOULD NOT BE EMPTY OR SOMETHING/')</script>";
+                <script defer> alert('PLS IMPLEMENT WARNING CONTAINER NA MERON OK BUTTON SAYING /ALL 
+                FIELDS SHOULD NOT BE EMPTY OR SOMETHING/')</script>";
                             $errorMessage = "";
                         }
                         ?> -->
