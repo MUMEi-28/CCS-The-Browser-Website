@@ -98,7 +98,7 @@ function HomePageContainerButtons()
         if (articleId)
         {
             // Redirect to articlePage.php with the article ID as a query parameter
-            window.location.href = `articlePage.php?id=${articleId}`;
+            window.location.href = `PHP/articlePage.php?id=${articleId}`;
         }
         else
         {
