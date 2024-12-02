@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         echo "<script>
         alert('Article updated successfully!');
-        window.location.href ='home.php';
+        window.location.href ='../index.php';
         </script>";
         //     header("location: home.php"); // Redirect to home or desired page
         exit;

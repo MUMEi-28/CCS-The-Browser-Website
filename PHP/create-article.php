@@ -58,7 +58,7 @@ do {
     $errorMessage = "";
     $successMessage = "";
 
-    header("location: home.php");
+    header("location: ../index.php");
 } while (false)
 ?>
 

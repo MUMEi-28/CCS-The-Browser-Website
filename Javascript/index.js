@@ -2,13 +2,11 @@
 
 function GoToHomePage()
 {
-    window.location.href = "../index.php";
+    window.location.href = "index.php";
 }
 function OnClickPostNews()
 {
-    //   window.location.href = `create-article.php`;
-    window.location.href = "create-article.php";
-    console.log("CREATE ARTICLE CLICKED");
+    window.location.href = "PHP/create-article.php";
 }
 function GoToEditArticle()
 {
@@ -53,6 +51,25 @@ function HeaderFunctions()
         }
     }
 
+    function OnClickLogOut()
+    {
+        const logOutButton = document.querySelector(".LogOut-button");
+
+        if (logOutButton != null)
+        {
+            logOutButton.addEventListener("click", logOut);
+        }
+
+        function logOut()
+        {
+
+            alert("LOGGING OUT");
+            window.location.href = "index.php";
+        }
+    }
+
+    OnClickLogOut();
+
     GoToCreateArticlePage();
 
     LogoClickBackToHome();
@@ -78,15 +95,14 @@ function HomePageContainerButtons()
         console.log("CONTAINER CLICKED");
 
         const articleId = this.getAttribute("data-id");
-        if (articleId)
+        if (articleId != null)
         {
             // Redirect to articlePage.php with the article ID as a query parameter
-            window.location.href = `articlePage.php?id=${articleId}`;
+            window.location.href = `PHP/articlePage.php?id=${articleId}`;
         }
         else
         {
-            console.log("WALANG ID YUNG SITE");
-            /*  alert("WALANG ID YUNG SITE") */
+            console.log("WALANG ID YUNG SITE")
         }
 
     }

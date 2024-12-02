@@ -81,8 +81,23 @@ header .header-logo
 .PostNews-button
 {
     position: absolute;
-    top: 27px;
+    top: 15px;
     left: 80px;
+
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.LogOut-button
+{
+    position: absolute;
+    top: 50px;
+    left: 80px;
+
 
     background-color: #8B0000;
     color: white;
