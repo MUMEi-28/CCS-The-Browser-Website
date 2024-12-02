@@ -61,7 +61,7 @@ while ($row = $result->fetch_assoc()) {
             <button class="PostNews-button">Post News</button>
         <?php endif; ?>
 
-        <img src="Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png" alt="Banner" class="header-logo">' ;
+        <img src="Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png" alt="Banner" class="header-logo">
 
         <nav>
             <ul class="navBar">
