@@ -344,6 +344,7 @@ while ($row = $result->fetch_assoc()) {
 
         <div class="container two">
             <h2>EDITORIAL</h2>
+            <hr>
             <div class="editorial news">
                 <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[2]['artID']); ?>">
                     <div class="editorial item">
