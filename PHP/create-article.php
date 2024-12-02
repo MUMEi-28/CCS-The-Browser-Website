@@ -7,59 +7,61 @@ $imgHeader = "";
 $articleContent  = "";
 $typeOfArticle = "";
 
-
 $errorMessage = "";
 $successMessage = "";
 
-// This code will run only when the form is submitted (via POST request).
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $headline = $_POST['headline'];
     $writer = $_POST['writer'];
-    $imgHeader = $_POST['imgHeader'];
     $articleContent = $_POST['articleContent'];
     $typeOfArticle = $_POST['typeOfArticle'];
 
+    do {
+        // Validate inputs
+        if (
+            empty($headline) ||
+            empty($writer) ||
+            empty($_FILES['imgHeader']['name']) ||
+            empty($articleContent) ||
+            empty($typeOfArticle)
+        ) {
+            $errorMessage = "All fields are required.";
+            break;
+        }
 
-    /*     echo "  <script defer>alert('SUBMITTED');</script>";
- */
+        // Handle the image upload
+        $imgHeader = $_FILES['imgHeader']['name'];
+        $tempName = $_FILES['imgHeader']['tmp_name'];
+        $folder = '../Images/' . $imgHeader;
+
+        if (!move_uploaded_file($tempName, $folder)) {
+            $errorMessage = "Failed to upload the image.";
+            break;
+        }
+
+        // Insert the article and image into the database
+        $sql = "INSERT INTO articles (artHeadline, artContent, artWriter, artType, artImgHeader)
+                VALUES ('$headline', '$articleContent', '$writer', '$typeOfArticle', '$imgHeader')";
+
+        $result = $con->query($sql);
+
+        if (!$result) {
+            $errorMessage = "Invalid Query: " . $con->error;
+            break;
+        }
+
+        // Reset all fields after success
+        $headline = "";
+        $writer = "";
+        $imgHeader = "";
+        $articleContent = "";
+        $typeOfArticle = "";
+
+        $successMessage = "Article created successfully!";
+        header("location: ../index.php");
+        exit;
+    } while (false);
 }
-
-
-do {
-    // CHECK IF ALL FIELDS ARE NOT EMPTY
-    if (empty($headline) || empty($writer) || empty($imgHeader) || empty($articleContent) || empty($typeOfArticle)) {
-        $errorMessage = "All fields are required.";
-        break;
-    }
-
-
-
-    // ADD THE ARTICLES TO THE DATABASE
-    $sql = "INSERT INTO articles (artHeadline, artContent, artWriter, artImgHeader, artType)" .
-        "VALUES ('$headline', '$articleContent', '$writer', '$imgHeader', '$typeOfArticle')";
-
-
-    $result = $con->query($sql);
-
-    if (!$result) {
-        $errorMessage = "Invalid Query: " . $con->error;
-        break;
-    }
-
-
-    // RESET ALL FIELDS
-
-    $headline = "";
-    $writer = "";
-    $imgHeader = "";
-    $articleContent = "";
-    $typeOfArticle = "";
-
-    $errorMessage = "";
-    $successMessage = "";
-
-    header("location: ../index.php");
-} while (false)
 ?>
 
 
@@ -86,7 +88,7 @@ do {
     <?php include("header.php") ?>
 
     <main>
-        <form action="create-article.php" class="createArticle" method="post">
+        <form action="create-article.php" class="createArticle" method="post" enctype="multipart/form-data">
             <h1>Create new article</h1>
 
             <div class="inputContainer" id="inputContainer">
@@ -101,7 +103,8 @@ do {
 
             <div class="inputContainer">
                 <label for="image-header">IMAGE HEADER:</label>
-                <input type="file" name="imgHeader" accept="image/*">
+                <input type="file" name="imgHeader" accept="image/png, image/jpeg">
+
             </div>
 
             <div class="inputContainer" id="inputContainer">
@@ -111,12 +114,12 @@ do {
 
             <div class="inputContainer" id="inputContainer">
                 <label for="choices">TYPE OF ARTICLE:</label>
-                <select name="typeOfArticle"id="typeOfArticle">
-                <option value="option1">News</option>
-                <option value="option2">Editorial</option>
-                <option value="option3">Feature</option>
-                <option value="option4">Sports</option>
-  </select>
+                <select name="typeOfArticle" id="typeOfArticle">
+                    <option value="option1">News</option>
+                    <option value="option2">Editorial</option>
+                    <option value="option3">Feature</option>
+                    <option value="option4">Sports</option>
+                </select>
             </div>
 
             <div class="submit-cancel-container">

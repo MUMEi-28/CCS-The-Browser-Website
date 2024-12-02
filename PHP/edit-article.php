@@ -10,10 +10,10 @@ if (!$result) {
     die("Invalid Query: " . $con->error);
 }
 
-while ($row = $result->fetch_assoc()) {
+/* while ($row = $result->fetch_assoc()) {
 
     echo "";
-}
+} */
 
 $headline = "";
 $writer = "";
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Fill In the values 
     $headline = $row['artHeadline'];
     $writer = $row['artWriter'];
-    //   $imgHeader = $row['artImgHeader'];
+    //  $imgHeader = $row['artImgHeader'];
     $articleContent = $row['artContent'];
     $typeOfArticle = $row['artType'];
 }
@@ -60,17 +60,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $articleContent = $con->real_escape_string($_POST['articleContent']);
     $typeOfArticle = $con->real_escape_string($_POST['typeOfArticle']);
 
+    // HANDLE THE IMAGE FILE RELATED THINGS HERE
+    $imgHeader = $_FILES['imgHeader']['name'];
+    $tempName = $_FILES['imgHeader']['tmp_name'];
+    $folder = '../Images' . $imgHeader;
+    /* 
+    $query = mysqli_query($con, "INSERT INTO articles (artImgHeader)
+    VALUES ('$imgHeader')");
 
-    /*     $headline = $_POST['headline'];
-    $writer = $_POST['writer'];
-    $imgHeader = $_POST['imgHeader'];
-    $articleContent = $_POST['articleContent'];
-    $typeOfArticle = $_POST['typeOfArticle']; */
+    if (move_uploaded_file($tempName, $folder)) {
+        echo "<h2> FILE UPLOADED </h2>";
+    } else {
+        echo "<h2> FILE NOT UPLOADED </h2>";
+    } */
+
 
 
     $sql = "UPDATE articles 
         SET artHeadline = '$headline', 
             artWriter = '$writer', 
+            artImgHeader = '$imgHeader',
             artContent = '$articleContent', 
             artType = '$typeOfArticle' 
         WHERE artID = $id";
@@ -100,44 +109,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
     ";
 }
-
-/* 
-do {
-    // CHECK IF ALL FIELDS ARE NOT EMPTY
-    if (empty($headline) || empty($writer) || empty($imgHeader) || empty($articleContent) || empty($typeOfArticle)) {
-        $errorMessage = "All fields are required.";
-        break;
-    }
-
-
-    // ADD THE ARTICLES TO THE DATABASE
-    $sql = "INSERT INTO articles (artHeadline, artContent, artWriter, artImgHeader, artType)" .
-        "VALUES ('$headline', '$articleContent', '$writer', '$imgHeader', '$typeOfArticle')";
-
-    // DATA SQL UPATE ETO INSTEAD NG INSERTAAAAA
-
-
-    $result = $con->query($sql);
-
-    if (!$result) {
-        $errorMessage = "Invalid Query: " . $con->error;
-        break;
-    }
-
-
-    // RESET ALL FIELDS
-
-    $headline = "";
-    $writer = "";
-    $imgHeader = "";
-    $articleContent = "";
-    $typeOfArticle = "";
-
-    $errorMessage = "";
-    $successMessage = "";
-
-    header("location: home.php");
-} while (false) */
 ?>
 
 
@@ -161,13 +132,24 @@ do {
 
 <body>
 
+
+    <!-- PANG DEBUG SA IMAGES --><!-- 
+    <?php
+    $res = mysqli_query($con, "SELECT * FROM articles");
+    while ($row = mysqli_fetch_assoc($res)) {
+    ?>
+        <img src="../Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
+
+    <?php } ?> -->
+
+
     <?php include("header.php") ?>
 
     <main>
-        <form class="createArticle" method="post">
+        <form class="createArticle" method="post" enctype="multipart/form-data">
             <h1>Edit article</h1>
 
-            <div class="inputContainer" id="inputContainer">
+            <div class=" inputContainer" id="inputContainer">
                 <label for="headline">TITLE/HEADLINE:</label>
                 <input type="text" name="headline" value="<?php echo $headline ?>">
             </div>
@@ -179,8 +161,19 @@ do {
 
             <div class="inputContainer">
                 <label for="image-header">IMAGE HEADER:</label>
-                <input type="file" name="imgHeader" accept="image/*">
+
+                <input type="file" name="imgHeader" accept="image/png, image/jpeg">
+
+                <!-- Display the current image -->
+                <?php if (!empty($imgHeader)): ?>
+                    <p>Current Image:</p>
+                    <img src=" ../Images/<?php echo htmlspecialchars($imgHeader); ?>" alt="Current Image" style="max-width: 200px;">
+                <?php else: ?>
+                    <p>No image available. Please upload an image.</p>
+                <?php endif; ?>
+
             </div>
+
 
             <div class="inputContainer" id="inputContainer">
                 <label for="I">ARTICLE CONTENT:</label>
@@ -188,14 +181,14 @@ do {
             </div>
 
             <div class="inputContainer" id="inputContainer">
-            <label for="choices">TYPE OF ARTICLE:</label>
+                <label for="choices">TYPE OF ARTICLE:</label>
                 <select name="typeOfArticle" id="typeOfArticle" value="<?php echo $typeOfArticle ?>">
-                <option value="option1">News</option>
-                <option value="option2">Editorial</option>
-                <option value="option3">Feature</option>
-                <option value="option4">Sports</option>
+                    <option value="option1">News</option>
+                    <option value="option2">Editorial</option>
+                    <option value="option3">Feature</option>
+                    <option value="option4">Sports</option>
                 </select>
-              
+
             </div>
 
             <div class="submit-cancel-container">
