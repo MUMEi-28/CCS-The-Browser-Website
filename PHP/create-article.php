@@ -112,10 +112,10 @@ do {
             <div class="inputContainer" id="inputContainer">
                 <label for="choices">TYPE OF ARTICLE:</label>
                 <select name="typeOfArticle"id="typeOfArticle">
-                <option value="option1">News</option>
-                <option value="option2">Editorial</option>
-                <option value="option3">Feature</option>
-                <option value="option4">Sports</option>
+                <option value="News">News</option>
+                <option value="Editorial">Editorial</option>
+                <option value="Feature">Feature</option>
+                <option value="Sports">Sports</option>
   </select>
             </div>
 
