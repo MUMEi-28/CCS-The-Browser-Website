@@ -112,11 +112,12 @@ do {
             <div class="inputContainer" id="inputContainer">
                 <label for="choices">TYPE OF ARTICLE:</label>
                 <select name="typeOfArticle"id="typeOfArticle">
-                <option value="option1">News</option>
-                <option value="option2">Editorial</option>
-                <option value="option3">Feature</option>
-                <option value="option4">Sports</option>
-  </select>
+                    <option value="null" selected disabled hidden>Choose Type</option>
+                    <option value="option1">News</option>
+                    <option value="option2">Editorial</option>
+                    <option value="option3">Feature</option>
+                    <option value="option4">Sports</option>
+                </select>
             </div>
 
             <div class="submit-cancel-container">
