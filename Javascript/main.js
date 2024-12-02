@@ -2,7 +2,7 @@
 
 function GoToHomePage()
 {
-    window.location.href = "home.php";
+    window.location.href = "../index.php";
 }
 function OnClickPostNews()
 {
