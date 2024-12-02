@@ -228,72 +228,22 @@ while ($row = $resulte->fetch_assoc()) {
             <div class="container two">
                 <h2>SPORTS</h2>
                 <div class="sports news">
-                    <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($sports[0]['artID']); ?>">
-                        <div class="news-item">
-                            <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
-                            <section class="headline">
-
-                                <h2><?php echo htmlspecialchars(substr($sports[0]['artHeadline'], 0, 20)) . '...'; ?></h2>
-
-                            </section>
-                            <section class="main-news">
-                                <p>
-                                    <?php echo htmlspecialchars(substr($sports[0]['artContent'], 0, 150)) . '...'; ?>
-                                </p>
-                            </section>
-                        </div>
-                    </section>
-                    <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($sports[1]['artID']); ?>">
-                        <div class="news-item">
-                            <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
-                            <section class="headline">
-
-                                <h2><?php echo htmlspecialchars(substr($sports[1]['artHeadline'], 0, 20)) . '...'; ?></h2>
-
-                            </section>
-                            <section class="main-news">
-                                <p>
-                                    <?php echo htmlspecialchars(substr($sports[1]['artContent'], 0, 150)) . '...'; ?>
-                                </p>
-                            </section>
-                        </div>
-                    </section>
+                    <?php
+                        foreach(array_slice($sports, 0, 2) as $x) {
+                            include("PHP/Sections/containertwomain.php");
+                        }
+                    ?>
                 </div>
             </div>
 
             <div class="container two">
                 <h2>FEATURE</h2>
                 <div class="feature news">
-                    <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($feature[0]['artID']); ?>">
-                        <div class="news-item">
-                            <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
-                            <section class="headline">
-
-                                <h2><?php echo htmlspecialchars(substr($feature[0]['artHeadline'], 0, 20)) . '...'; ?></h2>
-
-                            </section>
-                            <section class="main-news">
-                                <p>
-                                    <?php echo htmlspecialchars(substr($feature[0]['artContent'], 0, 150)) . '...'; ?>
-                                </p>
-                            </section>
-                        </div>
-                    </section>
-                    <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($feature[1]['artID']); ?>">
-                        <div class="news-item">
-                            <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
-                            <section class="headline">
-
-                                <h2><?php echo htmlspecialchars(substr($feature[1]['artHeadline'], 0, 20)) . '...'; ?></h2>
-
-                            </section>
-                            <section class="main-news">
-                                <p>
-                                    <?php echo htmlspecialchars(substr($feature[1]['artContent'], 0, 150)) . '...'; ?>
-                                </p>
-                            </section>
-                        </div>
-                    </section>
+                    <?php
+                        foreach(array_slice($feature, 0, 2) as $x) {
+                            include("PHP/Sections/containertwomain.php");
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -303,36 +253,11 @@ while ($row = $resulte->fetch_assoc()) {
             <h2>EDITORIAL</h2>
             <hr>
             <div class="editorial news">
-                <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($editorial[0]['artID']); ?>">
-                    <div class="editorial item">
-                        <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
-                        <div style="flex: 1;">
-                            <section class="headline">
-                                <h2><?php echo htmlspecialchars(substr($editorial[0]['artHeadline'], 0, 20)) . '...'; ?></h2>
-                            </section>
-                            <section class="main-news">
-                                <p>
-                                    <?php echo htmlspecialchars(substr($editorial[0]['artContent'], 0, 150)) . '...'; ?>
-                                </p>
-                            </section>
-                        </div>
-                    </div>
-                </section>
-                <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($editorial[1]['artID']); ?>">
-                    <div class="editorial item">
-                        <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
-                        <div style="flex: 1;">
-                            <section class="headline">
-                                <h2><?php echo htmlspecialchars(substr($editorial[1]['artHeadline'], 0, 20)) . '...'; ?></h2>
-                            </section>
-                            <section class="main-news">
-                                <p>
-                                    <?php echo htmlspecialchars(substr($editorial[1]['artContent'], 0, 150)) . '...'; ?>
-                                </p>
-                            </section>
-                        </div>
-                    </div>
-                </section>
+                    <?php
+                        foreach(array_slice($editorial, 0, 2) as $x) {
+                            include("PHP/Sections/containertwomain.php");
+                        }
+                    ?>
             </div>
         </div>
     </main>
