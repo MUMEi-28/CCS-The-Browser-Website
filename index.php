@@ -134,16 +134,16 @@ while ($row = $resulte->fetch_assoc()) {
         <div class="main-news">
             <div class="news">
                 <section class="headliner">
-                    <section class="container one" id="pop-out" data-id="<?php echo htmlspecialchars($articles[0]['artID']); ?>">
+                    <section class="container one" id="pop-out" data-id="<?php echo htmlspecialchars($news[0]['artID']); ?>">
                         <div class="news-item">
                             <section class="headline">
 
-                                <h2><?php echo htmlspecialchars(substr($articles[0]['artHeadline'], 0, 20)) . '...'; ?></h2>
+                                <h2><?php echo htmlspecialchars(substr($news[0]['artHeadline'], 0, 20)) . '...'; ?></h2>
 
                             </section>
                             <section class="main-news">
                                 <p>
-                                    <?php echo htmlspecialchars(substr($articles[0]['artContent'], 0, 150)) . '...'; ?>
+                                    <?php echo htmlspecialchars(substr($news[0]['artContent'], 0, 150)) . '...'; ?>
                                 </p>
                             </section>
                         </div>
@@ -153,18 +153,18 @@ while ($row = $resulte->fetch_assoc()) {
                 </section>
 
                 <section class="sub-news">
-                    <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[1]['artID']); ?>" ?>
+                    <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($news[1]['artID']); ?>" ?>
                         <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
 
                         <div class="news-item">
                             <section class="headline">
 
-                                <h2><?php echo htmlspecialchars(substr($articles[1]['artHeadline'], 0, 20)) . '...'; ?></h2>
+                                <h2><?php echo htmlspecialchars(substr($news[1]['artHeadline'], 0, 20)) . '...'; ?></h2>
 
                             </section>
                             <section class="main-news">
                                 <p>
-                                    <?php echo htmlspecialchars(substr($articles[1]['artContent'], 0, 150)) . '...'; ?>
+                                    <?php echo htmlspecialchars(substr($news[1]['artContent'], 0, 150)) . '...'; ?>
                                 </p>
                             </section>
                     </section>
@@ -179,7 +179,7 @@ while ($row = $resulte->fetch_assoc()) {
         <div class="other-main-news">
             <?php
                 foreach(array_slice($news, 1, 4) as $x) {
-                    include("PHP/Sections/containertwo.php");
+                    include("PHP/Sections/containertwomain.php");
                 }
             ?>
 
