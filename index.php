@@ -86,6 +86,7 @@ while ($row = $resulte->fetch_assoc()) {
             <button class="PostNews-button">Post News</button>
         <?php endif; ?>
 
+
         <img src="Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png" alt="Banner" class="header-logo">
 
         <nav>
@@ -148,13 +149,22 @@ while ($row = $resulte->fetch_assoc()) {
                             </section>
                         </div>
 
-                        <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                        <?php
+                        $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 1");
+                        $row = mysqli_fetch_assoc($res);
+                        ?>
+                        <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
+
                     </section>
                 </section>
 
                 <section class="sub-news">
                     <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($news[1]['artID']); ?>" ?>
-                        <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                        <?php
+                        $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 2");
+                        $row = mysqli_fetch_assoc($res);
+                        ?>
+                        <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
 
                         <div class="news-item">
                             <section class="headline">
@@ -182,7 +192,6 @@ while ($row = $resulte->fetch_assoc()) {
                     include("PHP/Sections/containertwomain.php");
                 }
             ?>
-
 
             <div class="other-main-news-no-img">
                 <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($news[6]['artID']); ?>">
@@ -257,7 +266,7 @@ while ($row = $resulte->fetch_assoc()) {
                         foreach(array_slice($editorial, 0, 2) as $x) {
                             include("PHP/Sections/containertwomain.php");
                         }
-                    ?>
+                  ?>
             </div>
         </div>
     </main>
