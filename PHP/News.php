@@ -1,23 +1,3 @@
-<?php
-
-include("../LogInRegister/php/config.php");
-
-// Get the database || USED TO MAKE SURE WHICH ARTICLE ID THE SITE WILL GO TO
-$sql = "SELECT * FROM articles";
-$result = $con->query($sql);
-/* $row = $result->fetch_assoc();
- */
-
-$row = "";
-$articles = [];
-
-// Fetch all articles into the array
-while ($row = $result->fetch_assoc()) {
-    $articles[] = $row;
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,8 +7,7 @@ while ($row = $result->fetch_assoc()) {
     <title>Document</title>
 
     <link rel="stylesheet" href="../CSS/main.css">
-    <!--     <link rel="stylesheet" href="../CSS/main.css">
- -->
+    <script src="../Javascript/news.js" defer></script>
 
 
     <!-- FONTS AWESOME CDN -->
@@ -43,23 +22,27 @@ while ($row = $result->fetch_assoc()) {
     <main>
 
         <section class="headliner">
-                    <section class="container one" id="pop-out" data-id="<?php echo htmlspecialchars($articles[0]['artID']); ?>">
-                        <div class="news-item">
-                            <section class="headline">
+            <section class="container one">
+                <div class="news-item">
+                    <section class="headline">
 
-                                <h2><?php echo htmlspecialchars(substr($articles[0]['artHeadline'], 0, 100)) . '...'; ?></h2>
+                        <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
 
-                            </section>
-                            <section class="main-news">
-                                <p>
-                                    <?php echo htmlspecialchars(substr($articles[0]['artContent'], 0, 150)) . '...'; ?>
-                                </p>
-                            </section>
-                        </div>
-
-                        <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
                     </section>
-                </section>
+                    <section class="main-news">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget mauris
+                            vel
+                            convallis.
+                            Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
+                        </p>
+                    </section>
+                </div>
+
+                <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
+
+            </section>
+        </section>
 
         <hr>
 

@@ -68,8 +68,8 @@ while ($row = $result->fetch_assoc()) {
                 <input type="checkbox" id="check">
 
                 <span class="menu">
-                    <li><a href="../../browser/PHP/News.php">News</a></li>
-                    <li><a href="../../browser/PHP/articlePage.php">Editorial</a></li>
+                    <li><a href="PHP/News.php">News</a></li>
+                    <li><a href="#">Editorial</a></li>
                     <li><a>Feature</a></li>
                     <li><a>Sports</a></li>
                     <li><a><span class="nowrap">TSU Marilag 2024</span></a></li>
@@ -113,7 +113,7 @@ while ($row = $result->fetch_assoc()) {
                         <div class="news-item">
                             <section class="headline">
 
-                                <h2><?php echo htmlspecialchars(substr($articles[0]['artHeadline'], 0, 100)) . '...'; ?></h2>
+                                <h2><?php echo htmlspecialchars(substr($articles[0]['artHeadline'], 0, 20)) . '...'; ?></h2>
 
                             </section>
                             <section class="main-news">
