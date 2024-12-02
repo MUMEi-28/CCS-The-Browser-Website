@@ -81,8 +81,23 @@ header .header-logo
 .PostNews-button
 {
     position: absolute;
-    top: 27px;
+    top: 15px;
     left: 80px;
+
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.LogOut-button
+{
+    position: absolute;
+    top: 50px;
+    left: 80px;
+
 
     background-color: #8B0000;
     color: white;
@@ -657,6 +672,12 @@ main .privacypolicy p
 .createArticle #inputContainer input
 {
     padding: 7px 0;
+}
+.createArticle #inputContainer select {
+    display: flex;
+    gap: 5px;
+    padding: 10px 0;
+    background-color: #D9D9D9;
 }
 
 .submit-cancel-container input

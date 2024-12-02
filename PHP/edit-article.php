@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         echo "<script>
         alert('Article updated successfully!');
-        window.location.href ='home.php';
+        window.location.href ='../index.php';
         </script>";
         //     header("location: home.php"); // Redirect to home or desired page
         exit;
@@ -188,8 +188,14 @@ do {
             </div>
 
             <div class="inputContainer" id="inputContainer">
-                <label for="headline">TYPE OF ARTICLE:</label>
-                <input type="text" name="typeOfArticle" value="<?php echo $typeOfArticle ?>">
+            <label for="choices">TYPE OF ARTICLE:</label>
+                <select name="typeOfArticle" id="typeOfArticle" value="<?php echo $typeOfArticle ?>">
+                <option value="News">News</option>
+                <option value="Editorial">Editorial</option>
+                <option value="Feature">Feature</option>
+                <option value="Sports">Sports</option>
+                </select>
+              
             </div>
 
             <div class="submit-cancel-container">

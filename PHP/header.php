@@ -1,5 +1,5 @@
 <header>
-    <a href="../index.php" class="user-Account">
+    <a href="../LogInRegister/logIn.php" class="user-Account">
         <i class="fa-regular fa-circle-user"></i>
     </a>
 
@@ -10,8 +10,29 @@
         <button class="PostNews-button">Post News</button>
     <?php endif; ?>
 
+    <?php
+    if (isset($_SESSION['id'])) {
 
-    <img src="../Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png" alt="Banner" class="header-logo">
+        echo "<a href='LogInRegister/PHP/logout.php' >
+
+            <button class='LogOut-button'>Log Out</button>
+
+            </a> ";
+    }
+    ?>
+
+
+    <!-- MAKE SURE IT ALSO WORKS ON THE INDEX.PHP -->
+    <?php
+    $logoPath = "../Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png";
+
+    if (file_exists($logoPath) && !is_dir($logoPath)) {
+        echo '<img src="' . htmlspecialchars($logoPath) . '" alt="Banner" class="header-logo">';
+    } else {
+        echo '<img src="' . htmlspecialchars("Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png") . '" alt="Banner" class="header-logo">';
+    }
+    ?>
+
     <nav>
         <ul class="navBar">
             <input type="checkbox" id="check">
