@@ -188,8 +188,14 @@ do {
             </div>
 
             <div class="inputContainer" id="inputContainer">
-                <label for="headline">TYPE OF ARTICLE:</label>
-                <input type="text" name="typeOfArticle" value="<?php echo $typeOfArticle ?>">
+            <label for="choices">TYPE OF ARTICLE:</label>
+                <select name="typeOfArticle" id="typeOfArticle" value="<?php echo $typeOfArticle ?>">
+                <option value="option1">News</option>
+                <option value="option2">Editorial</option>
+                <option value="option3">Feature</option>
+                <option value="option4">Sports</option>
+                </select>
+              
             </div>
 
             <div class="submit-cancel-container">
