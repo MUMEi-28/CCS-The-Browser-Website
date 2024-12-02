@@ -110,8 +110,13 @@ do {
             </div>
 
             <div class="inputContainer" id="inputContainer">
-                <label for="headline">TYPE OF ARTICLE:</label>
-                <input type="text" name="typeOfArticle">
+                <label for="choices">TYPE OF ARTICLE:</label>
+                <select name="typeOfArticle"id="typeOfArticle">
+                <option value="News">News</option>
+                <option value="Editorial">Editorial</option>
+                <option value="Feature">Feature</option>
+                <option value="Sports">Sports</option>
+  </select>
             </div>
 
             <div class="submit-cancel-container">
