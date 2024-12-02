@@ -101,7 +101,7 @@ do {
 
             <div class="inputContainer">
                 <label for="image-header">IMAGE HEADER:</label>
-                <input type="file" name="imgHeader" accept="image/*">
+                <input type="file" name="imgHeader">
             </div>
 
             <div class="inputContainer" id="inputContainer">
