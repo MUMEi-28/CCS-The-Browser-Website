@@ -1,3 +1,24 @@
+<?php
+
+include("../LogInRegister/php/config.php");
+
+// Get the database || USED TO MAKE SURE WHICH ARTICLE ID THE SITE WILL GO TO
+$sql = "SELECT * FROM articles WHERE artType='News'";
+$result = $con->query($sql);
+
+$row = "";
+$articles = [];
+
+// Fetch all articles into the array
+while ($row = $result->fetch_assoc()) {
+    $articles[] = $row;
+}
+
+$articles = array_reverse($articles);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,92 +41,15 @@
 <body>
     <?php include("header.php"); ?>
     <main>
-
-        <section class="headliner">
-            <section class="container one">
-                <div class="news-item">
-                    <section class="headline">
-
-                        <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
-
-                    </section>
-                    <section class="main-news">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget mauris
-                            vel
-                            convallis.
-                            Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
-                        </p>
-                    </section>
-                </div>
-
-                <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
-
-            </section>
-        </section>
-
-        <hr>
-
         <section class="other-main-news">
-            <section class="container two">
-                <div class="editorial-item">
-
-                    <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
-                    <div style="flex: 1;">
-                        <section class="headline">
-                            <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
-                        </section>
-                        <section class="main-news">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
-                                mauris vel convallis.
-                                Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
-                            </p>
-                        </section>
-                    </div>
-                </div>
-
-            </section>
-            <section class="container two">
-                <div class="editorial-item">
-
-                    <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
-                    <div style="flex: 1;">
-                        <section class="headline">
-                            <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
-                        </section>
-                        <section class="main-news">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
-                                mauris vel convallis.
-                                Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
-                            </p>
-                        </section>
-                    </div>
-                </div>
-
-            </section>
-            <section class="container two">
-                <div class="editorial-item">
-
-                    <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
-                    <div style="flex: 1;">
-                        <section class="headline">
-                            <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
-                        </section>
-                        <section class="main-news">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere eget
-                                mauris vel convallis.
-                                Sed lectus lacus, bibendum et magna tincidunt, dapibus pulvinar metus.
-                            </p>
-                        </section>
-                    </div>
-                </div>
-
-            </section>
+            <?php include("Sections/containerone.php")?>
+            <hr>
+            <?php
+                foreach(array_slice($articles, 1) as $x) {
+                    include("Sections/containertwo.php");
+                }
+            ?>
         </section>
-
     </main>
 
     <?php include("footer.php"); ?>
