@@ -128,7 +128,7 @@ while ($row = $result->fetch_assoc()) {
                 </section>
 
                 <section class="sub-news">
-                    <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[1]['artID']); ?>" ?>>
+                    <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[1]['artID']); ?>" ?>
                         <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
 
                         <div class="news-item">
