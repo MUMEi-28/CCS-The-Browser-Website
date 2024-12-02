@@ -46,6 +46,24 @@ header
     padding: 20px 0;
 }
 
+header .header-logo
+{
+    width: 20%;
+    cursor: pointer;
+}
+
+header .user-Account
+{
+    font-size: 2.5rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
 header img
 {
     width: 30%;
@@ -75,6 +93,35 @@ header .navBar .menu
     list-style-type: none;
 }
 
+.PostNews-button
+{
+    position: absolute;
+    top: 15px;
+    left: 80px;
+
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.LogOut-button
+{
+    position: absolute;
+    top: 50px;
+    left: 80px;
+
+
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
 header .navBar .menu li a
 {
     display: inline-block;
@@ -100,6 +147,18 @@ header .navBar .menu li a::after
 header .navBar .menu li a:hover::after
 {
     width: 100%;
+}
+
+header .user-Account
+{
+    font-size: 2.5rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+
+    position: absolute;
+    left: 20px;
+    top: 20px;
 }
 
 .open-menu,
