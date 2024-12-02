@@ -35,12 +35,12 @@ VALUES
 -- Article 1
 ("TSU – CCS’ Lord Baron Barcia wins 4th place in 22nd RHEPC",
 "Lord Baron Barcia, a first-year student from Tarlac State University – College of Computer Studies, clinched fourth place in the Copyreading and Headline Writing Filipino category at the 22nd Regional Higher Education Press Conference (RHEPC) held at Palm Cabanas Resort, Pampanga, from January 11 to 13, 2024. Alongside six other delegates from The Work, Barcia qualified for the 19th Luzon-wide Higher Education Press Conference (LHEPC) in Naga City in March 2024. Nearly 500 delegates competed, and Barcia's tenacity secured his spot among distinguished participants.",
-"John Hermie Sarceda", "shrek2.jpg", "News"),
+"John Hermie Sarceda", "shrek2.jpg", "Sports"),
 
 -- Article 2
 ("Inocension captures hearts with poetic prowess, earns 3rd Place during SAS Week 2024",
 "Earl Vincent Q. Inocension of BSIS-BA 4A mesmerized his audience with his poetic prowess, clinching 3rd place in an online Spoken Poetry contest during the SAS Week 2024. Despite minimal preparation due to his OJT, Inocension captivated judges with his performance. His love for storytelling and rhymes shone through, earning him a well-deserved award and the chance to showcase his talent.",
-"Marc Jhasper Petines", "shrek3.jpg", "News"),
+"Marc Jhasper Petines", "shrek3.jpg", "Editorial"),
 
 -- Article 3
 ("Mekuz seizes the Battle of the Bands championship",
@@ -50,12 +50,12 @@ VALUES
 -- Article 4
 ("TSU to launch weekly online classes starting this semester",
 "Tarlac State University (TSU) is set to enhance its flexible learning approach as it transitions all classes to online sessions one day per week, effective from the third week of classes starting this 2nd semester of Academic Year 2023-2024. This move supports both extracurricular activities and academic continuity while aligning with flexible work arrangements.",
-"Hannah Pulmano and Augustine Baguisi", "shrek5.jpg", "News"),
+"Hannah Pulmano and Augustine Baguisi", "shrek5.jpg", "Editorial"),
 
 -- Article 5
 ("TSU CCS Dean announces mandatory ICT Proficiency Exam for seniors",
 "Dr. Alvincent E. Danganan, the Dean of the College of Computer Studies (CCS) at TSU, announced an ICT Proficiency Diagnostic Exam for graduating students starting February 2024. While the exam doesn't affect graduation eligibility, it assesses skill levels and aids in professional readiness.",
-"Arvie Caling and Gabriel Garcia", "shrek6.jpg", "News"),
+"Arvie Caling and Gabriel Garcia", "shrek6.jpg", "Feature"),
 
 -- Article 6
 ("TSU fourth-year students gear up for OJT with 'Work Ethics and Safe Spaces Act' seminar",
@@ -80,9 +80,9 @@ VALUES
 -- Article 10
 ("Sicat of TSU-CCS secures 2nd Place in 8th Kanlahi Product Packaging Design Contest",
 "Justine Philip T. Sicat, a first-year BSCS student, won 2nd place in the 8th Kanlahi Product Packaging Design Contest on March 7, 2024. Despite challenges, his digital and physical design skills impressed judges, earning him a spot among the best.",
-"Augustine Baguisi", "shrek1.jpg", "News"),
+"Augustine Baguisi", "shrek1.jpg", "Sports"),
 
 -- Article 11
 ("TSU-CCS attends IRCITE 2024",
 "Tarlac State University - College of Computer Studies participated in the International Research Conference on Information Technology Education (IRCITE) 2024 on March 8, 2024. The event promoted innovation and knowledge exchange in IT education.",
-"John Hermie Sarceda", "shrek12.jpg", "News");
+"John Hermie Sarceda", "shrek12.jpg", "Feature");
