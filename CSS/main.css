@@ -799,8 +799,21 @@ footer .copyright
 
 
 /* || MOBILE SCREEN SIZE */
-@media screen and (max-width: 610px)
+@media screen and (max-width: 810px)
 {
+
+    .news,
+        .container.one, .other-main-news, .card-container,.other-news {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .container.one img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+        }
 
     /* || NAVIGATION START */
     header .navBar .menu
