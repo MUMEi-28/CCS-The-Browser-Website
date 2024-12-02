@@ -1,4 +1,10 @@
 <?php
+
+// session_destroy();
+
+/* include("php/logout.php");
+ */
+
 session_start();
 ?>
 <!DOCTYPE html>
@@ -8,7 +14,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="LogInRegister/style/style.css">
+    <link rel="stylesheet" href="style/style.css">
     <title>Login</title>
 </head>
 
@@ -17,7 +23,8 @@ session_start();
         <div class="box form-box">
             <?php
 
-            include("LogInRegister/php/config.php");
+            include("PHP/config.php");
+
             if (isset($_POST['submit'])) {
                 $email = mysqli_real_escape_string($con, $_POST['email']);
                 $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -31,13 +38,27 @@ session_start();
                     $_SESSION['age'] = $row['Age'];
                     $_SESSION['id'] = $row['Id'];
                 } else {
+
+                    /*        echo "
+                    <script> 
+                        alert('NOT VALID'); 
+                    </script>";
+ */
+
                     echo "<div class='message'>
-                      <p>Wrong Username or Password</p>
+                      <p>Wrong Username or Password</p> 
                        </div> <br>";
-                    echo "<a href='index.php'><button class='btn'>Go Back</button>";
+                    echo "<a href='logIn.php'><button class='btn'>Go Back</button>";
                 }
+
                 if (isset($_SESSION['valid'])) {
-                    header("Location: PHP/home.php");
+
+                    /* echo "
+                    <script> 
+                        alert('VALID'); 
+                    </script>"; */
+
+                    header("Location: ../index.php");
                 }
             } else {
 
@@ -60,7 +81,7 @@ session_start();
                         <input type="submit" class="btn" name="submit" value="Login" required>
                     </div>
                     <div class="links">
-                        Don't have account? <a href="LogInRegister/register.php">Sign Up Now</a>
+                        Don't have account? <a href="register.php">Sign Up Now</a>
                     </div>
                 </form>
         </div>

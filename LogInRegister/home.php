@@ -1,4 +1,7 @@
 <?php
+
+//include("php/logout.php");
+
 session_start();
 
 include("php/config.php");

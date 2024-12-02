@@ -1,7 +1,6 @@
 <?php
+
 include("LogInRegister/php/config.php");
-
-
 
 // Get the database || USED TO MAKE SURE WHICH ARTICLE ID THE SITE WILL GO TO
 $sql = "SELECT * FROM articles";
