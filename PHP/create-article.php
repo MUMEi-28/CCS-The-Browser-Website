@@ -111,7 +111,7 @@ do {
 
             <div class="inputContainer" id="inputContainer">
                 <label for="choices">TYPE OF ARTICLE:</label>
-                <select name="typeOfArticle"id="">
+                <select name="typeOfArticle"id="typeOfArticle">
                 <option value="option1">News</option>
                 <option value="option2">Editorial</option>
                 <option value="option3">Feature</option>
