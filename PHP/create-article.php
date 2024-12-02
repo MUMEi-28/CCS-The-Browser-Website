@@ -111,12 +111,15 @@ do {
 
             <div class="inputContainer" id="inputContainer">
                 <label for="choices">TYPE OF ARTICLE:</label>
-                <select name="typeOfArticle"id="typeOfArticle">
-                <option value="option1">News</option>
-                <option value="option2">Editorial</option>
-                <option value="option3">Feature</option>
-                <option value="option4">Sports</option>
-  </select>
+                <select name="typeOfArticle" id="typeOfArticle" value="<?php echo $typeOfArticle ?>">
+                <option value="null" disabled selected hidden>Choose Type of Article</option>
+                <option value="News">News</option>
+                <option value="Editorial">Editorial</option>
+                <option value="Feature">Feature</option>
+                <option value="Sports">Sports</option>
+                <option value="TSU Marilag 2024">TSU Marilag 2024</option>
+                <option value="CCS Sportsfest 2024">CCS Sportsfest 2024</option>
+                </select>
             </div>
 
             <div class="submit-cancel-container">
