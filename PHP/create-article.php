@@ -35,8 +35,8 @@ do {
 
 
     // ADD THE ARTICLES TO THE DATABASE
-    $sql = "INSERT INTO articles (artHeadline, artContent, artWriter, artImgHeader, artType)" .
-        "VALUES ('$headline', '$articleContent', '$writer', '$imgHeader', '$typeOfArticle')";
+    $sql = "INSERT INTO articles (artHeadline, artContent, artWriter, artType)" .
+        "VALUES ('$headline', '$articleContent', '$writer', '$typeOfArticle')";
 
 
     $result = $con->query($sql);
@@ -46,6 +46,19 @@ do {
         break;
     }
 
+    // HANDLE THE IMAGE FILE RELATED THINGS HERE
+    $imgHeader = $_FILES['imgHeader']['name'];
+    $tempName = $_FILES['imgHeader']['tmp_name'];
+
+    $folder = '../Images' . $imgHeader;
+    $query = mysqli_query($con, "INSERT INTO articles (artImgHeader)
+       VALUES ('$imgHeader')");
+
+    if (move_uploaded_file($tempName, $folder)) {
+        echo "<h2> FILE UPLOADED </h2>";
+    } else {
+        echo "<h2> FILE NOT UPLOADED </h2>";
+    }
 
     // RESET ALL FIELDS
 
@@ -86,7 +99,7 @@ do {
     <?php include("header.php") ?>
 
     <main>
-        <form action="create-article.php" class="createArticle" method="post">
+        <form action="create-article.php" class="createArticle" method="post" enctype="multipart/form-data">
             <h1>Create new article</h1>
 
             <div class="inputContainer" id="inputContainer">

@@ -63,8 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // HANDLE THE IMAGE FILE RELATED THINGS HERE
     $imgHeader = $_FILES['imgHeader']['name'];
     $tempName = $_FILES['imgHeader']['tmp_name'];
-
     $folder = '../Images' . $imgHeader;
+    /* 
     $query = mysqli_query($con, "INSERT INTO articles (artImgHeader)
     VALUES ('$imgHeader')");
 
@@ -72,13 +72,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<h2> FILE UPLOADED </h2>";
     } else {
         echo "<h2> FILE NOT UPLOADED </h2>";
-    }
+    } */
 
 
 
     $sql = "UPDATE articles 
         SET artHeadline = '$headline', 
             artWriter = '$writer', 
+            artImgHeader = '$imgHeader',
             artContent = '$articleContent', 
             artType = '$typeOfArticle' 
         WHERE artID = $id";
