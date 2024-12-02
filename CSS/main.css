@@ -251,13 +251,18 @@ main .main-header
     gap: 20px;
 }
 
-.other-main-news
-{
-    display: flex;
-    flex-direction: row;
+.other-main-news,
+    .other-main-news-no-img {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;  
+    }
 
-    gap: 20px;
-}
+    .other-main-news .container.two,
+    .other-main-news-no-img .container.two {
+        flex: 0 0 calc(50% - 20px); 
+        box-sizing: border-box; 
+    }
 
 .headline
 {
@@ -801,8 +806,6 @@ footer .copyright
 }
 
 /* || FOOTER END */
-
-
 
 /* || MOBILE SCREEN SIZE */
 @media screen and (max-width: 810px)
