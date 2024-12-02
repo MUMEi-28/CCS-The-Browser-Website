@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="../../CSS/Sections/SectionsIndex.css">
-    <!--     <link rel="stylesheet" href="../CSS/main.css">
- -->
+    <link rel="stylesheet" href="../CSS/main.css">
+
 
 
     <!-- FONTS AWESOME CDN -->
@@ -19,7 +18,7 @@
 
 
 <body>
-    <?php include("../header.php"); ?>
+    <?php include("header.php"); ?>
     <main>
 
         <section class="headliner">
@@ -40,7 +39,7 @@
                     </section>
                 </div>
 
-                <img src="../../Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
 
             </section>
         </section>
@@ -51,7 +50,7 @@
             <section class="container two">
                 <div class="editorial-item">
 
-                    <img src="../../Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                    <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                     <div style="flex: 1;">
                         <section class="headline">
                             <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
@@ -70,7 +69,7 @@
             <section class="container two">
                 <div class="editorial-item">
 
-                    <img src="../../Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                    <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                     <div style="flex: 1;">
                         <section class="headline">
                             <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
@@ -89,7 +88,7 @@
             <section class="container two">
                 <div class="editorial-item">
 
-                    <img src="../../Assets/testIMG-Landscape.jpg" alt="Main News Image">
+                    <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
                     <div style="flex: 1;">
                         <section class="headline">
                             <h2>LOREM IPSUM DOLOR VERY VERY LONG HEADLINE</h2>
@@ -109,7 +108,7 @@
 
     </main>
 
-    <?php include("../footer.php"); ?>
+    <?php include("footer.php"); ?>
 </body>
 
 </html>
