@@ -61,6 +61,7 @@ while ($row = $result->fetch_assoc()) {
             <button class="PostNews-button">Post News</button>
         <?php endif; ?>
 
+
         <img src="Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png" alt="Banner" class="header-logo">
 
         <nav>
@@ -123,13 +124,22 @@ while ($row = $result->fetch_assoc()) {
                             </section>
                         </div>
 
-                        <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                        <?php
+                        $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 1");
+                        $row = mysqli_fetch_assoc($res);
+                        ?>
+                        <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
+
                     </section>
                 </section>
 
                 <section class="sub-news">
                     <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[1]['artID']); ?>" ?>
-                        <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                        <?php
+                        $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 2");
+                        $row = mysqli_fetch_assoc($res);
+                        ?>
+                        <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
 
                         <div class="news-item">
                             <section class="headline">
@@ -153,7 +163,11 @@ while ($row = $result->fetch_assoc()) {
 
         <div class="other-main-news">
             <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[2]['artID']); ?>">
-                <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                <?php
+                $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 3");
+                $row = mysqli_fetch_assoc($res);
+                ?>
+                <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
 
                 <div class="news-item">
                     <section class="headline">
@@ -170,7 +184,11 @@ while ($row = $result->fetch_assoc()) {
             </section>
 
             <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[3]['artID']); ?>">
-                <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                <?php
+                $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 4");
+                $row = mysqli_fetch_assoc($res);
+                ?>
+                <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
 
                 <div class="news-item">
                     <section class="headline">
@@ -187,7 +205,11 @@ while ($row = $result->fetch_assoc()) {
             </section>
 
             <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[4]['artID']); ?>">
-                <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                <?php
+                $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 5");
+                $row = mysqli_fetch_assoc($res);
+                ?>
+                <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
 
                 <div class="news-item">
                     <section class="headline">
@@ -204,7 +226,11 @@ while ($row = $result->fetch_assoc()) {
             </section>
 
             <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[5]['artID']); ?>">
-                <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                <?php
+                $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 6");
+                $row = mysqli_fetch_assoc($res);
+                ?>
+                <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
 
                 <div class="news-item">
                     <section class="headline">
@@ -273,7 +299,11 @@ while ($row = $result->fetch_assoc()) {
                 <div class="sports news">
                     <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[8]['artID']); ?>">
                         <div class="news-item">
-                            <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                            <?php
+                            $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 9");
+                            $row = mysqli_fetch_assoc($res);
+                            ?>
+                            <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
                             <section class="headline">
 
                                 <h2><?php echo htmlspecialchars(substr($articles[8]['artHeadline'], 0, 20)) . '...'; ?></h2>
@@ -288,7 +318,11 @@ while ($row = $result->fetch_assoc()) {
                     </section>
                     <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[9]['artID']); ?>">
                         <div class="news-item">
-                            <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                            <?php
+                            $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 10");
+                            $row = mysqli_fetch_assoc($res);
+                            ?>
+                            <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
                             <section class="headline">
 
                                 <h2><?php echo htmlspecialchars(substr($articles[9]['artHeadline'], 0, 20)) . '...'; ?></h2>
@@ -309,7 +343,11 @@ while ($row = $result->fetch_assoc()) {
                 <div class="feature news">
                     <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[10]['artID']); ?>">
                         <div class="news-item">
-                            <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                            <?php
+                            $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 10");
+                            $row = mysqli_fetch_assoc($res);
+                            ?>
+                            <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
                             <section class="headline">
 
                                 <h2><?php echo htmlspecialchars(substr($articles[10]['artHeadline'], 0, 20)) . '...'; ?></h2>
@@ -324,7 +362,11 @@ while ($row = $result->fetch_assoc()) {
                     </section>
                     <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[1]['artID']); ?>">
                         <div class="news-item">
-                            <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                            <?php
+                            $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 1");
+                            $row = mysqli_fetch_assoc($res);
+                            ?>
+                            <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
                             <section class="headline">
 
                                 <h2><?php echo htmlspecialchars(substr($articles[1]['artHeadline'], 0, 20)) . '...'; ?></h2>
@@ -347,7 +389,11 @@ while ($row = $result->fetch_assoc()) {
             <div class="editorial news">
                 <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[2]['artID']); ?>">
                     <div class="editorial item">
-                        <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                        <?php
+                        $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 2");
+                        $row = mysqli_fetch_assoc($res);
+                        ?>
+                        <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
                         <div style="flex: 1;">
                             <section class="headline">
                                 <h2><?php echo htmlspecialchars(substr($articles[2]['artHeadline'], 0, 20)) . '...'; ?></h2>
@@ -362,7 +408,11 @@ while ($row = $result->fetch_assoc()) {
                 </section>
                 <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[3]['artID']); ?>">
                     <div class="editorial item">
-                        <img src="Images/testIMG-Landscape.jpg" alt="Main News Image">
+                        <?php
+                        $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 3");
+                        $row = mysqli_fetch_assoc($res);
+                        ?>
+                        <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
                         <div style="flex: 1;">
                             <section class="headline">
                                 <h2><?php echo htmlspecialchars(substr($articles[3]['artHeadline'], 0, 20)) . '...'; ?></h2>
