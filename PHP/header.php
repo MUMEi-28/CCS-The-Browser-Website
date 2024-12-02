@@ -10,6 +10,17 @@
         <button class="PostNews-button">Post News</button>
     <?php endif; ?>
 
+    <?php
+    if (isset($_SESSION['id'])) {
+
+        echo "<a href='LogInRegister/PHP/logout.php' >
+
+            <button class='LogOut-button'>Log Out</button>
+
+            </a> ";
+    }
+    ?>
+
 
     <!-- MAKE SURE IT ALSO WORKS ON THE INDEX.PHP -->
     <?php

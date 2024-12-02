@@ -71,8 +71,6 @@ function HomePageContainerButtons()
     for (i = 0; i < container.length; i++)
     {
         container[i].addEventListener("click", GoToArticlePage);
-
-        console.log(container[i]);
     }
 
     function GoToArticlePage()

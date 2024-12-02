@@ -51,6 +51,25 @@ function HeaderFunctions()
         }
     }
 
+    function OnClickLogOut()
+    {
+        const logOutButton = document.querySelector(".LogOut-button");
+
+        if (logOutButton != null)
+        {
+            logOutButton.addEventListener("click", logOut);
+        }
+
+        function logOut()
+        {
+
+            alert("LOGGING OUT");
+            window.location.href = "index.php";
+        }
+    }
+
+    OnClickLogOut();
+
     GoToCreateArticlePage();
 
     LogoClickBackToHome();
@@ -69,8 +88,6 @@ function HomePageContainerButtons()
     for (i = 0; i < container.length; i++)
     {
         container[i].addEventListener("click", GoToArticlePage);
-
-        console.log(container[i]);
     }
 
     function GoToArticlePage()

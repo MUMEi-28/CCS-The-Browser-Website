@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include("LogInRegister/php/config.php");
 
@@ -43,9 +44,18 @@ while ($row = $result->fetch_assoc()) {
         <a href="LogInRegister/logIn.php" class="user-Account">
             <i class="fa-regular fa-circle-user"></i>
         </a>
+        <?php
+        if (isset($_SESSION['id'])) {
+
+            echo "<a href='LogInRegister/PHP/logout.php' >
+
+            <button class='LogOut-button'>Log Out</button>
+
+            </a> ";
+        }
+        ?>
 
         <?php
-        session_start();
 
         if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
             <button class="PostNews-button">Post News</button>
@@ -85,7 +95,7 @@ while ($row = $result->fetch_assoc()) {
           </script>";
     } else {
         echo "<script defer>
-            alert('No user is logged in.');
+            console.log('No user is logged in.');
           </script>";
     }
     ?>
