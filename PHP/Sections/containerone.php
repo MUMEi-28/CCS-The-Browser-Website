@@ -11,6 +11,6 @@
                 </p>
             </section>
         </div>
-        <img src="../Assets/testIMG-Landscape.jpg" alt="Main News Image">
+        <img src="../Images/<?php echo $articles[0]['artImgHeader'] ?>" alt="UPLOADED IMAGE">
     </section>
 </section>

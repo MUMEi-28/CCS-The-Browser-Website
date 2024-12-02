@@ -1,4 +1,4 @@
-<section class="container two">
+<section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($x['artID']);?>">
     <class="editorial-item">
         <img src="Images/<?php echo $x['artImgHeader'] ?>" alt="UPLOADED IMAGE">
 
