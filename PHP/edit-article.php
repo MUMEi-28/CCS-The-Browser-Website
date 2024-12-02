@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Fill In the values 
     $headline = $row['artHeadline'];
     $writer = $row['artWriter'];
-    //   $imgHeader = $row['artImgHeader'];
+    //  $imgHeader = $row['artImgHeader'];
     $articleContent = $row['artContent'];
     $typeOfArticle = $row['artType'];
 }
@@ -162,7 +162,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="inputContainer">
                 <label for="image-header">IMAGE HEADER:</label>
                 <input type="file" name="imgHeader">
+
+                <!-- Display the current image -->
+                <?php if (!empty($imgHeader)): ?>
+                    <p>Current Image:</p>
+                    <img src="../Images/<?php echo htmlspecialchars($imgHeader); ?>" alt="Current Image" style="max-width: 200px;">
+                <?php else: ?>
+                    <p>No image available. Please upload an image.</p>
+                <?php endif; ?>
             </div>
+
 
             <div class="inputContainer" id="inputContainer">
                 <label for="I">ARTICLE CONTENT:</label>

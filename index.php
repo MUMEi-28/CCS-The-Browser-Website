@@ -110,7 +110,7 @@ while ($row = $result->fetch_assoc()) {
         <div class="main-news">
             <div class="news">
                 <section class="headliner">
-                    <section class="container one" id="pop-out" data-id="<?php echo htmlspecialchars($articles[0]['artID']); ?>">
+                    <section class="container one" id="pop-out" data-id="<?php echo htmlspecialchars($articles[17]['artID']); ?>">
                         <div class="news-item">
                             <section class="headline">
 
