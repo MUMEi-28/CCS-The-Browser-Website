@@ -95,14 +95,14 @@ function HomePageContainerButtons()
         console.log("CONTAINER CLICKED");
 
         const articleId = this.getAttribute("data-id");
-        if (articleId)
+        if (articleId != null)
         {
             // Redirect to articlePage.php with the article ID as a query parameter
             window.location.href = `PHP/articlePage.php?id=${articleId}`;
         }
         else
         {
-            alert("WALANG ID YUNG SITE")
+            console.log("WALANG ID YUNG SITE")
         }
 
     }
