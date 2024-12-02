@@ -38,8 +38,8 @@
             <input type="checkbox" id="check">
 
             <span class="menu">
-                <li><a href="../../browser/PHP/Sections/News.php">News</a></li>
-                <li><a href="../../browser/PHP/articlePage.php">Editorial</a></li>
+                <li><a href="../PHP/News.php">News</a></li>
+                <li><a >Editorial</a></li>
                 <li><a>Feature</a></li>
                 <li><a>Sports</a></li>
                 <li><a><span class="nowrap">TSU Marilag 2024</span></a></li>

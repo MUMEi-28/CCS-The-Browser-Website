@@ -161,6 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="inputContainer">
                 <label for="image-header">IMAGE HEADER:</label>
+
                 <input type="file" name="imgHeader" accept="image/png, image/jpeg">
 
                 <!-- Display the current image -->
@@ -170,6 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php else: ?>
                     <p>No image available. Please upload an image.</p>
                 <?php endif; ?>
+
             </div>
 
 
