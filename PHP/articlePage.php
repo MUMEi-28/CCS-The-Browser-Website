@@ -88,7 +88,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             </div>
         </div>
         <article class="article">
-            <img src="../Assets/testIMG-Landscape.jpg" alt="Article Image">
+
+            <?php
+            $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = $id");
+            $row = mysqli_fetch_assoc($res);
+            ?>
+            <img src="../Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
+
+            <!--   <img src="../Assets/testIMG-Landscape.jpg" alt="Article Image"> -->
             <p class="article-content">
                 <?php echo "$articleContent" ?>
             </p>

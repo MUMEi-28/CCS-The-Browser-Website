@@ -80,7 +80,7 @@ VALUES
 -- Article 10
 ("Sicat of TSU-CCS secures 2nd Place in 8th Kanlahi Product Packaging Design Contest",
 "Justine Philip T. Sicat, a first-year BSCS student, won 2nd place in the 8th Kanlahi Product Packaging Design Contest on March 7, 2024. Despite challenges, his digital and physical design skills impressed judges, earning him a spot among the best.",
-"Augustine Baguisi", "shrek11.jpg", "News"),
+"Augustine Baguisi", "shrek1.jpg", "News"),
 
 -- Article 11
 ("TSU-CCS attends IRCITE 2024",

@@ -344,7 +344,7 @@ while ($row = $result->fetch_assoc()) {
                     <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[10]['artID']); ?>">
                         <div class="news-item">
                             <?php
-                            $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 10");
+                            $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 11");
                             $row = mysqli_fetch_assoc($res);
                             ?>
                             <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
@@ -363,7 +363,7 @@ while ($row = $result->fetch_assoc()) {
                     <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($articles[1]['artID']); ?>">
                         <div class="news-item">
                             <?php
-                            $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 1");
+                            $res = mysqli_query($con, "SELECT * FROM articles WHERE artID = 2");
                             $row = mysqli_fetch_assoc($res);
                             ?>
                             <img src="Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
