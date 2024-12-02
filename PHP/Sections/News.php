@@ -20,15 +20,7 @@ while ($row = $result->fetch_assoc()) {
 
 <!DOCTYPE html>
 <html lang="en">
-<?php
-    $logoPath = "../Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png";
 
-    if (file_exists($logoPath) && !is_dir($logoPath)) {
-        echo '<img src="' . htmlspecialchars($logoPath) . '" alt="Banner" class="header-logo">';
-    } else {
-        echo '<img src="' . htmlspecialchars("Assets/LOGO-AY-24-25/3-WHITE-HEADER-LOGO-BANNER-TYPE.png") . '" alt="Banner" class="header-logo">';
-    }
-    ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,8 +35,6 @@ while ($row = $result->fetch_assoc()) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-        
 </head>
 
 
