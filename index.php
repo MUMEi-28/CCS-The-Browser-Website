@@ -99,11 +99,11 @@ $editorial = array_reverse($editorial);
 
                 <span class="menu">
                     <li><a href="PHP/News.php">News</a></li>
-                    <li><a href="#">Editorial</a></li>
-                    <li><a>Feature</a></li>
-                    <li><a>Sports</a></li>
-                    <li><a><span class="nowrap">TSU Marilag 2024</span></a></li>
-                    <li><a><span class="nowrap">CCS Sportsfest 2024</span></a></li>
+                <li><a href= "PHP/Editorial.php">Editorial</a></li>
+                <li><a href= "PHP/Feature.php">Feature</a></li>
+                <li><a href= "PHP/Sports.php">Sports</a></li>
+                <li><a href= "PHP/TSUMarilag.php"><span class="nowrap">TSU Marilag 2024</span></a></li>
+                <li><a href= "PHP/Sportsfest.php"><span class="nowrap">CCS Sportsfest 2024</span></a></li>
 
                     <label for="check" class="close-menu">
                         <i class="fas fa-times"></i>
