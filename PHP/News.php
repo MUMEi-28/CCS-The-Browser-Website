@@ -28,7 +28,7 @@ $articles = array_reverse($articles);
     <title>Document</title>
 
     <link rel="stylesheet" href="../CSS/main.css">
-    <script src="../Javascript/section.js" defer></script>
+    <script src="../Javascript/news.js" defer></script>
 
 
     <!-- FONTS AWESOME CDN -->
