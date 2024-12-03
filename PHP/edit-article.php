@@ -80,6 +80,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    // Check if a new type of article is provided
+    if (!empty($_POST['typeOfArticle'])) {
+        $typeOfArticle = $con->real_escape_string($_POST['typeOfArticle']);
+    } else {
+        // No new type selected; keep the current type
+        $sql = "SELECT artType FROM articles WHERE artID = $id";
+        $result = $con->query($sql);
+        if ($result && $row = $result->fetch_assoc()) {
+            $typeOfArticle = $row['artType'];
+        } else {
+            die("Error fetching current article type: " . $con->error);
+        }
+    }
+
     // Update the article
     $sql = "UPDATE articles 
             SET artHeadline = '$headline', 
