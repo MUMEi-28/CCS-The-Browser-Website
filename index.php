@@ -193,7 +193,7 @@ $editorial = array_reverse($editorial);
 
             <div class="other-main-news-no-img">
                 <?php
-                    foreach (array_slice($news, 5, 2) as $x) {
+                    foreach (array_slice($news, 6, 2) as $x) {
                         include("PHP/Sections/containertwomainnoimg.php");
                     }
                 ?>

@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <main>
         <div class="article-header">
             <div class="top-section">
-                <div class="category">NEWS</div>
+                <div class="category"><?php echo "$typeOfArticle" ?></div>
                 <h1 class="headline"><?php echo "$headline"  ?> </h1>
                 <div class="date"><?php echo "$date" ?></div>
                 <!-- <div class="date">November 8, 2024</div> -->
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <div class="bottom-section">
                 <div class="author-info">
                     <div class="author-name"><?php echo "$writer" ?></div>
-                    <div class="author-role">News Writer</div>
+                    <div class="author-role"><?php echo "$typeOfArticle" ?> Writer</div>
                 </div>
 
 
