@@ -169,6 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
 
+
             <script>
                 function previewImage(event) {
                     const input = event.target; // The file input element
