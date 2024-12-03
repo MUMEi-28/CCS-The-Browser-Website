@@ -1,0 +1,19 @@
+/* Apply padding to the headline */
+.headline h2 {
+    padding: 10px 20px;  /* 10px top/bottom, 20px left/right */
+}
+
+/* Apply padding to the content paragraph */
+.main-news p {
+    padding: 15px;  /* 15px padding on all sides */
+}
+
+/* Apply padding to the entire news item container */
+.news-item {
+    padding: 20px;  /* 20px padding on all sides */
+}
+
+/* Apply padding to the image (if needed) */
+.news-item img {
+    padding: 5px;  /* Add padding around the image */
+}

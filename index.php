@@ -102,8 +102,8 @@ $editorial = array_reverse($editorial);
                 <li><a href= "PHP/Editorial.php">Editorial</a></li>
                 <li><a href= "PHP/Feature.php">Feature</a></li>
                 <li><a href= "PHP/Sports.php">Sports</a></li>
-                <li><a href= "PHP/TSUMarilag.php"><span class="nowrap">TSU Marilag 2024</span></a></li>
-                <li><a href= "PHP/Sportsfest.php"><span class="nowrap">CCS Sportsfest 2024</span></a></li>
+                <li><a href= "PHP/TSU Marilag 2024.php"><span class="nowrap">TSU Marilag 2024</span></a></li>
+                <li><a href= "PHP/CCS Sportsfest 2024.php"><span class="nowrap">CCS Sportsfest 2024</span></a></li>
 
                     <label for="check" class="close-menu">
                         <i class="fas fa-times"></i>
@@ -144,7 +144,7 @@ $editorial = array_reverse($editorial);
                         <div class="news-item">
                             <section class="headline">
 
-                                <h2><?php echo htmlspecialchars(substr($news[0]['artHeadline'], 0, 20)) . '...'; ?></h2>
+                                
 
                             </section>
                             <section class="main-news">
