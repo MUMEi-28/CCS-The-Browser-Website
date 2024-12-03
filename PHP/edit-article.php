@@ -156,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="inputContainer" id="inputContainer">
                 <label for="writer">WRITER:</label>
-                <input type="text" name="writer" value="<?php echo $writer ?>">
+                <input type="text" name="writer" value="<?php echo $writer ?>" required>
             </div>
 
             <div class="inputContainer">

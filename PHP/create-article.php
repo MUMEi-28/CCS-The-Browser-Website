@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <link rel="stylesheet" href="../CSS/main.css">
 
-    <script src="../Javascript/main.js" defer></script>
+    <script src="../createArticle.js" defer></script>
 </head>
 
 <body>
@@ -93,37 +93,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="inputContainer" id="inputContainer">
                 <label for="headline">TITLE/HEADLINE:</label>
-                <input type="text" name="headline">
+                <input type="text" name="headline" required>
             </div>
 
             <div class="inputContainer" id="inputContainer">
                 <label for="writer">WRITER:</label>
-                <input type="text" name="writer">
+                <input type="text" name="writer" required>
             </div>
 
             <div class="inputContainer">
                 <label for="image-header">IMAGE HEADER:</label>
-                <input type="file" name="imgHeader" accept="image/png, image/jpeg">
+                <input type="file" name="imgHeader" accept="image/png, image/jpeg" required>
 
             </div>
 
             <div class="inputContainer" id="inputContainer">
                 <label for="I">ARTICLE CONTENT:</label>
-                <textarea name="articleContent" id="" cols="30" rows="26"></textarea>
+                <textarea name="articleContent" id="" cols="30" rows="26" required></textarea>
             </div>
 
             <div class="inputContainer" id="inputContainer">
-                <label for="choices">TYPE OF ARTICLE:</label>
-                <select name="typeOfArticle" id="typeOfArticle" value="<?php echo $typeOfArticle ?>">
+            <label for="choices">TYPE OF ARTICLE:</label>
+            <select name="typeOfArticle" id="typeOfArticle" required>
                 <option value="null" disabled selected hidden>Choose Type of Article</option>
-                <option value="News">News</option>
-                <option value="Editorial">Editorial</option>
-                <option value="Feature">Feature</option>
-                <option value="Sports">Sports</option>
-                <option value="TSU Marilag 2024">TSU Marilag 2024</option>
-                <option value="CCS Sportsfest 2024">CCS Sportsfest 2024</option>
-                </select>
-            </div>
+                <option value="News" <?php echo $typeOfArticle == "News" ? "selected" : ""; ?>>News</option>
+                <option value="Editorial" <?php echo $typeOfArticle == "Editorial" ? "selected" : ""; ?>>Editorial</option>
+                <option value="Feature" <?php echo $typeOfArticle == "Feature" ? "selected" : ""; ?>>Feature</option>
+                <option value="Sports" <?php echo $typeOfArticle == "Sports" ? "selected" : ""; ?>>Sports</option>
+                <option value="TSU Marilag 2024" <?php echo $typeOfArticle == "TSU Marilag 2024" ? "selected" : ""; ?>>TSU Marilag 2024</option>
+                <option value="CCS Sportsfest 2024" <?php echo $typeOfArticle == "CCS Sportsfest 2024" ? "selected" : ""; ?>>CCS Sportsfest 2024</option>
+             </select>
+        </div>
+
 
             <div class="submit-cancel-container">
                 <input type="submit" value="POST" name="submit">
