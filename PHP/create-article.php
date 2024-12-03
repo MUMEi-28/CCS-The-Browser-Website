@@ -11,22 +11,23 @@ $errorMessage = "";
 $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $headline = $_POST['headline'];
-    $writer = $_POST['writer'];
-    $articleContent = $_POST['articleContent'];
-    $typeOfArticle = $_POST['typeOfArticle'];
 
     do {
         // Validate inputs
         if (
-            empty($headline) ||
-            empty($writer) ||
+            empty($_POST['headline']) ||
+            empty($_POST['writer']) ||
             empty($_FILES['imgHeader']['name']) ||
-            empty($articleContent) ||
-            empty($typeOfArticle)
+            empty($_POST['articleContent']) ||
+            empty($_POST['typeOfArticle'])
         ) {
             $errorMessage = "All fields are required.";
             break;
+        } else {
+            $headline = $_POST['headline'];
+            $writer = $_POST['writer'];
+            $articleContent = $_POST['articleContent'];
+            $typeOfArticle = $_POST['typeOfArticle'];
         }
 
         // Handle the image upload
@@ -115,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="inputContainer" id="inputContainer">
             <label for="choices">TYPE OF ARTICLE:</label>
             <select name="typeOfArticle" id="typeOfArticle" required>
-                <option value="null" disabled selected hidden>Choose Type of Article</option>
+                <option disabled selected hidden>Choose Type of Article</option>
                 <option value="News" <?php echo $typeOfArticle == "News" ? "selected" : ""; ?>>News</option>
                 <option value="Editorial" <?php echo $typeOfArticle == "Editorial" ? "selected" : ""; ?>>Editorial</option>
                 <option value="Feature" <?php echo $typeOfArticle == "Feature" ? "selected" : ""; ?>>Feature</option>
@@ -127,20 +128,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
             <div class="submit-cancel-container">
-                <input type="submit" value="POST" name="submit">
+                <input type="submit" value="POST" name="submit" >
                 <input type="button" value="CANCEL" id="cancel">
             </div>
 
 
-            <!--     <?php
-
-                        // IF THERE ARE NO ERROR MESSAGE AND THE SUBMIT BUTTON WAS CLICKED
-                        if (!empty($errorMessage) && isset($_POST['submit'])) {
-                            echo "
-                <script defer> alert('PLS IMPLEMENT WARNING CONTAINER NA MERON OK BUTTON SAYING /ALL FIELDS SHOULD NOT BE EMPTY OR SOMETHING/')</script>";
-                            $errorMessage = "";
-                        }
-                        ?> -->
+            <?php
+                // IF THERE ARE NO ERROR MESSAGE AND THE SUBMIT BUTTON WAS CLICKED
+                if (!empty($errorMessage) && isset($_POST['submit'])) {
+                    echo "<script defer> alert('$errorMessage')</script>";
+                    $errorMessage = "";
+                }
+            ?>
 
         </form>
     </main>
