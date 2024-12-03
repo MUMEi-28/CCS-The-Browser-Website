@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $headline = $con->real_escape_string($_POST['headline']);
     $writer = $con->real_escape_string($_POST['writer']);
     $articleContent = $con->real_escape_string($_POST['articleContent']);
-    $typeOfArticle = $con->real_escape_string($_POST['typeOfArticle']);
+    $typeOfArticle = $con->real_escape_string($_POST['artType']);
 
     // Check if a new file is uploaded
     if (!empty($_FILES['imgHeader']['name'])) {
