@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Fill In the values 
     $headline = $row['artHeadline'];
     $writer = $row['artWriter'];
-    //  $imgHeader = $row['artImgHeader'];
+    $imgHeader = $row['artImgHeader'];
     $articleContent = $row['artContent'];
     $typeOfArticle = $row['artType'];
 }
@@ -53,62 +53,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_GET["id"];
 
-
-    // THIS IS USED TO CLEAN UP THE SPECIAL CHARACTERS ON THE INPUTS
+    // Clean the input data
     $headline = $con->real_escape_string($_POST['headline']);
     $writer = $con->real_escape_string($_POST['writer']);
     $articleContent = $con->real_escape_string($_POST['articleContent']);
     $typeOfArticle = $con->real_escape_string($_POST['typeOfArticle']);
 
-    // HANDLE THE IMAGE FILE RELATED THINGS HERE
-    $imgHeader = $_FILES['imgHeader']['name'];
-    $tempName = $_FILES['imgHeader']['tmp_name'];
-    $folder = '../Images' . $imgHeader;
-    /* 
-    $query = mysqli_query($con, "INSERT INTO articles (artImgHeader)
-    VALUES ('$imgHeader')");
+    // Check if a new file is uploaded
+    if (!empty($_FILES['imgHeader']['name'])) {
+        $imgHeader = $_FILES['imgHeader']['name'];
+        $tempName = $_FILES['imgHeader']['tmp_name'];
+        $folder = '../Images/' . $imgHeader;
 
-    if (move_uploaded_file($tempName, $folder)) {
-        echo "<h2> FILE UPLOADED </h2>";
+        // Attempt to move the uploaded file
+        if (!move_uploaded_file($tempName, $folder)) {
+            die("Error uploading image.");
+        }
     } else {
-        echo "<h2> FILE NOT UPLOADED </h2>";
-    } */
+        // No new file uploaded; keep the current image
+        $sql = "SELECT artImgHeader FROM articles WHERE artID = $id";
+        $result = $con->query($sql);
+        if ($result && $row = $result->fetch_assoc()) {
+            $imgHeader = $row['artImgHeader'];
+        } else {
+            die("Error fetching current image: " . $con->error);
+        }
+    }
 
-
-
+    // Update the article
     $sql = "UPDATE articles 
-        SET artHeadline = '$headline', 
-            artWriter = '$writer', 
-            artImgHeader = '$imgHeader',
-            artContent = '$articleContent', 
-            artType = '$typeOfArticle' 
-        WHERE artID = $id";
+            SET artHeadline = '$headline', 
+                artWriter = '$writer', 
+                artImgHeader = '$imgHeader',
+                artContent = '$articleContent', 
+                artType = '$typeOfArticle' 
+            WHERE artID = $id";
 
-    // Execute the query
     $result = $con->query($sql);
 
-    // Check for errors
     if (!$result) {
         die("Error updating article: " . $con->error);
     } else {
-
-
         echo "<script>
-        alert('Article updated successfully!');
-        window.location.href ='../index.php';
+            alert('Article updated successfully!');
+            window.location.href = '../index.php';
         </script>";
-        //     header("location: home.php"); // Redirect to home or desired page
         exit;
     }
-
-
-    echo "  <script defer>
-    alert('UPDATE BUTTON CLICKED ');
-    alert('ARTICLE ID: ' + $id);
-    </script>
-            
-    ";
 }
+
 ?>
 
 
@@ -162,17 +155,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="inputContainer">
                 <label for="image-header">IMAGE HEADER:</label>
 
-                <input type="file" name="imgHeader" accept="image/png, image/jpeg">
+                <!-- File input for selecting a new image -->
+                <input type="file" name="imgHeader" id="imgHeader" accept="image/png, image/jpeg" onchange="previewImage(event)">
 
-                <!-- Display the current image -->
-                <?php if (!empty($imgHeader)): ?>
-                    <p>Current Image:</p>
-                    <img src=" ../Images/<?php echo htmlspecialchars($imgHeader); ?>" alt="Current Image" style="max-width: 200px;">
-                <?php else: ?>
-                    <p>No image available. Please upload an image.</p>
-                <?php endif; ?>
-
+                <!-- Display the current or newly selected image -->
+                <div id="imagePreview">
+                    <?php if (!empty($imgHeader)): ?>
+                        <p>Current Image:</p>
+                        <img src="../Images/<?php echo htmlspecialchars($imgHeader); ?>" alt="Current Image" style="max-width: 200px;" id="currentImage">
+                    <?php else: ?>
+                        <p>No image available. Please upload an image.</p>
+                    <?php endif; ?>
+                </div>
             </div>
+
+            <script>
+                function previewImage(event) {
+                    const input = event.target; // The file input element
+                    const previewDiv = document.getElementById('imagePreview'); // The div where the preview is displayed
+                    const file = input.files[0]; // The selected file
+
+                    if (file) {
+                        const reader = new FileReader();
+
+                        reader.onload = function(e) {
+                            // Replace the current image or message with the new image preview
+                            previewDiv.innerHTML = `
+                    <p>New Image Preview:</p>
+                    <img src="${e.target.result}" alt="New Image" style="max-width: 200px;">
+                `;
+                        };
+
+                        // Read the file as a data URL
+                        reader.readAsDataURL(file);
+                    }
+                }
+            </script>
+
 
 
             <div class="inputContainer" id="inputContainer">
@@ -183,13 +202,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="inputContainer" id="inputContainer">
                 <label for="choices">TYPE OF ARTICLE:</label>
                 <select name="typeOfArticle" id="typeOfArticle" value="<?php echo $typeOfArticle ?>">
-                <option value="null" disabled selected hidden>Choose Type of Article</option>
-                <option value="News">News</option>
-                <option value="Editorial">Editorial</option>
-                <option value="Feature">Feature</option>
-                <option value="Sports">Sports</option>
-                <option value="TSU Marilag 2024">TSU Marilag 2024</option>
-                <option value="CCS Sportsfest 2024">CCS Sportsfest 2024</option>
+                    <option value="null" disabled selected hidden>Choose Type of Article</option>
+                    <option value="News">News</option>
+                    <option value="Editorial">Editorial</option>
+                    <option value="Feature">Feature</option>
+                    <option value="Sports">Sports</option>
+                    <option value="TSU Marilag 2024">TSU Marilag 2024</option>
+                    <option value="CCS Sportsfest 2024">CCS Sportsfest 2024</option>
                 </select>
 
             </div>

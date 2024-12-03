@@ -113,17 +113,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="inputContainer" id="inputContainer">
-            <label for="choices">TYPE OF ARTICLE:</label>
-            <select name="typeOfArticle" id="typeOfArticle" required>
-                <option value="null" disabled selected hidden>Choose Type of Article</option>
-                <option value="News" <?php echo $typeOfArticle == "News" ? "selected" : ""; ?>>News</option>
-                <option value="Editorial" <?php echo $typeOfArticle == "Editorial" ? "selected" : ""; ?>>Editorial</option>
-                <option value="Feature" <?php echo $typeOfArticle == "Feature" ? "selected" : ""; ?>>Feature</option>
-                <option value="Sports" <?php echo $typeOfArticle == "Sports" ? "selected" : ""; ?>>Sports</option>
-                <option value="TSU Marilag 2024" <?php echo $typeOfArticle == "TSU Marilag 2024" ? "selected" : ""; ?>>TSU Marilag 2024</option>
-                <option value="CCS Sportsfest 2024" <?php echo $typeOfArticle == "CCS Sportsfest 2024" ? "selected" : ""; ?>>CCS Sportsfest 2024</option>
-             </select>
-        </div>
+                <label for="choices">TYPE OF ARTICLE:</label>
+                <select name="typeOfArticle" id="typeOfArticle" required>
+                    <option value="null" disabled selected hidden>Choose Type of Article</option>
+                    <option value="News" <?php echo $typeOfArticle == "News" ? "selected" : ""; ?>>News</option>
+                    <option value="Editorial" <?php echo $typeOfArticle == "Editorial" ? "selected" : ""; ?>>Editorial</option>
+                    <option value="Feature" <?php echo $typeOfArticle == "Feature" ? "selected" : ""; ?>>Feature</option>
+                    <option value="Sports" <?php echo $typeOfArticle == "Sports" ? "selected" : ""; ?>>Sports</option>
+                    <option value="TSU Marilag 2024" <?php echo $typeOfArticle == "TSU Marilag 2024" ? "selected" : ""; ?>>TSU Marilag 2024</option>
+                    <option value="CCS Sportsfest 2024" <?php echo $typeOfArticle == "CCS Sportsfest 2024" ? "selected" : ""; ?>>CCS Sportsfest 2024</option>
+                </select>
+            </div>
 
 
             <div class="submit-cancel-container">
