@@ -10,7 +10,7 @@ CREATE TABLE users(
 
 INSERT INTO users (Username, Email, Age, Password)
 VALUES
-('Andrei Salas', 'andrei.salas@example.com', 25, 'andrei123'),
+('Andrie Salas', 'andrie.salas@example.com', 25, 'andrie123'),
 ('Justice Patrick David', 'justice.david@example.com', 30, 'justice456'),
 ('Keziah Lee Dominguez', 'keziah.dominguez@example.com', 27, 'keziah789'),
 ('Marc Jhasper Petines', 'marc.petines@example.com', 22, 'marc1234'),
