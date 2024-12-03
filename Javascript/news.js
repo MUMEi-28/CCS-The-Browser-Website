@@ -1,25 +1,20 @@
 /* || GLOBAL FUNCTIONS START */
 
-function GoToHomePage()
-{
-    window.location.href = "../index.php";
+function GoToHomePage() {
+    window.location.href = "../index.php";  // Corrected relative path to go up one folder and access index.php
 }
-function OnClickPostNews()
-{
-    window.location.href = "../PHP/create-article.php";
+
+function OnClickPostNews() {
+    window.location.href = "../PHP/create-article.php";  // Corrected relative path
 }
-function GoToEditArticle()
-{
+
+function GoToEditArticle() {
     const urlParams = new URLSearchParams(window.location.search);
     const articleId = urlParams.get('id');
 
-    if (articleId)
-    {
-        // Redirect to articlePage.php with the article ID as a query parameter
-        window.location.href = `edit-article.php?id=${articleId}`;
-    }
-    else
-    {
+    if (articleId) {
+        window.location.href = `../PHP/edit-article.php?id=${articleId}`;  // Corrected relative path
+    } else {
         console.log("ITS NOT WORKING");
     }
 
@@ -29,143 +24,102 @@ function GoToEditArticle()
 /* || GLOBAL FUNCTIONS END */
 
 /* || HEADER START */
-function HeaderFunctions()
-{
+function HeaderFunctions() {
 
-    function LogoClickBackToHome()
-    {
+    function LogoClickBackToHome() {
         const imageLogo = document.querySelector(".header-logo");
-
         imageLogo.addEventListener("click", GoToHomePage);
-
     }
 
-    function GoToCreateArticlePage()
-    {
+    function GoToCreateArticlePage() {
         const postButton = document.querySelector(".PostNews-button");
 
-        if (postButton != null)
-        {
-            postButton.addEventListener("click", OnClickPostNews)
-
+        if (postButton != null) {
+            postButton.addEventListener("click", OnClickPostNews);
         }
     }
 
-    function OnClickLogOut()
-    {
+    function OnClickLogOut() {
         const logOutButton = document.querySelector(".LogOut-button");
 
-        if (logOutButton != null)
-        {
+        if (logOutButton != null) {
             logOutButton.addEventListener("click", logOut);
         }
 
-        function logOut()
-        {
-
+        function logOut() {
             alert("LOGGING OUT");
-            window.location.href = "index.php";
+            window.location.href = "../index.php";  // Corrected relative path
         }
     }
 
     OnClickLogOut();
-
     GoToCreateArticlePage();
-
     LogoClickBackToHome();
 }
 HeaderFunctions();
 /* || HEADER END */
 
-
 /* || HOME PAGE START */
-function HomePageContainerButtons()
-{
+function HomePageContainerButtons() {
     const container = document.getElementsByClassName("container");
 
-    // DITO YUNG MGA CLICKABLE CONTAINER SA HOMEPAGE
-
-    for (i = 0; i < container.length; i++)
-    {
+    for (i = 0; i < container.length; i++) {
         container[i].addEventListener("click", GoToArticlePage);
     }
 
-    function GoToArticlePage()
-    {
+    function GoToArticlePage() {
         console.log("CONTAINER CLICKED");
 
         const articleId = this.getAttribute("data-id");
-        if (articleId != null)
-        {
-            // Redirect to articlePage.php with the article ID as a query parameter
-            window.location.href = `PHP/articlePage.php?id=${articleId}`;
+        if (articleId != null) {
+            window.location.href = `../PHP/articlePage.php?id=${articleId}`;  // Corrected relative path
+        } else {
+            console.log("WALANG ID YUNG SITE");
         }
-        else
-        {
-            console.log("WALANG ID YUNG SITE")
-        }
-
     }
 }
 
 HomePageContainerButtons();
-
 /* || HOME PAGE END */
 
 /* || ARTICLE PAGE START */
 
-function ArticlePageFunctions()
-{
-    function GoHomePageOnCancel()
-    {
-        const cancelButton = document.querySelector("#cancel")
+function ArticlePageFunctions() {
+    function GoHomePageOnCancel() {
+        const cancelButton = document.querySelector("#cancel");
 
-        if (cancelButton != null)
-        {
+        if (cancelButton != null) {
             cancelButton.addEventListener("click", GoToHomePage);
         }
     }
     GoHomePageOnCancel();
 
-    function OnClickEditArticle()
-    {
+    function OnClickEditArticle() {
         const editArticleButton = document.querySelector(".edit-button");
 
-        if (editArticleButton != null)
-        {
-
+        if (editArticleButton != null) {
             editArticleButton.addEventListener("click", GoToEditArticle);
         }
     }
 
     OnClickEditArticle();
 
-
-    function OnClickUpdateArticle()
-    {
+    function OnClickUpdateArticle() {
         const updateArticleButton = document.querySelector(".update-Button");
 
-        if (updateArticleButton != null)
-        {
-            updateArticleButton.addEventListener("click", UpdateAritcle);
+        if (updateArticleButton != null) {
+            updateArticleButton.addEventListener("click", UpdateArticle);
         }
 
-        function UpdateAritcle()
-        {
+        function UpdateArticle() {
             const urlParams = new URLSearchParams(window.location.search);
             const articleId = urlParams.get('id');
 
-
-            if (articleId)
-            {
-                // Redirect to articlePage.php with the article ID as a query parameter
-                window.location.href = `edit-article.php?id=${articleId}`;
-            }
-            else
-            {
+            if (articleId) {
+                window.location.href = `../PHP/edit-article.php?id=${articleId}`;  // Corrected relative path
+            } else {
                 console.log("ITS NOT WORKING");
             }
-
         }
     }
 
@@ -174,5 +128,3 @@ function ArticlePageFunctions()
 
 ArticlePageFunctions();
 /* || ARTICLE PAGE END */
-
-
