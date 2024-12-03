@@ -3,7 +3,7 @@
 include("../LogInRegister/php/config.php");
 
 // Get the database || USED TO MAKE SURE WHICH ARTICLE ID THE SITE WILL GO TO
-$sql = "SELECT * FROM articles WHERE artType='Sportsfest'";
+$sql = "SELECT * FROM articles WHERE artType='CCS Sportsfest 2024'";
 $result = $con->query($sql);
 
 $row = "";
