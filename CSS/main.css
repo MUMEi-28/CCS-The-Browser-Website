@@ -732,6 +732,7 @@ footer .socials
 {
     font-weight: 600;
     padding: 10px;
+    font-family: Helvetica;
 }
 
 footer .socials .icons
@@ -803,6 +804,7 @@ footer .copyright
 {
     color: white;
     padding: 0 0 0 1.5em;
+    font-family: Helvetica;
 }
 
 /* || FOOTER END */
@@ -893,11 +895,14 @@ footer .copyright
     /* || NAVIGATION END */
 }
 .container.three {
-    flex: 0 0 50%; 
+    flex: 0 0 50    %; 
     border-right: 2px solid #ccc; 
     padding-right: 20px; 
     display: flex;
     flex-direction: column; 
+    text-align: left;
+    font-family: Coolvetica;
+    font-size: 1.5rem;
 }
 
 .container.four {
@@ -906,6 +911,9 @@ footer .copyright
     display: flex;
     flex-direction: column; 
     justify-content: flex-start; 
+    text-align: left;
+    font-family: Coolvetica;
+    font-size: 1.5rem;
 }
 
 .container.three img,
