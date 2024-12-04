@@ -15,9 +15,11 @@ if (isset($articles) && is_array($articles) && isset($articles[0])): ?>
             </section>
         </div>
         <!-- Display the image -->
-        <img src="Images/<?php echo htmlspecialchars($articles[0]['artImgHeader']); ?>" alt="UPLOADED IMAGE">
+        <img src="../Images/<?php echo htmlspecialchars($articles[0]['artImgHeader']); ?>" alt="UPLOADED IMAGE">
     </section>
 <?php else: ?>
-    <p>No articles available.</p>
+    <div class="errEmpty">
+        <h2>No articles available.</h2>
+    </div>
     <link rel="stylesheet" href="containerone.css">
 <?php endif; ?>

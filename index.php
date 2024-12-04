@@ -143,12 +143,11 @@ $editorial = array_reverse($editorial);
                         data-id="<?php echo htmlspecialchars($news[0]['artID']); ?>">
                         <div class="news-item">
                             <section class="headline">
-
-                                
-
+                                <?php echo htmlspecialchars(substr($news[0]['artHeadline'], 0, 150)) . '...'; ?>
                             </section>
                             <section class="main-news">
                                 <p>
+                                    <i><?php echo htmlspecialchars(substr($news[1]['artDate'], 0, 150)); ?> <br><br></i>
                                     <?php echo htmlspecialchars(substr($news[0]['artContent'], 0, 150)) . '...'; ?>
                                 </p>
                             </section>
@@ -167,11 +166,12 @@ $editorial = array_reverse($editorial);
                         <div class="news-item">
                             <section class="headline">
 
-                                <h2><?php echo htmlspecialchars(substr($news[1]['artHeadline'], 0, 20)) . '...'; ?></h2>
+                                <h2><?php echo htmlspecialchars(substr($news[1]['artHeadline'], 0, 100)); ?></h2>
 
                             </section>
                             <section class="main-news">
                                 <p>
+                                    <i><?php echo htmlspecialchars(substr($news[1]['artDate'], 0, 150)); ?> <br><br></i>
                                     <?php echo htmlspecialchars(substr($news[1]['artContent'], 0, 150)) . '...'; ?>
                                 </p>
                             </section>

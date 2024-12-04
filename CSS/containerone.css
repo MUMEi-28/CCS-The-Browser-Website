@@ -1,3 +1,18 @@
+/* || FONTS*/
+
+@font-face
+{
+    font-family: Helvetica;
+    src: url(../Assets/fonts/Helvetica.ttf);
+}
+
+@font-face
+{
+    font-family: Coolvetica;
+    src: url(../Assets/fonts/coolvetica-rg.otf);
+}
+
+
 /* Apply padding to the headline */
 .headline h2 {
     padding: 10px 20px;  /* 10px top/bottom, 20px left/right */
@@ -16,4 +31,8 @@
 /* Apply padding to the image (if needed) */
 .news-item img {
     padding: 5px;  /* Add padding around the image */
+}
+
+.errEmpty {
+    font-family: Coolvetica;
 }

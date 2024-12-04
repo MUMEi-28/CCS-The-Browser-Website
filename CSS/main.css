@@ -193,7 +193,7 @@ header .user-Account
 {
     position: absolute;
     font-size: 1.5rem;
-    color: green;
+    color: white;
 
     display: none;
 }
@@ -802,15 +802,34 @@ footer .about a
 footer .copyright
 {
     color: white;
-    padding: 0 0 0 1.5rem;
+    padding: 0 0 0 1.5em;
 }
 
 /* || FOOTER END */
+
+/* || EMPTY ARTICLE START*/
+
+.errEmpty {
+    font-family: Coolvetica;
+    font-size: x-large;
+    padding: 20%;
+}
+
+/* || EMPTY ARTICLE END*/
 
 /* || MOBILE SCREEN SIZE */
 @media screen and (max-width: 810px)
 {
 
+    /* || HEADER START */
+    header .header-logo
+    {
+        width: 45%;
+
+        cursor: pointer;
+    }
+    /* || HEADER END */
+    
     .news,
         .container.one, .other-main-news, .card-container,.other-news {
             display: flex;
@@ -872,5 +891,4 @@ footer .copyright
     }
 
     /* || NAVIGATION END */
-
 }
