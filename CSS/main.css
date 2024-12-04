@@ -669,6 +669,7 @@ main .privacypolicy p
 .createArticle
 {
     padding: 10px 0;
+    font-family: Coolvetica;
 }
 
 .createArticle h1
@@ -677,13 +678,13 @@ main .privacypolicy p
     font-weight: bolder;
 }
 
-
 .createArticle .inputContainer
 {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px 0;
+    font-family: Helvetica;
 }
 
 .createArticle .inputContainer label
