@@ -212,7 +212,7 @@ $editorial = array_reverse($editorial);
         </section>
 
         <div class="other-news">
-            <div class="container two">
+            <div class="container three">
                 <h2>SPORTS</h2>
                 <div class="sports news">
                     <?php
@@ -223,7 +223,7 @@ $editorial = array_reverse($editorial);
                 </div>
             </div>
 
-            <div class="container two">
+            <div class="container four">
                 <h2>FEATURE</h2>
                 <div class="feature news">
                     <?php
