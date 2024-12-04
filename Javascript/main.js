@@ -58,9 +58,8 @@ function HeaderFunctions()
 
         if (logOutButton != null)
         {
-            logOutButton.forEach(postButton =>
+            logOutButton.forEach(logOutButton =>
             {
-
                 logOutButton.addEventListener("click", OnClickLogOut);
             });
         }
