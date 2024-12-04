@@ -78,7 +78,7 @@ header .header-logo
     cursor: pointer;
 }
 
-.PostNews-button
+.PostNews-button.PC
 {
     position: absolute;
     top: 15px;
@@ -92,7 +92,7 @@ header .header-logo
     font-size: 0.9em;
 }
 
-.LogOut-button
+.LogOut-button.PC
 {
     position: absolute;
     top: 50px;
@@ -105,6 +105,14 @@ header .header-logo
     padding: 8px 16px;
     cursor: pointer;
     font-size: 0.9em;
+}
+
+/* always hide the buttons on nav be default */
+.PostNews-button.mobile,
+.LogOut-button.mobile,
+.mobile-only
+{
+    display: none;
 }
 
 header nav
@@ -188,6 +196,23 @@ header .user-Account
 }
 
 /* SIDEBAR */
+
+.PostNews-button.mobile,
+.LogOut-button.mobile
+{
+
+    display: flex;
+
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+
+    padding: 8px 16px;
+    margin: 0 10px;
+}
+
 .open-menu,
 .close-menu
 {
@@ -736,7 +761,6 @@ footer .socials
 {
     font-weight: 600;
     padding: 10px;
-    font-family: Helvetica;
 }
 
 footer .socials .icons
@@ -808,7 +832,6 @@ footer .copyright
 {
     color: white;
     padding: 0 0 0 1.5em;
-    font-family: Helvetica;
 }
 
 /* || FOOTER END */
@@ -824,9 +847,64 @@ footer .copyright
 
 /* || EMPTY ARTICLE END*/
 
+
+
+.container.three
+{
+    flex: 0 0 50%;
+    border-right: 2px solid #ccc;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container.four
+{
+    flex: 0 0 50%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.container.three img,
+.container.four img
+{
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
 /* || MOBILE SCREEN SIZE */
 @media screen and (max-width: 810px)
 {
+
+    .PostNews-button.mobile,
+    .LogOut-button.mobile
+    {
+
+        display: flex;
+
+        background-color: #8B0000;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 0.9em;
+
+        padding: 8px 16px;
+        margin: 0 10px;
+    }
+
+
+    .PostNews-button.PC,
+    .LogOut-button.PC
+    {
+        display: none;
+    }
 
     /* || HEADER START */
     header .header-logo
@@ -857,12 +935,12 @@ footer .copyright
     }
 
     /* || NAVIGATION START */
+
     header .navBar .menu
     {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-
 
         text-align: center;
         font-size: 1.2rem;
@@ -905,70 +983,24 @@ footer .copyright
 
     /* || NAVIGATION END */
 }
-.container.three {
-    flex: 0 0 50    %; 
-    border-right: 2px solid #ccc; 
-    padding-right: 20px; 
-    display: flex;
-    flex-direction: column; 
-    text-align: left;
-    font-family: Coolvetica;
-    font-size: 1.5rem;
-}
 
-.container.four
-{
-    flex: 0 0 50%;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column; 
-    justify-content: flex-start; 
-    text-align: left;
-    font-family: Coolvetica;
-    font-size: 1.5rem;
-}
-
-.container.three img,
-.container.four img
-{
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* 
-@media (max-width: 768px)
-{
-    .news
-    {
-        flex-direction: column;
-    }
-
-    .container.three,
-    .container.four
-    {
-        flex: 1;
-        max-width: 100%;
-    }
-
-    .container.three img,
-    .container.four img
-    {
-        max-height: 150px;
-    }
-
-    .container.two
-    {
-        border-right: none;
-        border-bottom: 2px solid #ccc;
-    }
-} */
-
-
+/* || TABLET SCREEN SIZE */
 @media screen and (max-width: 1141px)
 {
+
+    .PostNews-button.mobile,
+    .LogOut-button.mobile,
+    .mobile-only
+    {
+        display: flex;
+
+    }
+
+    .PostNews-button.PC,
+    .LogOut-button.PC
+    {
+        display: none;
+    }
 
     /* || HEADER START */
     header .header-logo

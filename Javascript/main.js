@@ -44,14 +44,14 @@ function HeaderFunctions()
 
     function GoToCreateArticlePage()
     {
-        const postButton = document.querySelector(".PostNews-button");
+        const postButtons = document.querySelectorAll(".PostNews-button");
 
-        if (postButton != null)
+        postButtons.forEach(postButton =>
         {
-            postButton.addEventListener("click", OnClickPostNews)
-
-        }
+            postButton.addEventListener("click", OnClickPostNews);
+        });
     }
+
 
     GoToCreateArticlePage();
 
