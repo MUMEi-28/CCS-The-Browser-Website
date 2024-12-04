@@ -42,29 +42,28 @@ function HeaderFunctions()
 
     function GoToCreateArticlePage()
     {
-        const postButton = document.querySelector(".PostNews-button");
+        const postButtons = document.querySelectorAll(".PostNews-button");
 
-        if (postButton != null)
+        if (postButtons != null)
         {
-            postButton.addEventListener("click", OnClickPostNews)
 
+            postButtons.forEach(postButton =>
+            {
+                postButton.addEventListener("click", OnClickPostNews);
+            });
         }
     }
 
     function OnClickLogOut()
     {
-        const logOutButton = document.querySelector(".LogOut-button");
+        const logOutButton = document.querySelectorAll(".LogOut-button");
 
         if (logOutButton != null)
         {
-            logOutButton.addEventListener("click", logOut);
-        }
-
-        function logOut()
-        {
-
-            alert("LOGGING OUT");
-            window.location.href = "index.php";
+            logOutButton.forEach(logOutButton =>
+            {
+                logOutButton.addEventListener("click", OnClickLogOut);
+            });
         }
     }
 
@@ -107,6 +106,52 @@ function HomePageContainerButtons()
 
     }
 }
+
+function OnClickSportFest()
+{
+    const sportFestCard = document.querySelector(".sportFest");
+
+    if (sportFestCard != null)
+    {
+        sportFestCard.addEventListener("click", SportFestOnClick);
+    }
+    else
+    {
+        console.log("NO SPORT FEST BUTTON");
+    }
+
+
+    function SportFestOnClick()
+    {
+        window.location.href = "PHP/CCS Sportsfest 2024.php";
+    }
+
+}
+
+
+function OnClickMarilag()
+{
+    const marilagCard = document.querySelector(".marilag");
+
+    if (marilagCard != null)
+    {
+        marilagCard.addEventListener("click", marilagOnClick);
+    }
+    else
+    {
+        console.log("NO marilag BUTTON");
+    }
+
+
+    function marilagOnClick()
+    {
+        window.location.href = "PHP/TSU Marilag 2024.php";
+    }
+
+}
+
+OnClickMarilag();
+OnClickSportFest();
 
 HomePageContainerButtons();
 

@@ -52,7 +52,21 @@ function HeaderFunctions()
         });
     }
 
+    function OnClickLogOut()
+    {
+        const logOutButton = document.querySelectorAll(".LogOut-button");
 
+        if (logOutButton != null)
+        {
+            logOutButton.forEach(postButton =>
+            {
+
+                logOutButton.addEventListener("click", OnClickLogOut);
+            });
+        }
+    }
+
+    OnClickLogOut();
     GoToCreateArticlePage();
 
     LogoClickBackToHome();

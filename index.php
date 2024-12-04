@@ -213,11 +213,11 @@ $editorial = array_reverse($editorial);
         </div>
         <hr>
         <section class="card-container">
-            <div class="card" id="pop-out" data-id="2">
+            <div class="card sportFest" id="pop-out" data-id="2">
                 <h2>CCS SPORTSFEST 2024</h2>
             </div>
 
-            <div class="card" id="pop-out" data-id="2">
+            <div class="card marilag" id="pop-out" data-id="2">
                 <h2>TSU MARILAG 2024</h2>
             </div>
         </section>
