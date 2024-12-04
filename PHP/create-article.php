@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <link rel="stylesheet" href="../CSS/main.css">
 
-    <script src="../createArticle.js" defer></script>
+    <script src="../Javascript/createArticle.js" defer></script>
 </head>
 
 <body>

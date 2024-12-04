@@ -15,7 +15,7 @@ function GoToEditArticle()
     const urlParams = new URLSearchParams(window.location.search);
     const articleId = urlParams.get('id');
 
-    if (articleId)
+    if (articleId != null)
     {
         // Redirect to articlePage.php with the article ID as a query parameter
         window.location.href = `edit-article.php?id=${articleId}`;
@@ -40,19 +40,35 @@ function HeaderFunctions()
 
         imageLogo.addEventListener("click", GoToHomePage);
 
+
+        console.log("homeeee");
+
     }
 
     function GoToCreateArticlePage()
     {
-        const postButton = document.querySelector(".PostNews-button");
+        const postButtons = document.querySelectorAll(".PostNews-button");
 
-        if (postButton != null)
+        postButtons.forEach(postButton =>
         {
-            postButton.addEventListener("click", OnClickPostNews)
+            postButton.addEventListener("click", OnClickPostNews);
+        });
+    }
 
+    function OnClickLogOut()
+    {
+        const logOutButton = document.querySelectorAll(".LogOut-button");
+
+        if (logOutButton != null)
+        {
+            logOutButton.forEach(logOutButton =>
+            {
+                logOutButton.addEventListener("click", OnClickLogOut);
+            });
         }
     }
 
+    OnClickLogOut();
     GoToCreateArticlePage();
 
     LogoClickBackToHome();
