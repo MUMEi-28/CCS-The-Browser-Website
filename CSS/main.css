@@ -784,7 +784,7 @@ main .privacypolicy p
 footer
 {
     background-image: var(--gradientBg);
-    height: 100vh;
+    height: 50rem;
 }
 
 footer .socials
