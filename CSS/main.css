@@ -396,6 +396,8 @@ main .main-header
     gap: 1rem;
     align-items: flex-start;
     flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 -0.5rem;
 }
 
 .editorial.item img
@@ -408,10 +410,44 @@ main .main-header
 
 .editorial.item>div
 {
-    flex: 1;
+    flex: 1 1 calc(50% - 1rem);
     min-width: 0;
-    padding: 0 1rem;
+    padding: 0.5rem;
 }
+
+.editorial.item img
+{
+    width: 100%; 
+    height: auto; 
+    max-height: 150px; 
+    object-fit: cover; 
+}
+
+.editorial.news
+{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1rem; 
+}
+
+.editorial.news .container.two
+{
+    flex: 1 1 calc(50% - 1rem); 
+    max-width: calc(50% - 1rem); 
+    box-sizing: border-box; 
+}
+
+
+.editorial.item img
+{
+    width: 100%; 
+    height: auto; 
+    max-height: 150px; 
+    object-fit: cover; 
+}
+
+
+
 
 /* || CARD */
 
@@ -847,8 +883,6 @@ footer .copyright
 
 /* || EMPTY ARTICLE END*/
 
-
-
 .container.three
 {
     flex: 0 0 50%;
@@ -931,6 +965,15 @@ footer .copyright
         height: auto;
         object-fit: cover;
         aspect-ratio: 16/9;
+    }
+
+    .editorial.news {
+        flex-direction: column; 
+    }
+
+    .editorial.news .container.two {
+        flex: 1 1 100%; 
+        max-width: 100%; 
     }
 
     /* || NAVIGATION START */
