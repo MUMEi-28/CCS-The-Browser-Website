@@ -70,10 +70,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     <main>
         <?php if (!empty($errorMessage)): ?>
-            <div class="error-message" style="color: red; font-weight: bold;">
+            <div class="error-message" style="font-size: 2.5rem; text-align: center; 
+                                                font-family: Coolvetica; margin-top: 100px; 
+                                                margin-bottom: 100px;">
                 <?php echo $errorMessage; ?>
             </div>
-        <?php endif; ?>
+        <?php else: ?>
         <div class="article-header">
             <div class="top-section">
                 <div class="category"><?php echo "$typeOfArticle" ?></div>
@@ -113,6 +115,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             </p>
         </article>
 
+        <?php endif; ?>
+
         <section class="more-articles">
             <div id="more-articles">
                 <hr>
@@ -138,6 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 </div>
             </a>
         </section>
+        
     </main>
 
     <?php include("footer.php") ?>
