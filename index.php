@@ -82,7 +82,7 @@ $editorial = array_reverse($editorial);
         <?php
         if (isset($_SESSION['id'])) {
 
-            echo "<a href='LogInRegister/PHP/logout.php' >
+            echo "<a href='LogInRegister/php/logout.php' >
 
             <button class='LogOut-button PC'>Log Out</button>
 
@@ -126,7 +126,7 @@ $editorial = array_reverse($editorial);
                         <?php if (isset($_SESSION['id'])): ?>
                             <li class="mobile-only">
                                 <span class="nowrap">
-                                    <a href="LogInRegister/PHP/logout.php">
+                                    <a href="LogInRegister/php/logout.php">
                                         <button class="LogOut-button mobile">Log Out</button>
                                     </a>
                                 </span>
