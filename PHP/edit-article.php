@@ -53,6 +53,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_GET["id"];
 
+    // Delete the current article
+    if (isset($_POST["delete"])) {
+        $id = $_GET["id"];
+        $sql = "DELETE FROM articles WHERE artID = $id";
+        $result = $con->query($sql);
+
+        if (!$result) {
+            die("Error deleting article: " . $con->error);
+        } else {
+            echo "<script>
+                alert('Article deleted successfully!');
+                window.location.href = '../index.php';
+            </script>";
+            exit;
+        }
+    }
+
     // Clean the input data
     $headline = $con->real_escape_string($_POST['headline']);
     $writer = $con->real_escape_string($_POST['writer']);
@@ -94,6 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    
     // Update the article
     $sql = "UPDATE articles 
             SET artHeadline = '$headline', 
@@ -230,9 +248,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="submit-cancel-container">
                 <input type="submit" value="UPDATE" name="update" class="update-Button">
+                <input type="submit" value="DELETE" name="delete" class="delete-Button" onclick="return confirm('Are you sure you want to delete this article?');">
                 <input type="button" value="CANCEL" id="cancel">
             </div>
-
 
             <!--     <?php
 
