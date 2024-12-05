@@ -60,12 +60,17 @@ function HeaderFunctions()
         {
             logOutButton.forEach(logOutButton =>
             {
-                logOutButton.addEventListener("click", OnClickLogOut);
+                logOutButton.addEventListener("click", logOut);
             });
         }
     }
+    function logOut()
+    {
+        window.location.href = "../LogInRegister/php/logout.php"
+    }
 
     OnClickLogOut();
+
     GoToCreateArticlePage();
 
     LogoClickBackToHome();
