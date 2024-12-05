@@ -51,26 +51,26 @@
                 <li><a href="../PHP/Editorial.php">Editorial</a></li>
                 <li><a href="../PHP/Feature.php">Feature</a></li>
                 <li><a href="../PHP/Sports.php">Sports</a></li>
-                <li><a href="../PHP/TSU Marilag 2024.php"><span class="nowrap">TSU Marilag 2024</span></a></li>
-                <li><a href="../PHP/CCS Sportsfest 2024.php"><span class="nowrap">CCS Sportsfest 2024</span></a></li>
-            
-                
+                <li><a href="../PHP/TSU Marilag 2024.php"><span class="nowrsap">TSU Marilag 2024</span></a></li>
+                <li><a href="../PHP/CCS Sportsfest 2024.php"><span class="noswrap">CCS Sportsfest 2024</span></a></li>
+
+
                 <label for="check" class="close-menu">
                     <i class="fas fa-times"></i>
                 </label>
 
                 <div class="button-container">
-                        <?php if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
-                            <li class="mobile-only">
-                                <button class="PostNews-button mobile">Post News</button>
-                            </li>
-                        <?php endif; ?>
+                    <?php if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
+                        <li class="mobile-only">
+                            <button class="PostNews-button mobile">Post News</button>
+                        </li>
+                    <?php endif; ?>
 
-                        <?php if (isset($_SESSION['id'])): ?>
-                            <li class="mobile-only">
-                               <a href="LogInRegister/PHP/logout.php">
-                                  <button class="LogOut-button mobile">Log Out</button>
-                             </a>
+                    <?php if (isset($_SESSION['id'])): ?>
+                        <li class="mobile-only">
+                            <a href="../LogInRegister/PHP/logout.php">
+                                <button class="LogOut-button mobile">Log Out</button>
+                            </a>
                         </li>
                     <?php endif; ?>
                 </div>

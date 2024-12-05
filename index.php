@@ -98,43 +98,43 @@ $editorial = array_reverse($editorial);
                 <input type="checkbox" id="check">
 
                 <span class="menu">
-                <?php
-                $logoPath = "../Assets/LOGO-AY-24-25/4-Black-logo-TB-wo-text.png";
+                    <?php
+                    $logoPath = "../Assets/LOGO-AY-24-25/4-Black-logo-TB-wo-text.png";
 
-                if (file_exists($logoPath) && !is_dir($logoPath)) {
-                    echo '<img src="' . htmlspecialchars($logoPath) . '" alt="Banner" class="navBar-logo">';
-                } else {
-                    echo '<img src="' . htmlspecialchars("Assets/LOGO-AY-24-25/4-Black-logo-TB-wo-text.png") . '" alt="Banner" class="navBar-logo">';
-                }
-                ?>
+                    if (file_exists($logoPath) && !is_dir($logoPath)) {
+                        echo '<img src="' . htmlspecialchars($logoPath) . '" alt="Banner" class="navBar-logo">';
+                    } else {
+                        echo '<img src="' . htmlspecialchars("Assets/LOGO-AY-24-25/4-Black-logo-TB-wo-text.png") . '" alt="Banner" class="navBar-logo">';
+                    }
+                    ?>
                     <li><a href="PHP/News.php">News</a></li>
                     <li><a href="PHP/Editorial.php">Editorial</a></li>
                     <li><a href="PHP/Feature.php">Feature</a></li>
                     <li><a href="PHP/Sports.php">Sports</a></li>
-                    <li><a href="PHP/TSU Marilag 2024.php"><span class="nowrap">TSU Marilag 2024</span></a></li>
-                    <li><a href="PHP/CCS Sportsfest 2024.php"><span class="nowrap">CCS Sportsfest 2024</span></a></li>
+                    <li><a href="PHP/TSU Marilag 2024.php"><span class="noswrap">TSU Marilag 2024</span></a></li>
+                    <li><a href="PHP/CCS Sportsfest 2024.php"><span class="noswrap">CCS Sportsfest 2024</span></a></li>
 
                     <div class="button-container">
-                    <?php if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
-                        <li class="mobile-only">
-                            <button class="PostNews-button mobile">Post News</button>
-                        </li>
-                    <?php endif; ?>
+                        <?php if (isset($_SESSION['id']) && in_array($_SESSION['id'], [1, 2, 3, 4, 5])): ?>
+                            <li class="mobile-only">
+                                <button class="PostNews-button mobile">Post News</button>
+                            </li>
+                        <?php endif; ?>
 
-                    <?php if (isset($_SESSION['id'])): ?>
-                        <li class="mobile-only">
-                            <a href="LogInRegister/PHP/logout.php">
-                                <button class="LogOut-button mobile">Log Out</button>
-                            </a>
-                        </li>
-                    <?php endif; ?>
-                </div>
+                        <?php if (isset($_SESSION['id'])): ?>
+                            <li class="mobile-only">
+                                <a href="LogInRegister/PHP/logout.php">
+                                    <button class="LogOut-button mobile">Log Out</button>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                    </div>
 
                     <label for="check" class="close-menu">
                         <i class="fas fa-times"></i>
                     </label>
                 </span>
-         
+
                 <label for="check" class="open-menu">
                     <i class="fas fa-bars"></i>
                 </label>
