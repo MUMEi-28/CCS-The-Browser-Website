@@ -3,6 +3,7 @@
 // Connect to the database
 include("../LogInRegister/php/config.php");
 
+
 // GET method: Shows the data of the client
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
@@ -41,7 +42,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         }
 }
 
+// Get the database || USED TO MAKE SURE WHICH ARTICLE ID THE SITE WILL GO TO
+$sqlnews = "SELECT * FROM articles WHERE artType='News'";
+$resultn = $con->query($sqlnews);
 
+$sqledit = "SELECT * FROM articles WHERE artType='Editorial'";
+$resulte = $con->query($sqledit);
+
+$sqlfeat = "SELECT * FROM articles WHERE artType='Feature'";
+$resultf = $con->query($sqlfeat);
+
+$sqlspor = "SELECT * FROM articles WHERE artType='Sports'";
+$results = $con->query($sqlspor);
+
+
+/* $row = $result->fetch_assoc();
+ */
+
+$row = "";
+$news = [];
+$editorial = [];
+$feature = [];
+$sports = [];
+
+// Fetch all articles into the array
+while ($row = $resultn->fetch_assoc()) {
+    $news[] = $row;
+}
+$news = array_reverse($news);
+
+while ($row = $resultf->fetch_assoc()) {
+    $feature[] = $row;
+}
+$feature = array_reverse($feature);
+
+while ($row = $results->fetch_assoc()) {
+    $sports[] = $row;
+}
+$sports = array_reverse($sports);
+
+while ($row = $resulte->fetch_assoc()) {
+    $editorial[] = $row;
+}
+$editorial = array_reverse($editorial);
 ?>
 
 
@@ -121,24 +164,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <div id="more-articles">
                 <hr>
                 <h3>More articles below:</h3>
-                <hr>
+                <hr style="margin-bottom: 20px;">
             </div>
             <a href="" class="article-preview">
-                <img src="../Assets/testIMG-Landscape.jpg" alt="Preview Image">
+                <img src="../Images/<?php echo $news[0]['artImgHeader'] ?>" alt="UPLOADED IMAGE">
                 <div>
-                    <h4>Lorem Ipsum Dolor Very Very Very Long Headline</h4>
-                    <p>Praesent eros velit, tincidunt id elit a, consequat sollicitudin libero.
-                        Sed quis enim scelerisque, tempus libero et, fermentum urna. Nunc et quam ut lorem laoreet
-                        mollis.</p>
+                    <h4><?php echo htmlspecialchars(substr($news[0]['artHeadline'], 0, 150)) . '...'; ?></h4>
+                    <p><?php echo htmlspecialchars(substr($news[0]['artContent'], 0, 150)) . '...'; ?></p>
                 </div>
             </a>
             <a href="" class="article-preview">
-                <img src="../Assets/testIMG-Landscape.jpg" alt="Preview Image">
+            <img src="../Images/<?php echo $news[1]['artImgHeader'] ?>" alt="UPLOADED IMAGE">
                 <div>
-                    <h4>Lorem Ipsum Dolor Very Very Very Long Headline</h4>
-                    <p>Praesent eros velit, tincidunt id elit a, consequat sollicitudin libero.
-                        Sed quis enim scelerisque, tempus libero et, fermentum urna. Nunc et quam ut lorem laoreet
-                        mollis.</p>
+                    <h4><?php echo htmlspecialchars(substr($news[1]['artHeadline'], 0, 150)) . '...'; ?></h4>
+                    <p><?php echo htmlspecialchars(substr($news[1]['artContent'], 0, 150)) . '...'; ?></p>
                 </div>
             </a>
         </section>
