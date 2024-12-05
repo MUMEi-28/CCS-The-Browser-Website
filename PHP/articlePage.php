@@ -18,20 +18,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Get the database
     $sql = "SELECT * FROM articles WHERE artId = $id";
     $result = $con->query($sql);
-    $row = $result->fetch_assoc();
+    
+    // Check if the article exists
+    if ($result && $result->num_rows > 0) {
+        $row = $result->fetch_assoc();
 
-    /*  if (!$row) {
-        header("location: index.php");
-        exit;
-    } */
+        /*  if (!$row) {
+            header("location: index.php");
+            exit;
+        } */
 
-    // Reference all the variables
-    $headline = $row["artHeadline"];
-    $writer = $row["artWriter"];
-    // $imgHeader = $row[""];
-    $articleContent = $row["artContent"];
-    $typeOfArticle = $row["artType"];
-    $date = $row["artDate"];
+        // Reference all the variables
+        $headline = $row["artHeadline"];
+        $writer = $row["artWriter"];
+        // $imgHeader = $row[""];
+        $articleContent = $row["artContent"];
+        $typeOfArticle = $row["artType"];
+        $date = $row["artDate"];
+        } else {
+        // Article not found, set an error message
+        $errorMessage = "Oh no! It seems like your page you're trying to access does not exist :<";
+        }
 }
 
 
@@ -62,6 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <?php include("header.php") ?>
 
     <main>
+        <?php if (!empty($errorMessage)): ?>
+            <div class="error-message" style="color: red; font-weight: bold;">
+                <?php echo $errorMessage; ?>
+            </div>
+        <?php endif; ?>
         <div class="article-header">
             <div class="top-section">
                 <div class="category"><?php echo "$typeOfArticle" ?></div>
