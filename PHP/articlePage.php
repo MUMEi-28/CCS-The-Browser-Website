@@ -167,14 +167,14 @@ $editorial = array_reverse($editorial);
                 <hr style="margin-bottom: 20px;">
             </div>
             <a href="" class="article-preview">
-                <img src="../Images/<?php echo $news[0]['artImgHeader'] ?>" alt="UPLOADED IMAGE">
+                <img class="yummy" src="../Images/<?php echo $news[0]['artImgHeader'] ?>" alt="UPLOADED IMAGE">
                 <div>
                     <h4><?php echo htmlspecialchars(substr($news[0]['artHeadline'], 0, 150)) . '...'; ?></h4>
                     <p><?php echo htmlspecialchars(substr($news[0]['artContent'], 0, 150)) . '...'; ?></p>
                 </div>
             </a>
             <a href="" class="article-preview">
-            <img src="../Images/<?php echo $news[1]['artImgHeader'] ?>" alt="UPLOADED IMAGE">
+            <img class="yummy" src="../Images/<?php echo $news[1]['artImgHeader'] ?>" alt="UPLOADED IMAGE">
                 <div>
                     <h4><?php echo htmlspecialchars(substr($news[1]['artHeadline'], 0, 150)) . '...'; ?></h4>
                     <p><?php echo htmlspecialchars(substr($news[1]['artContent'], 0, 150)) . '...'; ?></p>

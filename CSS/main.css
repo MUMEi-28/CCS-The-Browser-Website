@@ -289,6 +289,13 @@ p
     font-family: Helvetica;
 }
 
+.yummy {
+    width: auto;
+    height: 50%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
 main .main-header
 {
     font-family: Coolvetica;
