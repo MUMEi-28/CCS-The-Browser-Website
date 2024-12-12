@@ -289,7 +289,8 @@ p
     font-family: Helvetica;
 }
 
-.yummy {
+.yummy
+{
     width: auto;
     height: 50%;
     object-fit: cover;
@@ -539,6 +540,16 @@ main .main-header
     padding: 20px;
 }
 
+.viewMore
+{
+    color: #555;
+}
+
+.viewMore:hover
+{
+    color: #fc0000;
+}
+
 
 /* || HOMEPAGE END */
 
@@ -557,13 +568,14 @@ main .main-header
 
 .category
 {
-    font-size: 0.9em;
+    font-size: 1.5rem;
     color: #555;
+    font-weight: bold;
 }
 
 .headline
 {
-    font-size: 1.5em;
+    font-size: 2rem;
     font-weight: bold;
     margin: 5px 0;
 }
@@ -767,21 +779,22 @@ main .privacypolicy p
 .createArticle #inputContainer textarea
 {
     width: 100%;
-    background-color: #D9D9D9;
-    border: none;
+    background-color: #fdfdfd;
+    border: 1px solid black;
+    padding: 7px;
     border-radius: 2px;
 }
 
 .createArticle #inputContainer input
 {
-    padding: 7px 0;
+    padding: 7px;
 }
 
 .createArticle #inputContainer select
 {
     display: flex;
     gap: 5px;
-    padding: 10px 0;
+    padding: 7px;
     background-color: #D9D9D9;
 }
 
