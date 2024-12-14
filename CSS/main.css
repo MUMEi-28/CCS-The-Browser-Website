@@ -546,21 +546,32 @@ main .main-header
 
 .layer
 {
-    visibility: hidden;
-    background: transparent;
-    height: 100%;
-    width: 100%;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    height: 0%;
+    width: 0%;
+
+    background: transparent;
+
+    bottom: -100%;
+    right: 50%;
+    left: 50%;
+
     opacity: 0;
-    transition: opacity 0.3s, visibility 0.3ss;
+    transition: 0.3s;
 }
 
 .container:hover .layer
 {
-    visibility: visible;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
     opacity: 1;
+
+    transition: 0.2s;
+
 }
 
 .layer:hover
@@ -593,7 +604,6 @@ main .main-header
 
     transition: 0.3s;
 }
-
 
 
 /* || HOMEPAGE END */
