@@ -595,6 +595,8 @@ main .main-header
     transition: 0.3s;
 
     text-align: center;
+    font-family: Coolvetica;
+    font-size: 3.5rem;
 }
 
 .layer:hover h3
@@ -623,14 +625,15 @@ main .main-header
 
 .category
 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #555;
     font-weight: bold;
+    font-family: Coolvetica;
 }
 
 .headline
 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     margin: 5px 0;
 }
@@ -652,11 +655,13 @@ main .main-header
 {
     display: flex;
     flex-direction: column;
+    font-family: Helvetica;
 }
 
 .author-name
 {
     font-weight: bold;
+    font-family: Helvetica;
 }
 
 .author-role
@@ -850,7 +855,7 @@ main .privacypolicy p
     display: flex;
     gap: 5px;
     padding: 7px;
-    background-color: #D9D9D9;
+    background-color: #FFFFFF;
 }
 
 .submit-cancel-container input
@@ -874,7 +879,6 @@ main .privacypolicy p
 {
     border: 2px solid #C01F1F;
 }
-
 
 /* || CREATE ARTICLE END */
 
