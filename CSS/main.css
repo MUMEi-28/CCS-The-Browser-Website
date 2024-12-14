@@ -540,15 +540,60 @@ main .main-header
     padding: 20px;
 }
 
-.viewMore
+
+/* VIEW MORE */
+
+
+.layer
 {
-    color: #555;
+    visibility: hidden;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3ss;
 }
 
-.viewMore:hover
+.container:hover .layer
 {
-    color: #fc0000;
+    visibility: visible;
+    opacity: 1;
 }
+
+.layer:hover
+{
+    background: rgba(226, 0, 0, 0.7);
+    transition: 0.3s;
+}
+
+.layer h3
+{
+    width: 100%;
+    font-weight: 500;
+    color: white;
+    font-size: 26px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    transition: 0.3s;
+
+    text-align: center;
+}
+
+.layer:hover h3
+{
+    bottom: 49%;
+    opacity: 1;
+
+    transition: 0.3s;
+}
+
 
 
 /* || HOMEPAGE END */

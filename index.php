@@ -172,18 +172,23 @@ $editorial = array_reverse($editorial);
                         data-id="<?php echo htmlspecialchars($news[0]['artID']); ?>">
                         <div class="news-item">
                             <section class="headline">
-                                <?php echo htmlspecialchars(substr($news[0]['artHeadline'], 0, 150)) . "<span class='viewMore'>... View more</span>"; ?>
+
+                                <?php echo htmlspecialchars(substr($news[0]['artHeadline'], 0, 150)) . '...'; ?>
+
                             </section>
                             <section class="main-news">
                                 <p>
                                     <i><?php echo htmlspecialchars(substr($news[1]['artDate'], 0, 150)); ?> <br><br></i>
-                                    <?php echo htmlspecialchars(substr($news[0]['artContent'], 0, 150)) . "<span class='viewMore'>... View more</span>"; ?>
+                                    <?php echo htmlspecialchars(substr($news[0]['artContent'], 0, 150)) . '...'; ?>
                                 </p>
                             </section>
                         </div>
 
                         <img src="Images/<?php echo $news[0]['artImgHeader'] ?>" alt="UPLOADED IMAGE">
 
+                        <div class="layer">
+                            <h3>View More</h3>
+                        </div>
                     </section>
                 </section>
 
@@ -201,13 +206,16 @@ $editorial = array_reverse($editorial);
                             <section class="main-news">
                                 <p>
                                     <i><?php echo htmlspecialchars(substr($news[1]['artDate'], 0, 150)); ?> <br><br></i>
-                                    <?php echo htmlspecialchars(substr($news[1]['artContent'], 0, 150)) . "<span class='viewMore'>... View more</span>" ?>
+                                    <?php echo htmlspecialchars(substr($news[1]['artContent'], 0, 150)) . '...' ?>
                                 </p>
                             </section>
+
+                            <div class="layer">
+                                <h3>View More</h3>
+                            </div>
                     </section>
+
             </div>
-            </section>
-            </section>
 
         </div>
 

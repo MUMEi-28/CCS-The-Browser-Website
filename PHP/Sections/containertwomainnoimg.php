@@ -10,4 +10,7 @@
             </section>
         </div>
         </class>
+        <div class="layer">
+            <h3>View More</h3>
+        </div>
 </section>

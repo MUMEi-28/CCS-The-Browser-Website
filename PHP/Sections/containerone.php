@@ -16,6 +16,10 @@ if (isset($articles) && is_array($articles) && isset($articles[0])): ?>
         </div>
         <!-- Display the image -->
         <img src="../Images/<?php echo htmlspecialchars($articles[0]['artImgHeader']); ?>" alt="UPLOADED IMAGE">
+
+        <div class="layer">
+            <h3>View More</h3>
+        </div>
     </section>
 <?php else: ?>
     <div class="errEmpty">

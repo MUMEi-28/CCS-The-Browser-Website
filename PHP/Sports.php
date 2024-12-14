@@ -42,12 +42,12 @@ $articles = array_reverse($articles);
     <?php include("header.php"); ?>
     <main>
         <section class="other-main-news">
-            <?php include("Sections/containerone.php")?>
+            <?php include("Sections/containerone.php") ?>
             <hr>
             <?php
-                foreach(array_slice($articles, 1) as $x) {
-                    include("Sections/containertwo.php");
-                }
+            foreach (array_slice($articles, 1) as $x) {
+                include("Sections/containertwo.php");
+            }
             ?>
         </section>
     </main>
