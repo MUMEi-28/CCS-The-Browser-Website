@@ -10,7 +10,7 @@ if (isset($articles) && is_array($articles) && isset($articles[0])): ?>
             <section class="main-news">
                 <p>
                     <i><?php echo htmlspecialchars(substr($articles[0]['artDate'], 0, 50)); ?></i> <br><br>
-                    <?php echo htmlspecialchars(substr($articles[0]['artContent'], 0, 500)) . "<span class='viewMore'>... View more</span>"; ?>
+                    <?php echo htmlspecialchars(substr($articles[0]['artContent'], 0, 500)) . "..."; ?>
                 </p>
             </section>
         </div>

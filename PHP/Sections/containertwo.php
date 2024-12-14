@@ -7,7 +7,7 @@
             </section>
             <section class="main-news">
                 <i><?php echo htmlspecialchars(substr($x['artDate'], 0, 50)); ?></i> <br><br>
-                <?php echo htmlspecialchars(substr($x['artContent'], 0, 350)) . "<span class='viewMore'>... View more</span>"; ?>
+                <?php echo htmlspecialchars(substr($x['artContent'], 0, 350)) . "..."; ?>
 
                 <div class="layer">
                     <h3>View More</h3>
