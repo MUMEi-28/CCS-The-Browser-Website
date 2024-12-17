@@ -4,23 +4,17 @@ include("../LogInRegister/php/config.php");
 
 // Get the database
 $sql = "SELECT * FROM articles";
-$result =   $con->query($sql);
+$result = $con->query($sql);
 
 if (!$result) {
     die("Invalid Query: " . $con->error);
 }
-
-/* while ($row = $result->fetch_assoc()) {
-
-    echo "";
-} */
 
 $headline = "";
 $writer = "";
 $imgHeader = "";
 $articleContent  = "";
 $typeOfArticle = "";
-
 
 $errorMessage = "";
 $successMessage = "";
@@ -74,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $headline = $con->real_escape_string($_POST['headline']);
     $writer = $con->real_escape_string($_POST['writer']);
     $articleContent = $con->real_escape_string($_POST['articleContent']);
-    $typeOfArticle = $con->real_escape_string($_POST['artType']);
+    $typeOfArticle = $con->real_escape_string($_POST['typeOfArticle']);
 
     // Check if a new file is uploaded
     if (!empty($_FILES['imgHeader']['name'])) {
@@ -97,21 +91,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Check if a new type of article is provided
-    if (!empty($_POST['typeOfArticle'])) {
-        $typeOfArticle = $con->real_escape_string($_POST['typeOfArticle']);
-    } else {
-        // No new type selected; keep the current type
-        $sql = "SELECT artType FROM articles WHERE artID = $id";
-        $result = $con->query($sql);
-        if ($result && $row = $result->fetch_assoc()) {
-            $typeOfArticle = $row['artType'];
-        } else {
-            die("Error fetching current article type: " . $con->error);
-        }
-    }
-
-    
     // Update the article
     $sql = "UPDATE articles 
             SET artHeadline = '$headline', 
@@ -133,9 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -151,30 +128,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="../CSS/main.css">
-
     <script src="../Javascript/main.js" defer></script>
 </head>
 
 <body>
-
-
-    <!-- PANG DEBUG SA IMAGES --><!-- 
-    <?php
-    $res = mysqli_query($con, "SELECT * FROM articles");
-    while ($row = mysqli_fetch_assoc($res)) {
-    ?>
-        <img src="../Images/<?php echo $row['artImgHeader'] ?>" alt="UPLOADED IMAGE">
-
-    <?php } ?> -->
-
-
     <?php include("header.php") ?>
 
     <main>
         <form class="createArticle" method="post" enctype="multipart/form-data">
             <h1>Edit article</h1>
 
-            <div class=" inputContainer" id="inputContainer">
+            <div class="inputContainer" id="inputContainer">
                 <label for="headline">TITLE/HEADLINE:</label>
                 <input type="text" name="headline" value="<?php echo $headline ?>">
             </div>
@@ -186,11 +150,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="inputContainer">
                 <label for="image-header">IMAGE HEADER:</label>
-
-                <!-- File input for selecting a new image -->
                 <input type="file" name="imgHeader" id="imgHeader" accept="image/png, image/jpeg" onchange="previewImage(event)">
 
-                <!-- Display the current or newly selected image -->
                 <div id="imagePreview">
                     <?php if (!empty($imgHeader)): ?>
                         <p>Current Image:</p>
@@ -201,73 +162,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
 
-
             <script>
                 function previewImage(event) {
-                    const input = event.target; // The file input element
-                    const previewDiv = document.getElementById('imagePreview'); // The div where the preview is displayed
-                    const file = input.files[0]; // The selected file
+                    const input = event.target;
+                    const previewDiv = document.getElementById('imagePreview');
+                    const file = input.files[0];
 
                     if (file) {
                         const reader = new FileReader();
-
                         reader.onload = function(e) {
-                            // Replace the current image or message with the new image preview
                             previewDiv.innerHTML = `
-                    <p>New Image Preview:</p>
-                    <img src="${e.target.result}" alt="New Image" style="max-width: 200px;">
-                `;
+                                <p>New Image Preview:</p>
+                                <img src="${e.target.result}" alt="New Image" style="max-width: 200px;">
+                            `;
                         };
-
-                        // Read the file as a data URL
                         reader.readAsDataURL(file);
                     }
                 }
             </script>
 
-
-
             <div class="inputContainer" id="inputContainer">
-                <label for="I">ARTICLE CONTENT:</label>
-                <textarea name="articleContent" id="" cols="30" rows="26"><?php echo $articleContent ?></textarea>
+                <label for="articleContent">ARTICLE CONTENT:</label>
+                <textarea name="articleContent" cols="30" rows="26"><?php echo $articleContent ?></textarea>
             </div>
 
             <div class="inputContainer" id="inputContainer">
-                <label for="choices">TYPE OF ARTICLE:</label>
-                <select name="typeOfArticle" id="typeOfArticle" value="<?php echo $typeOfArticle ?>">
-                    <option value="null" disabled selected hidden>Choose Type of Article</option>
-                    <option value="News">News</option>
-                    <option value="Editorial">Editorial</option>
-                    <option value="Feature">Feature</option>
-                    <option value="Sports">Sports</option>
-                    <option value="TSU Marilag 2024">TSU Marilag 2024</option>
-                    <option value="CCS Sportsfest 2024">CCS Sportsfest 2024</option>
+                <label for="typeOfArticle">TYPE OF ARTICLE:</label>
+                <select name="typeOfArticle" id="typeOfArticle">
+                    <option value="null" disabled hidden>Choose Type of Article</option>
+                    <option value="News" <?php echo ($typeOfArticle == 'News') ? 'selected' : ''; ?>>News</option>
+                    <option value="Editorial" <?php echo ($typeOfArticle == 'Editorial') ? 'selected' : ''; ?>>Editorial</option>
+                    <option value="Feature" <?php echo ($typeOfArticle == 'Feature') ? 'selected' : ''; ?>>Feature</option>
+                    <option value="Sports" <?php echo ($typeOfArticle == 'Sports') ? 'selected' : ''; ?>>Sports</option>
+                    <option value="TSU Marilag 2024" <?php echo ($typeOfArticle == 'TSU Marilag 2024') ? 'selected' : ''; ?>>TSU Marilag 2024</option>
+                    <option value="CCS Sportsfest 2024" <?php echo ($typeOfArticle == 'CCS Sportsfest 2024') ? 'selected' : ''; ?>>CCS Sportsfest 2024</option>
                 </select>
-
             </div>
 
             <div class="submit-cancel-container">
                 <input type="submit" value="UPDATE" name="update" class="update-Button">
                 <input type="submit" value="DELETE" name="delete" class="delete-Button" onclick="return confirm('Are you sure you want to delete this article?');">
-                <input type="button" value="CANCEL" id="cancel">
+                <input type="button" value="CANCEL" onclick="window.location.href='../index.php'" class="cancel-Button">
             </div>
-
-            <!--     <?php
-
-                        // IF THERE ARE NO ERROR MESSAGE AND THE SUBMIT BUTTON WAS CLICKED
-                        if (!empty($errorMessage) && isset($_POST['update'])) {
-                            echo "
-                <script defer> alert('PLS IMPLEMENT WARNING CONTAINER NA MERON OK BUTTON SAYING /ALL 
-                FIELDS SHOULD NOT BE EMPTY OR SOMETHING/')</script>";
-                            $errorMessage = "";
-                        }
-                        ?> -->
-
         </form>
     </main>
 
     <?php include("footer.php") ?>
-
 </body>
 
 </html>
