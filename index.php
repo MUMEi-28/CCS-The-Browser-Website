@@ -167,53 +167,80 @@ $editorial = array_reverse($editorial);
         <hr>
         <div class="main-news">
             <div class="news">
-                <section class="container one" id="pop-out"
-                    data-id="<?php echo htmlspecialchars($news[0]['artID']); ?>">
-                    <div class="news-item">
-                        <section class="headline">
-
-                            <?php echo htmlspecialchars(substr($news[0]['artHeadline'], 0, 150)) . '...'; ?>
-
-                        </section>
-                        <section class="main-news">
-                            <p>
-                                <i><?php echo htmlspecialchars(substr($news[1]['artDate'], 0, 150)); ?> <br><br></i>
-                                <?php echo htmlspecialchars(substr($news[0]['artContent'], 0, 150)) . '...'; ?>
-                            </p>
-                        </section>
-                    </div>
-
-                    <img src="Images/<?php echo $news[0]['artImgHeader'] ?>" alt="UPLOADED IMAGE">
-
-                    <div class="layer">
-                        <h3>View More</h3>
-                    </div>
-                </section>
-
-                <section class="sub-news">
-                    <section class="container two" id="pop-out"
-                        data-id="<?php echo htmlspecialchars($news[1]['artID']); ?>" ?>
-                        <img src="Images/<?php echo $news[1]['artImgHeader'] ?>" alt="UPLOADED IMAGE">
-
+                <?php if (isset($news[0]['artID']) && !empty($news[0]['artID'])): ?>
+                    <!-- Main News Section -->
+                    <section class="container one" id="pop-out" data-id="<?php echo htmlspecialchars($news[0]['artID']); ?>">
                         <div class="news-item">
                             <section class="headline">
-
-                                <h2><?php echo htmlspecialchars(substr($news[1]['artHeadline'], 0, 100)); ?></h2>
-
+                                <?php
+                                if (!empty($news[0]['artHeadline'])) {
+                                    echo htmlspecialchars(substr($news[0]['artHeadline'], 0, 150)) . '...';
+                                } else {
+                                    echo "<h1>There is no news yet</h1>";
+                                }
+                                ?>
                             </section>
                             <section class="main-news">
                                 <p>
-                                    <i><?php echo htmlspecialchars(substr($news[1]['artDate'], 0, 150)); ?> <br><br></i>
-                                    <?php echo htmlspecialchars(substr($news[1]['artContent'], 0, 150)) . '...' ?>
+                                    <?php if (isset($news[0]['artDate']) && !empty($news[0]['artDate'])): ?>
+                                        <i>
+                                            <?php echo htmlspecialchars(substr($news[0]['artDate'], 0, 150)); ?> <br><br>
+                                        </i>
+                                    <?php endif; ?>
+
+                                    <?php
+                                    if (!empty($news[0]['artContent'])) {
+                                        echo htmlspecialchars(substr($news[0]['artContent'], 0, 150)) . '...';
+                                    }
+                                    ?>
                                 </p>
                             </section>
+                        </div>
 
-                            <div class="layer">
-                                <h3>View More</h3>
-                            </div>
+                        <img src="Images/<?php echo htmlspecialchars($news[0]['artImgHeader']); ?>" alt="UPLOADED IMAGE">
+
+                        <div class="layer">
+                            <h3>View More</h3>
+                        </div>
                     </section>
+                <?php else: ?>
+                    <h1 class="no-news-yet">There is no news yet</h1>
+                <?php endif; ?>
 
+                <?php if (isset($news[1]['artID']) && !empty($news[1]['artID'])): ?>
+                    <!-- Sub News Section -->
+                    <section class="sub-news">
+                        <section class="container two" id="pop-out" data-id="<?php echo htmlspecialchars($news[1]['artID']); ?>">
+                            <img src="Images/<?php echo htmlspecialchars($news[1]['artImgHeader']); ?>" alt="UPLOADED IMAGE">
+
+                            <div class="news-item">
+                                <section class="headline">
+                                    <h2><?php echo htmlspecialchars(substr($news[1]['artHeadline'], 0, 100)); ?></h2>
+                                </section>
+                                <section class="main-news">
+                                    <p>
+                                        <?php if (!empty($news[1]['artDate'])): ?>
+                                            <i><?php echo htmlspecialchars(substr($news[1]['artDate'], 0, 150)); ?> <br><br></i>
+                                        <?php endif; ?>
+
+                                        <?php
+                                        if (!empty($news[1]['artContent'])) {
+                                            echo htmlspecialchars(substr($news[1]['artContent'], 0, 150)) . '...';
+                                        }
+                                        ?>
+                                    </p>
+                                </section>
+
+                                <div class="layer">
+                                    <h3>View More</h3>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                <?php endif; ?>
             </div>
+        </div>
+
 
         </div>
 

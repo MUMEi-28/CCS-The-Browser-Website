@@ -303,6 +303,14 @@ main .main-header
     font-size: 3rem;
 }
 
+.no-news-yet
+{
+    width: 100%;
+    padding: 30px;
+
+    text-align: center;
+}
+
 .news
 {
     display: flex;
