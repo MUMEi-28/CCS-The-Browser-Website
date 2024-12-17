@@ -273,23 +273,29 @@ $editorial = array_reverse($editorial);
             <div class="container three">
                 <h2>SPORTS</h2>
                 <div class="sports news">
-                    <?php
-                    foreach (array_slice($sports, 0, 2) as $x) {
-                        include("PHP/Sections/containertwomain.php");
-                    }
-                    ?>
+                    <?php if (!empty($sports)): ?>
+                        <?php foreach (array_slice($sports, 0, 2) as $x): ?>
+                            <?php include("PHP/Sections/containertwomain.php"); ?>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <h1 class="no-news-yet">There is no news yet</h1>
+                    <?php endif; ?>
                 </div>
+
             </div>
 
             <div class="container four">
                 <h2>FEATURE</h2>
                 <div class="feature news">
-                    <?php
-                    foreach (array_slice($feature, 0, 2) as $x) {
-                        include("PHP/Sections/containertwomain.php");
-                    }
-                    ?>
+                    <?php if (!empty($feature)): ?>
+                        <?php foreach (array_slice($feature, 0, 2) as $x): ?>
+                            <?php include("PHP/Sections/containertwomain.php"); ?>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <h1 class="no-news-yet">There is no news yet</h1>
+                    <?php endif; ?>
                 </div>
+
             </div>
         </div>
 
@@ -298,12 +304,15 @@ $editorial = array_reverse($editorial);
             <h2>EDITORIAL</h2>
             <hr>
             <div class="editorial news">
-                <?php
-                foreach (array_slice($editorial, 0, 2) as $x) {
-                    include("PHP/Sections/containertwomain.php");
-                }
-                ?>
+                <?php if (!empty($editorial)): ?>
+                    <?php foreach (array_slice($editorial, 0, 2) as $x): ?>
+                        <?php include("PHP/Sections/containertwomain.php"); ?>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <h1 class="no-news-yet">There is no news yet</h1>
+                <?php endif; ?>
             </div>
+
         </div>
     </main>
 
